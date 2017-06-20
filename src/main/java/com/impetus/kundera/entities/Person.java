@@ -15,21 +15,24 @@
  ******************************************************************************/
 package com.impetus.kundera.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * The Class Person.
  */
 @Entity
-@Table(name = "PERSON")
+@Cacheable
+@Table( name = "PERSON",
+        indexes = {
+                @Index(name = "last_name_idx",  columnList="PERSON_LAST_NAME", unique = true),
+                @Index(name = "email_idx", columnList="EMAIL",     unique = false)})
 public class Person
 {
-
     /** The person id. */
-    @Id
+    @Id @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "PERSON_ID")
     private String personId;
 
@@ -38,12 +41,29 @@ public class Person
     private String personFirstName;
 
     /** The person last name. */
-    @Column(name = "PERSON_LAST_NAME")
+    @Column(name = "PERSON_LAST_NAME", nullable = false)
     private String personLastName;
 
     /** The age. */
     @Column(name = "AGE")
     private int age;
+
+    /** Email addresses.
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "EMAIL")
+    @Transient
+    private Set<String> email = new HashSet<>();
+
+    @Column(name = "UPDATED")
+    @Temporal(TemporalType.DATE)
+    private Date updated;
+     */
+
+
+    @Column(name = "VERSION")
+    @Version
+    private long version;
+
 
     /**
      * Gets the person id.
@@ -138,5 +158,7 @@ public class Person
     {
         this.age = age;
     }
+
+//    public void addEmail(String email) { this.email.add(email); }
 
 }

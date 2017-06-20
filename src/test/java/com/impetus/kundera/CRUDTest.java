@@ -1,38 +1,23 @@
-/*******************************************************************************
- * * Copyright 2016 Impetus Infotech.
- *  *
- *  * Licensed under the Apache License, Version 2.0 (the "License");
- *  * you may not use this file except in compliance with the License.
- *  * You may obtain a copy of the License at
- *  *
- *  *      http://www.apache.org/licenses/LICENSE-2.0
- *  *
- *  * Unless required by applicable law or agreed to in writing, software
- *  * distributed under the License is distributed on an "AS IS" BASIS,
- *  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  * See the License for the specific language governing permissions and
- *  * limitations under the License.
- ******************************************************************************/
 package com.impetus.kundera;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
+import com.datastax.driver.core.querybuilder.QueryBuilder;
+import com.datastax.driver.core.querybuilder.Select;
+import com.impetus.client.cassandra.common.CassandraConstants;
 import com.impetus.kundera.entities.Person;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.junit.*;
+
+import javax.persistence.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * The Class CRUDTest.
  */
 public class CRUDTest
 {
+    private Log log = LogFactory.getLog(getClass().getName());
 
     /** The Constant PU. */
     private static final String PU = "cassandra_pu";
@@ -52,7 +37,11 @@ public class CRUDTest
     @BeforeClass
     public static void SetUpBeforeClass() throws Exception
     {
-        emf = Persistence.createEntityManagerFactory(PU);
+        Map propertyMap = new HashMap();
+        //propertyMap.put(PersistenceProperties.KUNDERA_DDL_AUTO_PREPARE, "create");
+        propertyMap.put("kundera.batch.size", "5");
+        propertyMap.put(CassandraConstants.CQL_VERSION, CassandraConstants.CQL_VERSION_3_0);
+        emf = Persistence.createEntityManagerFactory(PU, propertyMap);
     }
 
     /**
@@ -78,6 +67,11 @@ public class CRUDTest
     {
         testInsert();
         testMerge();
+        testUpdate();
+        testCache();
+        testTransaction();
+        testBatch();
+        testQueryBuilder();
         testRemove();
     }
 
@@ -94,13 +88,14 @@ public class CRUDTest
         p.setPersonFirstName("James");
         p.setPersonLastName("Bond");
         p.setAge(24);
+        //p.addEmail("007@mi6.gov");
         em.persist(p);
+        em.flush();
 
         Person person = em.find(Person.class, "101");
         Assert.assertNotNull(person);
         Assert.assertEquals("101", person.getPersonId());
         Assert.assertEquals("James Bond", person.getPersonName());
-
     }
 
     /**
@@ -109,12 +104,80 @@ public class CRUDTest
     private void testMerge()
     {
         Person person = em.find(Person.class, "101");
-        person.setPersonFirstName("Bill");
-        person.setPersonLastName("Clinton");
-        em.merge(person);
+        person.setPersonLastName("Blond");
+        //person.addEmail("jamesbond@gmail.com");
+        person = em.merge(person);
+        em.flush();
 
-        Person p1 = em.find(Person.class, "101");
-        Assert.assertEquals("Bill Clinton", p1.getPersonName());
+        Person p2 = em.find(Person.class, "101");
+        Assert.assertEquals("Blond", p2.getPersonLastName());
+    }
+
+    private void testCache() {
+        Cache cache = emf.getCache();
+        cache.evictAll();
+        log.info("Person in Cache: " + cache.contains(Person.class, "101"));
+        Person person = em.find(Person.class, "101");
+        log.info("Person in Cache: " + cache.contains(Person.class, person.getPersonId()));
+        cache.evictAll();
+        log.info("Person in Cache: " + cache.contains(Person.class, person.getPersonId()));
+    }
+
+    private void testUpdate()
+    {
+        Person person = em.find(Person.class, "101");
+        /*
+        // In Query set Paramater.
+        queryString = "Update PersonCassandra p SET p.personName = 'Kuldeep' WHERE p.personId IN :idList";
+
+        List<String> id = new ArrayList<String>();
+        id.add("1");
+        id.add("2");
+        id.add("3");
+
+        cqlQuery = parseAndCreateUpdateQuery(kunderaQuery, emf, em, pu, PersonCassandra.class, Integer.MAX_VALUE);
+        KunderaQuery kunderaQuery = getQueryObject(queryString, emf);
+        kunderaQuery.setParameter("idList", id);
+
+        PersistenceDelegator pd = getPersistenceDelegator(em, getpd);
+        EntityManagerFactoryImpl.KunderaMetadata kunderaMetadata = ((EntityManagerFactoryImpl) emf).getKunderaMetadataInstance();
+
+        CassQuery query = new CassQuery(kunderaQuery, pd, kunderaMetadata);
+        query.setMaxResults(maxResult);
+        if(ttl != null)
+        {
+            query.applyTTL(ttl);
+        }
+
+        String cqlQuery = query.createUpdateQuery(kunderaQuery);
+        return cqlQuery;
+                */
+        person.setPersonFirstName("Jim");
+        em.flush();
+    }
+
+    private void testTransaction()
+    {
+        EntityTransaction txn = em.getTransaction();
+        txn.begin();
+        Person person = new Person();
+        person.setPersonFirstName("Fred");
+        person.setPersonLastName("Johnson");
+        person.setAge(22);
+        em.persist(person);
+        txn.commit();
+    }
+
+    private void testBatch()
+    {
+    }
+
+    private void testQueryBuilder()
+    {
+        String table = em.getMetamodel().entity(Person.class).getName();
+        Select q = QueryBuilder.select().all().from(table);
+        Query query = em.createQuery(q.getQueryString());
+        query.getResultList();
     }
 
     /**

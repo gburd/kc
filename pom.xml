@@ -9,7 +9,7 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<kundera.version>3.6</kundera.version>
+		<kundera.version>3.9</kundera.version>
 	</properties>
 
 	<dependencies>
@@ -17,6 +17,21 @@
 			<groupId>com.impetus.kundera.client</groupId>
 			<artifactId>kundera-cassandra</artifactId>
 			<version>${kundera.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.impetus.kundera.client</groupId>
+			<artifactId>kundera-cassandra-ds-driver</artifactId>
+			<version>${kundera.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.datastax.cassandra</groupId>
+			<artifactId>cassandra-driver-core</artifactId>
+			<version>3.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.16.16</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
