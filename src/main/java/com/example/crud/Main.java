@@ -14,8 +14,10 @@ import javax.persistence.Query;
 
 import com.example.crud.entities.*;
 
+import com.example.crud.repositories.InventoryRepository;
 import org.datanucleus.enhancer.DataNucleusEnhancer;
 import org.datanucleus.util.NucleusLogger;
+import org.springframework.data.jpa.repository.support.JpaRepositoryFactory;
 
 /**
  * Controlling application for the DataNucleus Tutorial using JPA.
@@ -157,6 +159,13 @@ public class Main {
             em.close();
         }
         System.out.println("");
+
+        em = emf.createEntityManager();
+        JpaRepositoryFactory factory = new JpaRepositoryFactory(em);
+        InventoryRepository repository = factory.getRepository(InventoryRepository.class);
+        Inventory inventory = repository.findByName("My Inventory");
+        System.out.println("SpringData/JPA: " + inventory.toString());
+        em.close();
 
         // Clean out the database
         em = emf.createEntityManager();

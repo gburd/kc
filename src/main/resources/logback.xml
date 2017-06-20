@@ -69,11 +69,11 @@
   <logger name="com.datastax.driver.core.QueryLogger.SLOW" level="INFO">
     <appender-ref ref="console"/>
   </logger>
-<!--
-  <logger name="com.datastax.driver.core.QueryLogger.NORMAL" level="TRACE">
+
+  <logger name="com.datastax.driver.core.QueryLogger.NORMAL" level="INFO">
     <appender-ref ref="console"/>
   </logger>
--->
+
   <logger name="com.datastax.driver.core.QueryLogger.FAST" level="INFO">
     <appender-ref ref="console"/>
   </logger>
