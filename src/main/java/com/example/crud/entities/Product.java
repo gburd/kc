@@ -3,12 +3,8 @@ package com.example.crud.entities;
 import lombok.Data;
 import lombok.ToString;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.annotation.Generated;
+import javax.persistence.*;
 
 /**
  * Definition of a Product
@@ -21,7 +17,7 @@ public class Product
 {
     /** Id for the product. */
     @Id
-    private long id;
+    private String id;
 
     /** Name of the Product. */
     @Basic
@@ -33,8 +29,11 @@ public class Product
 
     /** Price of the Product. */
     @Basic
-    @Column (name="THE_PRICE")
     private double price=0.0;
+
+    /** Seller of this product. */
+    @ManyToOne(optional = false)
+    private Person seller;
 
     /**
      * Default constructor. 

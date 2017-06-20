@@ -105,7 +105,7 @@ build
 
         <!-- enhance -->
         <enhancer classpathref="run.classpath" dir="${classes.dir}" verbose="true" api="JPA" persistenceUnit="crud">
-            <sysproperty key="log4j.configuration" value="file:log4j.properties"/>
+            <sysproperty key="log4j.configuration" value="file:log4j.xml"/>
         </enhancer>
     </target>
 
@@ -117,7 +117,7 @@ build
 
         <schematool classpathref="run.classpath" failonerror="true" verbose="true" 
             mode="create" api="JPA" persistenceUnit="crud">
-            <sysproperty key="log4j.configuration" value="file:${basedir}/log4j.properties"/>
+            <sysproperty key="log4j.configuration" value="file:${basedir}/log4j.xml"/>
         </schematool>
     </target>
 
@@ -129,7 +129,7 @@ build
 
         <schematool classpathref="run.classpath" failonerror="true" fork="true" verbose="true" 
             mode="delete" api="JPA" persistenceUnit="crud">
-            <sysproperty key="log4j.configuration" value="file:${basedir}/log4j.properties"/>
+            <sysproperty key="log4j.configuration" value="file:${basedir}/log4j.xml"/>
         </schematool>
     </target>
 
@@ -141,7 +141,7 @@ build
 
         <schematool classpathref="run.classpath" failonerror="true" fork="true" verbose="true" 
             mode="dbinfo" api="JPA" persistenceUnit="crud">
-            <sysproperty key="log4j.configuration" value="file:${basedir}/log4j.properties"/>
+            <sysproperty key="log4j.configuration" value="file:${basedir}/log4j.xml"/>
         </schematool>
     </target>
 

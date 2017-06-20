@@ -32,9 +32,19 @@
             <version>2.1.0</version>
         </dependency>
         <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>[1.2, 1.3)</version>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.0.13</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-access</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>log4j-over-slf4j</artifactId>
+            <version>1.7.7</version>
         </dependency>
 
         <!-- ENABLE THIS FOR H2 -->
@@ -103,7 +113,7 @@
         </dependency-->
 
         <!-- ENABLE THIS FOR MongoDB -->
-        <!--dependency>
+        <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-mongodb</artifactId>
             <version>[5.0.0-m1, 5.9)</version>
@@ -111,8 +121,8 @@
         <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongo-java-driver</artifactId>
-            <version>3.0.0</version>
-        </dependency-->
+            <version>3.4.2</version>
+        </dependency>
 
         <!-- ENABLE THIS FOR HBase -->
         <!--dependency>
@@ -233,7 +243,7 @@
                 <configuration>
                     <api>JPA</api>
                     <persistenceUnitName>crud</persistenceUnitName>
-                    <log4jConfiguration>${basedir}/src/main/resources/log4j.properties</log4jConfiguration>
+                    <persistenceUnitName>mongo</persistenceUnitName>
                     <verbose>true</verbose>
                 </configuration>
                 <executions>
@@ -252,12 +262,6 @@
                 <version>1.1</version>
                 <configuration>
                     <mainClass>com.example.crud.Main</mainClass>
-                    <systemProperties>
-                        <systemProperty>
-                            <key>log4j.configuration</key>
-                            <value>file:${basedir}/src/main/resources/log4j.properties</value>
-                        </systemProperty>
-                    </systemProperties>
                 </configuration>
             </plugin>
             <plugin>

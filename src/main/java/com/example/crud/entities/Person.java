@@ -1,9 +1,7 @@
 package com.example.crud.entities;
 
 import javax.persistence.*;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 /**
  * The Class Person.
@@ -12,8 +10,8 @@ import java.util.Set;
 @Cacheable
 @Table( name = "PERSON",
         indexes = {
-                @Index(name = "last_name_idx",  columnList="PERSON_LAST_NAME", unique = true),
-                @Index(name = "email_idx", columnList="EMAIL",     unique = false)})
+                @Index(name = "last_name_idx",  columnList="PERSON_LAST_NAME", unique = false)
+            /*, @Index(name = "email_idx",      columnList="EMAIL",            unique = false)*/})
 public class Person
 {
     /** The person id. */
@@ -44,6 +42,8 @@ public class Person
     private Date updated;
      */
 
+    @OneToMany(mappedBy = "seller")
+    private List<Product> products;
 
     @Column(name = "VERSION")
     @Version

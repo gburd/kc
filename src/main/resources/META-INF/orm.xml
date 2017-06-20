@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd"
-    version="1.0">
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_1.xsd"
+    version="2.1">
     <description>JPA Mapping for CRUD/JPA</description>
     <package>com.example.crud.entities</package>
 
+    <!--
+    @Table(indexes = {@Index(columnList="PRICE")})
+    -->
     <entity class="com.example.crud.entities.Product" name="Product">
-        <table name="JPA_PRODUCTS"/>
+        <table name="PRODUCTS"/>
         <inheritance strategy="JOINED"/>
         <attributes>
             <id name="id">
                 <generated-value strategy="AUTO"/>
             </id>
             <basic name="name">
-                <column name="PRODUCT_NAME" length="100"/>
+                <column name="NAME" length="100"/>
             </basic>
             <basic name="description">
                 <column length="255"/>
@@ -23,7 +26,9 @@
     </entity>
 
     <entity class="com.example.crud.entities.Book" name="Book">
-        <table name="JPA_BOOKS"/>
+        <table name="BOOKS">
+            <index column-list="price" unique="false"/>
+        </table>
         <attributes>
             <basic name="isbn">
                 <column name="ISBN" length="20"></column>
@@ -38,17 +43,36 @@
     </entity>
 
     <entity class="com.example.crud.entities.Inventory" name="Inventory">
-        <table name="JPA_INVENTORY"/>
+        <table name="INVENTORY"/>
         <attributes>
             <id name="name">
                 <column name="NAME" length="40"></column>
             </id>
+            <version name="version">
+                <column name="VERSION"></column>
+            </version>
             <one-to-many name="products">
-                <join-table name="JPA_INVENTORY_PRODUCTS">
+                <join-table name="INVENTORY_PRODUCTS">
                     <join-column name="INVENTORY_ID_OID"/>
                     <inverse-join-column name="PRODUCT_ID_EID"/>
                 </join-table>
             </one-to-many>
+        </attributes>
+    </entity>
+
+
+    <entity class="com.example.crud.entities.Magazine" name="Magazine">
+        <table name="MAGAZINES"/>
+        <attributes>
+            <basic name="isbn">
+                <column name="ISBN" length="20"></column>
+            </basic>
+            <basic name="author">
+                <column name="AUTHOR" length="40"/>
+            </basic>
+            <basic name="publisher">
+                <column name="PUBLISHER" length="40"/>
+            </basic>
         </attributes>
     </entity>
 </entity-mappings>

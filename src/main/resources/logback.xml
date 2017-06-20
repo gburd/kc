@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true">
+  <!-- ====================================================================== -->
+  <!-- Changing the pattern requires a change in our logstash parsing module  -->
+  <!-- ====================================================================== -->
+  <property name="java-pattern"   value="%d{ISO8601, UTC} %-5p [%.15t] %c{1}: %m %X{OBJECT_ID}%X{CLIENT_IP}%X{ELEMENT_ID}%X{USER_ID}%X{CONNECTION_ID}%X{REQUEST_ID}%X{CLIENT_ID}%n"/>
+  <property name="cpp-pattern"    value="%d{ISO8601, UTC} %-5p %c{1}: %m %X{OBJECT_ID} %X{ELEMENT_ID}%n"/>
+  <property name="timer-pattern"  value="%d{ISO8601, UTC} %-5p %c: %m \\(%F, line %L\\) %X{OBJECT_ID} %X{ELEMENT_ID}%n"/>
+  <property name="tree-pattern"   value="%d{ISO8601, UTC} %-5p %c: %m%n"/>
+
+  <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>${java-pattern}</pattern>
+    </encoder>
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+      <level>TRACE</level>
+    </filter>
+  </appender>
+
+  <logger name="com.mchange.v2.resourcepool" level="INFO">
+    <appender-ref ref="console"/>
+  </logger>
+
+  <logger name="com.mchange.v2.c3p0" level="INFO">
+    <appender-ref ref="console"/>
+  </logger>
+  
+  <logger name="org.logicalcobwebs.proxool" level="INFO">
+    <appender-ref ref="console"/>
+  </logger>
+  
+  <logger name="DataNucleus" level="TRACE">
+    <appender-ref ref="console"/>
+  </logger>
+
+  <logger name="org.springframework" level="TRACE">
+    <level value="trace" />
+    <appender-ref ref="console"/>
+  </logger>
+
+  <logger name="org.mongodb.driver" level="TRACE">
+    <appender-ref ref="console"/>
+  </logger>
+
+  <logger name="org.springdata.cassandra" level="TRACE">
+    <appender-ref ref="console"/>
+  </logger>
+
+  <logger name="com.datastax.driver.core.Cluster" level="INFO">
+    <appender-ref ref="console"/>
+  </logger>
+
+  <logger name="com.datastax.driver.core.Session" level="INFO">
+    <appender-ref ref="console"/>
+  </logger>
+
+  <logger name="com.datastax.driver.core.RequestHandler" level="TRACE">
+    <appender-ref ref="console"/>
+  </logger>
+
+  <logger name="com.datastax.driver.core.Connection" level="INFO">
+    <appender-ref ref="console"/>
+  </logger>
+
+  <logger name="com.datastax.driver.core.Message" level="INFO">
+    <appender-ref ref="console"/>
+  </logger>
+
+  <logger name="com.datastax.driver.core.QueryLogger.SLOW" level="INFO">
+    <appender-ref ref="console"/>
+  </logger>
+<!--
+  <logger name="com.datastax.driver.core.QueryLogger.NORMAL" level="TRACE">
+    <appender-ref ref="console"/>
+  </logger>
+-->
+  <logger name="com.datastax.driver.core.QueryLogger.FAST" level="INFO">
+    <appender-ref ref="console"/>
+  </logger>
+
+  <logger name="com.datastax.driver.core.QueryLogger.ERROR" level="INFO">
+    <appender-ref ref="console"/>
+  </logger>
+
+  <logger name="net.spy.memcached" level="TRACE">
+    <appender-ref ref="console"/>
+  </logger>
+
+  <!-- Root logger
+  <root>
+    <level value="info" />
+    <appender-ref ref="console" />
+  </root>
+  -->
+
+</configuration>
