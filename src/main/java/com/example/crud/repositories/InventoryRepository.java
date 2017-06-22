@@ -1,19 +1,34 @@
 package com.example.crud.repositories;
 
+import com.codahale.metrics.annotation.Metered;
 import com.example.crud.entities.Inventory;
-import com.example.crud.entities.Product;
+import io.astefanutti.metrics.aspectj.Metrics;
+import org.datanucleus.api.jpa.annotations.ReadOnly;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-public interface InventoryRepository extends JpaRepository<Inventory, String> {
+//@Metrics(registry = "${this.registry}")
+public interface InventoryRepository extends JpaRepository<Inventory, String>, JpaSpecificationExecutor {
 
-  Inventory findByName(String name);
+    //@Metered(name = "${this.id}")
+    @Transactional
+    @Cacheable(value = "inventory", key = "#name")
+    Inventory findByName(String name);
 
-  @Query(value        = "select * from inventory where product_id_eid contains :productId allow filtering",
-          nativeQuery = true)
-  List<Inventory> findByProduct(@Param("productId") String productId);
+    @ReadOnly
+    @Query(value = "select * from inventory where product_id_eid contains :productId allow filtering",
+            nativeQuery = true)
+    List<Inventory> findByProduct(@Param("productId") String productId);
+
+    @Transactional
+    @CacheEvict(value = "inventory", key = "#name")
+    void deleteInventoryBy(String name);
 
 }

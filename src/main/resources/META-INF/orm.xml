@@ -6,6 +6,30 @@
     <description>JPA Mapping for CRUD/JPA</description>
     <package>com.example.crud.entities</package>
 
+    <entity class="com.example.crud.entities.AbstractEntity" name="AbstractEntity">
+        <version name="version">
+            <column name="VERSION"></column>
+        </version>
+    </entity>
+
+
+    <entity class="com.example.crud.entities.AbstractAuditableEntity" name="AbstractAuditableEntity">
+        <attributes>
+            <basic name="createdDateTime">
+                <column name="created" nullable="=false"/>
+            </basic>
+            <basic name="lastModifiedDateTime">
+                <column name="modified" nullable="=false"/>
+            </basic>
+            <basic name="createdByUser">
+                <column name="created_by" nullable="false"/>
+            </basic>
+            <basic name="modifiedByUser">
+                <column name="modified_by" nullable="false"/>
+            </basic>
+        </attributes>
+    </entity>
+
     <!--
     @Table(indexes = {@Index(columnList="PRICE")})
     -->
@@ -48,9 +72,6 @@
             <id name="name">
                 <column name="NAME" length="40"></column>
             </id>
-            <version name="version">
-                <column name="VERSION"></column>
-            </version>
             <one-to-many name="products">
                 <join-table name="INVENTORY_PRODUCTS">
                     <join-column name="INVENTORY_ID_OID"/>

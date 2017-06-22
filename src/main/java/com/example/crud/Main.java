@@ -1,40 +1,62 @@
 package com.example.crud;
 
+import com.example.crud.entities.*;
+import com.example.crud.repositories.InventoryRepository;
+import org.datanucleus.util.NucleusLogger;
+import org.infinispan.Cache;
+import org.infinispan.configuration.cache.ConfigurationBuilder;
+import org.infinispan.manager.DefaultCacheManager;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.data.jpa.repository.support.JpaRepositoryFactory;
+
+import javax.persistence.*;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.HashMap;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.EntityGraph;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
-
-import com.example.crud.entities.*;
-
-import com.example.crud.repositories.InventoryRepository;
-import org.datanucleus.enhancer.DataNucleusEnhancer;
-import org.datanucleus.util.NucleusLogger;
-import org.springframework.data.jpa.repository.support.JpaRepositoryFactory;
 
 /**
  * Controlling application for the DataNucleus Tutorial using JPA.
  * Uses the "persistence-unit" called "Tutorial".
  */
 public class Main {
+
+    public static void cacheTest() {
+        // Construct a simple local cache manager with default configuration
+        DefaultCacheManager cacheManager = new DefaultCacheManager();
+        // Define local cache configuration
+        cacheManager.defineConfiguration("local", new ConfigurationBuilder().build());
+        // Obtain the local cache
+        Cache<String, String> cache = cacheManager.getCache("local");
+        // Register a listener
+        cache.addListener(new CacheClusterListener());
+        // Store some values
+        cache.put("key1", "value1");
+        cache.put("key2", "value2");
+        cache.put("key1", "newValue");
+        // Stop the cache manager and release all resources
+        cacheManager.stop();
+    }
+
     public static void main(String args[]) {
-        DataNucleusEnhancer enhancer = new DataNucleusEnhancer("JPA", null);
-        enhancer.setVerbose(true);
-        enhancer.addPersistenceUnit("crud");
-        enhancer.addPersistenceUnit("mongo");
-        enhancer.enhance();
+        //cacheTest();
+
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
+        ctx.register(ApplicationConfig.class);
+        ctx.refresh();
 
         // Create an EntityManagerFactory for this "persistence-unit"
         // See the file "META-INF/persistence.xml"
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("crud");
         EntityManagerFactory emf_mongo = Persistence.createEntityManagerFactory("mongo");
+        //MergingPersistenceUnitmanager
+
+        // TODO:
+        // * types: int, bool, etc.
+        // * Set<>
+        // * L2/Caching via Infinispan (embedded, clustered)
+        // * MergingPersistenceUnitmanager
+        // * Draft/(Fluent)Builder Immutable Entites
 
         // Persistence of a Product and a Book.
         EntityManager em = emf.createEntityManager();
@@ -44,16 +66,18 @@ public class Main {
 
             Inventory inv = em.merge(new Inventory("My Inventory"));
             Product product = new Product("Sony Discman", "A standard discman from Sony", 200.00);
-            inv.getProducts().add(product);
+            inv.addProduct(product);
             Book book = new Book("Lord of the Rings by Tolkien", "The classic story", 49.99, "JRR Tolkien",
                     "12345678", "MyBooks Factory");
             Magazine magazine = new Magazine("Field and Stream", "A hunter's guide to the outdoors.", 3.29, "F&S, Inc.", "23984729347", "F&S, Inc.");
-            inv.getProducts().add(book);
-            inv.getProducts().add(magazine);
+            inv.addProduct(book);
+            inv.addProduct(magazine);
             em.persist(inv);
 
             tx.commit();
-            System.out.println("Product and Book have been persisted");
+//            SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(inv);
+//            SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(product);
+//            System.out.println("Product and Book have been persisted, inventory: " + inv.getPrimaryKey().toString() + ", product: " + product.getPrimaryKey().toString());
         }
         catch (Exception e) {
             NucleusLogger.GENERAL.error(">> Exception persisting data", e);
@@ -168,6 +192,7 @@ public class Main {
         em.close();
 
         // Clean out the database
+        emf.getCache().evictAll();
         em = emf.createEntityManager();
         tx = em.getTransaction();
         try {
@@ -177,7 +202,7 @@ public class Main {
             inv = (Inventory) em.find(Inventory.class, "My Inventory");
 
             System.out.println("Clearing out Inventory");
-            inv.getProducts().clear();
+            inv.clearProducts();
             em.flush();
 
             System.out.println("Deleting Inventory");

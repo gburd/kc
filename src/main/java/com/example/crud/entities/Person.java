@@ -8,66 +8,64 @@ import java.util.List;
  */
 @Entity
 @Cacheable
-@Table( name = "PERSON",
+@Table(name = "PERSON",
         indexes = {
-                @Index(name = "last_name_idx",  columnList="PERSON_LAST_NAME", unique = false)
-            /*, @Index(name = "email_idx",      columnList="EMAIL",            unique = false)*/})
-public class Person
-{
-    /** The person id. */
-    @Id @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name = "PERSON_ID")
+                @Index(name = "last_name_idx", columnList = "PERSON_LAST_NAME", unique = false)
+            /*, @Index(name = "email_idx",      columnList="EMAIL",            unique = false)*/ })
+public class Person extends AbstractAuditableEntity {
+    /**
+     * The person id.
+     */
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ID")
     private String personId;
 
-    /** The person first name. */
+    /**
+     * The person first name.
+     */
     @Column(name = "PERSON_FIRST_NAME")
     private String personFirstName;
 
-    /** The person last name. */
+    /**
+     * The person last name.
+     */
     @Column(name = "PERSON_LAST_NAME", nullable = false)
     private String personLastName;
 
-    /** The age. */
+    /**
+     * The age.
+     */
     @Column(name = "AGE")
     private int age;
 
-    /** Email addresses.
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "EMAIL")
-    @Transient
-    private Set<String> email = new HashSet<>();
-
-    @Column(name = "UPDATED")
-    @Temporal(TemporalType.DATE)
-    private Date updated;
+    /**
+     * Email addresses.
+     *
+     * @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+     * @JoinColumn(name = "EMAIL")
+     * @Transient private Set<String> email = new HashSet<>();
+     * @Column(name = "UPDATED")
+     * @Temporal(TemporalType.DATE) private Date updated;
      */
 
     @OneToMany(mappedBy = "seller")
     private List<Product> products;
-
-    @Column(name = "VERSION")
-    @Version
-    private long version;
-
 
     /**
      * Gets the person id.
      *
      * @return the person id
      */
-    public String getPersonId()
-    {
+    public String getPersonId() {
         return personId;
     }
 
     /**
      * Sets the person id.
      *
-     * @param personId
-     *            the new person id
+     * @param personId the new person id
      */
-    public void setPersonId(String personId)
-    {
+    public void setPersonId(String personId) {
         this.personId = personId;
     }
 
@@ -76,8 +74,7 @@ public class Person
      *
      * @return the person name
      */
-    public String getPersonName()
-    {
+    public String getPersonName() {
         return personFirstName + " " + personLastName;
     }
 
@@ -86,19 +83,16 @@ public class Person
      *
      * @return the person first name
      */
-    public String getPersonFirstName()
-    {
+    public String getPersonFirstName() {
         return personFirstName;
     }
 
     /**
      * Sets the person first name.
      *
-     * @param personFirstName
-     *            the new person first name
+     * @param personFirstName the new person first name
      */
-    public void setPersonFirstName(String personFirstName)
-    {
+    public void setPersonFirstName(String personFirstName) {
         this.personFirstName = personFirstName;
     }
 
@@ -107,19 +101,16 @@ public class Person
      *
      * @return the person last name
      */
-    public String getPersonLastName()
-    {
+    public String getPersonLastName() {
         return personLastName;
     }
 
     /**
      * Sets the person last name.
      *
-     * @param personLastName
-     *            the new person last name
+     * @param personLastName the new person last name
      */
-    public void setPersonLastName(String personLastName)
-    {
+    public void setPersonLastName(String personLastName) {
         this.personLastName = personLastName;
     }
 
@@ -128,22 +119,19 @@ public class Person
      *
      * @return the age
      */
-    public int getAge()
-    {
+    public int getAge() {
         return age;
     }
 
     /**
      * Sets the age.
      *
-     * @param age
-     *            the new age
+     * @param age the new age
      */
-    public void setAge(int age)
-    {
+    public void setAge(int age) {
         this.age = age;
     }
 
-//    public void addEmail(String email) { this.email.add(email); }
+    //    public void addEmail(String email) { this.email.add(email); }
 
 }

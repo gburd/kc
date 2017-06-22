@@ -17,6 +17,10 @@
     </filter>
   </appender>
 
+  <category name="com.example.crud">
+    <priority value="TRACE"/>
+  </category>
+
   <logger name="com.mchange.v2.resourcepool" level="INFO">
     <appender-ref ref="console"/>
   </logger>
@@ -35,10 +39,6 @@
 
   <logger name="org.springframework" level="TRACE">
     <level value="trace" />
-    <appender-ref ref="console"/>
-  </logger>
-
-  <logger name="org.mongodb.driver" level="TRACE">
     <appender-ref ref="console"/>
   </logger>
 
@@ -79,6 +79,18 @@
   </logger>
 
   <logger name="com.datastax.driver.core.QueryLogger.ERROR" level="INFO">
+    <appender-ref ref="console"/>
+  </logger>
+
+  <category name="org.infinispan">
+    <priority value="TRACE"/>
+  </category>
+
+  <category name="org.jgroups">
+    <priority value="WARN"/>
+  </category>
+
+  <logger name="org.mongodb.driver" level="TRACE">
     <appender-ref ref="console"/>
   </logger>
 

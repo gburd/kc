@@ -3,7 +3,6 @@ package com.example.crud.entities;
 import lombok.Data;
 import lombok.ToString;
 
-import javax.annotation.Generated;
 import javax.persistence.*;
 
 /**
@@ -12,45 +11,64 @@ import javax.persistence.*;
  **/
 @Data @Entity
 @ToString
-@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
-public class Product
-{
-    /** Id for the product. */
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public class Product extends AbstractAuditableEntity {
+
+    /**
+     * Id for the product.
+     */
     @Id
     private String id;
 
-    /** Name of the Product. */
+    /**
+     * Name of the Product.
+     */
     @Basic
-    private String name=null;
+    private String name = null;
 
-    /** Description of the Product. */
+    /**
+     * Description of the Product.
+     */
     @Basic
-    private String description=null;
+    private String description = null;
 
-    /** Price of the Product. */
+    /**
+     * Price of the Product.
+     */
     @Basic
-    private double price=0.0;
+    private double price = 0.0;
 
-    /** Seller of this product. */
+    /**
+     * Seller of this product.
+     */
     @ManyToOne(optional = false)
     private Person seller;
 
     /**
-     * Default constructor. 
+     * Default constructor.
      */
     protected Product() {
     }
 
     /**
      * Constructor.
-     * @param name name of product
+     *
+     * @param name        name of product
      * @param description description of product
-     * @param price Price
+     * @param price       Price
      **/
     public Product(String name, String description, double price) {
         this.name = name;
         this.description = description;
         this.price = price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
 }

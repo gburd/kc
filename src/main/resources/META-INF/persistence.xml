@@ -25,6 +25,9 @@
         <properties>
             <property name="javax.persistence.jdbc.url" value="cassandra:"/>
             <property name="datanucleus.mapping.Schema" value="kc"/>
+            <property name="datanucleus.cache.level2.type" value="jcache"/>
+            <property name="datanucleus.cache.level2.cacheName" value="dist"/>
+            <property name="datanucleus.cache.level2.timeout" value="10000"/>
             <property name="datanucleus.schema.autoCreateAll" value="true"/>
         </properties>
     </persistence-unit>

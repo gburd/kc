@@ -1,0 +1,19 @@
+docker run --name mongodb -p 27017:27017 -d mongo --storageEngine wiredTiger
+docker run --name castrato -p 9042:9042 -p 9162:9162 -p 7000:7000 -e CASSANDRA_START_RPC=true -d stratio/cassandra-lucene-index:3.10.0
+
+drop table books; drop table products; drop table inventory; drop table magazines; desc tables;
+
+mvn clean compile -Dmaven.compiler.showDeprecation=true -Dmaven.compiler.showWarnings=true
+
+https://www.one-tab.com/page/K4XlsjF2TyugqYE_8ORqxg
+
+
+
+
+https://apple.stackexchange.com/questions/215919/enable-multicast-on-mac
+ifconfig -a
+sudo route -nv add -net 239.9.9.9 -interface en0
+netstat -nr | grep 239.9.9.9
+ping -t 1 -c 2 239.9.9.9
+sudo tcpdump -vvv -ni en0 host 239.9.9.9
+sudo route -v delete -inet 239.9.9.9
