@@ -46,6 +46,7 @@
             <basic name="description">
                 <column length="255"/>
             </basic>
+            <one-to-many name="seller"/>
         </attributes>
     </entity>
 
@@ -62,6 +63,9 @@
             </basic>
             <basic name="publisher">
                 <column name="PUBLISHER" length="40"/>
+            </basic>
+            <basic name="paperback">
+                <column name="PAPERBACK" nullable="false"/>
             </basic>
         </attributes>
     </entity>

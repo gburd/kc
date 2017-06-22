@@ -1,15 +1,14 @@
 package com.example.crud;
 
+import com.datastax.driver.core.Cluster;
+import com.datastax.driver.core.Session;
 import com.example.crud.entities.AbstractAuditableEntity;
 import com.example.crud.entities.AbstractEntity;
 import com.example.crud.entities.Product;
+import org.datanucleus.ExecutionContext;
 import org.datanucleus.enhancer.DataNucleusEnhancer;
-import org.infinispan.configuration.cache.CacheMode;
-import org.infinispan.configuration.cache.ConfigurationBuilder;
-import org.infinispan.configuration.global.GlobalConfigurationBuilder;
-import org.infinispan.manager.DefaultCacheManager;
-import org.infinispan.manager.EmbeddedCacheManager;
-import org.springframework.cache.annotation.EnableCaching;
+import org.datanucleus.store.StoreManager;
+import org.datanucleus.store.connection.ManagedConnection;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
@@ -22,18 +21,17 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.annotation.PostConstruct;
+import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import java.net.UnknownHostException;
 
 @Configuration
 @EnableJpaRepositories
 @EnableJpaAuditing
 @EnableScheduling
 @EnableAspectJAutoProxy
-@EnableCaching
 @EnableTransactionManagement
-class ApplicationConfig {
+class ApplicationConfiguration {
 
     @PostConstruct
     private void enhanceModelObjectBytecode() {
@@ -60,43 +58,30 @@ class ApplicationConfig {
         return txManager;
     }
 
-    @Bean
-    public EmbeddedCacheManager cacheManager() {
-        return infinispanEmbeddedDistributedCacheManager();
-    }
-
+    // Auditing
     @Bean
     public AuditorAware<String> auditorAware() {
         return new UsernameAuditorAware();
     }
 
-    private EmbeddedCacheManager infinispanEmbeddedDistributedCacheManager() {
-        String nodeName = null;
-        try {
-            nodeName = java.net.InetAddress.getLocalHost().getHostName();
-        } catch (UnknownHostException e) {
-            nodeName = "localhost";
-        }
-//        ConfigurationBuilder cb = new ConfigurationBuilder();	cb.addCluster("HighQCacheCluster").‌​addClusterNode("jbos‌​s1ind1", 11222).addClusterNode("udit.local.com", 11222); RemoteCacheManager rmc = new RemoteCacheManager(cb.build());
+    // Cassandra
+    @Bean
+    public EntityManager entityManager() {
+        EntityManager em = entityManagerFactory().createEntityManager();
+        return em;
+    }
 
-        DefaultCacheManager cacheManager = new DefaultCacheManager(
-                GlobalConfigurationBuilder.defaultClusteredBuilder()
-                        .transport().nodeName(nodeName).addProperty("configurationFile",
-                        "jgroups-l2-cache-udp-largecluster.xml")
-                        .build(),
-                new ConfigurationBuilder()
-                        .clustering()
-                        .cacheMode(CacheMode.INVALIDATION_SYNC)
-                        .build()
-        );
-        // The only way to get the "repl" cache to be exactly the same as the default cache is to not define it at all
-        cacheManager.defineConfiguration("dist", new ConfigurationBuilder()
-                .clustering()
-                .cacheMode(CacheMode.DIST_SYNC)
-                .hash().numOwners(2)
-                .build()
-        );
-        return cacheManager;
+    @Bean
+    public Session session() {
+        StoreManager storeManager = ((ExecutionContext)entityManager().getDelegate()).getNucleusContext().getStoreManager();
+        ManagedConnection connection = storeManager.getConnection(-1);
+        Session session = (Session) connection.getConnection();
+        return session;
+    }
+
+    @Bean
+    public Cluster cluster() {
+        return session().getCluster();
     }
 
 }

@@ -13,16 +13,19 @@
       </configuration>
     </facet>
     <facet type="Spring" name="Spring">
-      <configuration />
+      <configuration>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/src/main/java/com/example/crud/ApplicationConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/example/crud/CacheConfiguration.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/example/crud/EhCacheConfiguration.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/example/crud/metrics/MetricsConfiguration.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/example/crud/metrics/SpringConfiguringClass.java</file>
+          <file>file://$MODULE_DIR$/applicationContext.xml</file>
+        </fileset>
+      </configuration>
     </facet>
     <facet type="AspectJ" name="AspectJ">
-      <configuration>
-        <option name="aspectPath">
-          <projectLibrary>
-            <option name="name" value="Maven: io.astefanutti.metrics.aspectj:metrics-aspectj:1.2.0" />
-          </projectLibrary>
-        </option>
-      </configuration>
+      <configuration />
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
@@ -55,7 +58,6 @@
     <orderEntry type="library" name="Maven: io.netty:netty-transport:4.0.44.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-codec:4.0.44.Final" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava:19.0" level="project" />
-    <orderEntry type="library" name="Maven: io.dropwizard.metrics:metrics-core:3.1.2" level="project" />
     <orderEntry type="library" name="Maven: com.github.jnr:jnr-ffi:2.0.7" level="project" />
     <orderEntry type="library" name="Maven: com.github.jnr:jffi:1.2.10" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.github.jnr:jffi:native:1.2.10" level="project" />
@@ -67,25 +69,21 @@
     <orderEntry type="library" name="Maven: com.github.jnr:jnr-x86asm:1.0.2" level="project" />
     <orderEntry type="library" name="Maven: com.github.jnr:jnr-posix:3.0.27" level="project" />
     <orderEntry type="library" name="Maven: com.github.jnr:jnr-constants:0.9.0" level="project" />
+    <orderEntry type="library" name="Maven: org.hdrhistogram:HdrHistogram:2.1.9" level="project" />
     <orderEntry type="library" name="Maven: org.datanucleus:datanucleus-cache:5.0.0-release" level="project" />
-    <orderEntry type="library" name="Maven: org.infinispan:infinispan-embedded:9.0.2.Final" level="project" />
-    <orderEntry type="library" name="Maven: org.jboss.spec.javax.transaction:jboss-transaction-api_1.1_spec:1.0.1.Final" level="project" />
-    <orderEntry type="library" name="Maven: org.infinispan:infinispan-jcache:9.0.2.Final" level="project" />
-    <orderEntry type="library" name="Maven: org.infinispan:infinispan-core:9.0.2.Final" level="project" />
-    <orderEntry type="library" name="Maven: org.infinispan:infinispan-commons:9.0.2.Final" level="project" />
-    <orderEntry type="library" name="Maven: org.jgroups:jgroups:4.0.3.Final" level="project" />
-    <orderEntry type="library" name="Maven: com.github.ben-manes.caffeine:caffeine:2.4.0" level="project" />
-    <orderEntry type="library" name="Maven: org.jboss.marshalling:jboss-marshalling-osgi:2.0.0.Beta3" level="project" />
-    <orderEntry type="library" name="Maven: org.jboss.logging:jboss-logging:3.3.0.Final" level="project" />
-    <orderEntry type="library" name="Maven: org.infinispan:infinispan-jcache-commons:9.0.2.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.datanucleus:datanucleus-guava:5.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.datanucleus:datanucleus-jodatime:5.0.0-release" level="project" />
     <orderEntry type="library" name="Maven: javax.cache:cache-api:1.0.0" level="project" />
-    <orderEntry type="library" name="Maven: org.ehcache:ehcache:3.3.1" level="project" />
+    <orderEntry type="library" name="Maven: net.sf.ehcache:ehcache-core:2.6.11" level="project" />
+    <orderEntry type="library" name="Maven: net.sf.ehcache:ehcache-jgroupsreplication:1.7" level="project" />
+    <orderEntry type="library" name="Maven: org.jgroups:jgroups:3.1.0.Final" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:5.0.0.M5" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.0.0.M5" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.0.0.M5" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:5.0.0.M5" level="project" />
     <orderEntry type="library" name="Maven: commons-logging:commons-logging:1.2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.0.0.M5" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-context-support:5.0.0.M5" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-jpa:2.0.0.M4" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-commons:2.0.0.M4" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjrt:1.8.10" level="project" />
@@ -102,10 +100,22 @@
     <orderEntry type="library" name="Maven: joda-time:joda-time:2.9.9" level="project" />
     <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.16.16" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.12" level="project" />
-    <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
-    <orderEntry type="library" name="Maven: io.astefanutti.metrics.aspectj:metrics-aspectj:1.2.0" level="project" />
-    <orderEntry type="library" name="Maven: io.dropwizard.metrics:metrics-annotation:3.2.2" level="project" />
-    <orderEntry type="library" name="Maven: org.glassfish.web:javax.el:2.2.6" level="project" />
-    <orderEntry type="library" name="Maven: javax.el:javax.el-api:2.2.5" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
+    <orderEntry type="library" name="Maven: io.dropwizard.metrics:metrics-core:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: com.codahale.metrics:metrics-annotation:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.dropwizard.metrics:metrics-logback:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.dropwizard.metrics:metrics-jvm:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.dropwizard.metrics:metrics-healthchecks:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.dropwizard.metrics:metrics-graphite:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: com.ryantenney.metrics:metrics-spring:3.1.3" level="project" />
+    <orderEntry type="library" name="Maven: io.dropwizard.metrics:metrics-annotation:3.1.2" level="project" />
+    <orderEntry type="library" name="Maven: io.riemann:metrics3-riemann-reporter:0.4.5" level="project" />
+    <orderEntry type="library" name="Maven: com.codahale.metrics:metrics-core:3.0.1" level="project" />
+    <orderEntry type="library" name="Maven: io.riemann:riemann-java-client:0.4.5" level="project" />
+    <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:2.6.1" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty:3.6.1.Final" level="project" />
+    <orderEntry type="library" name="Maven: defunkt:logback-riemann-appender:0.4.0" level="project" />
+    <orderEntry type="library" name="Maven: com.aphyr:riemann-java-client:0.4.1" level="project" />
+    <orderEntry type="library" name="Maven: javax.inject:javax.inject:1" level="project" />
   </component>
 </module>

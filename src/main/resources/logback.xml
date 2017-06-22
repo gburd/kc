@@ -17,92 +17,58 @@
     </filter>
   </appender>
 
-  <category name="com.example.crud">
-    <priority value="TRACE"/>
-  </category>
-
-  <logger name="com.mchange.v2.resourcepool" level="INFO">
+  <appender name="consoleasync" class="ch.qos.logback.classic.AsyncAppender">
+    <queueSize>10000</queueSize>
+    <discardingThreshold>0</discardingThreshold>
     <appender-ref ref="console"/>
-  </logger>
+  </appender>
 
-  <logger name="com.mchange.v2.c3p0" level="INFO">
-    <appender-ref ref="console"/>
-  </logger>
-  
-  <logger name="org.logicalcobwebs.proxool" level="INFO">
-    <appender-ref ref="console"/>
-  </logger>
-  
-  <logger name="DataNucleus" level="TRACE">
-    <appender-ref ref="console"/>
-  </logger>
+  <category name="com.example.crud" level="TRACE" additivity="true"/>
 
-  <logger name="org.springframework" level="TRACE">
-    <level value="trace" />
-    <appender-ref ref="console"/>
-  </logger>
+  <logger name="com.mchange.v2.resourcepool" level="INFO"/>
 
-  <logger name="org.springdata.cassandra" level="TRACE">
-    <appender-ref ref="console"/>
-  </logger>
+  <logger name="com.mchange.v2.c3p0" level="INFO"/>
 
-  <logger name="com.datastax.driver.core.Cluster" level="INFO">
-    <appender-ref ref="console"/>
-  </logger>
+  <logger name="org.logicalcobwebs.proxool" level="INFO"/>
 
-  <logger name="com.datastax.driver.core.Session" level="INFO">
-    <appender-ref ref="console"/>
-  </logger>
+  <logger name="DataNucleus" level="TRACE"/>
 
-  <logger name="com.datastax.driver.core.RequestHandler" level="TRACE">
-    <appender-ref ref="console"/>
-  </logger>
+  <logger name="org.springframework" level="TRACE"/>
 
-  <logger name="com.datastax.driver.core.Connection" level="INFO">
-    <appender-ref ref="console"/>
-  </logger>
+  <logger name="org.springframework.cache" level="Trace"/>
 
-  <logger name="com.datastax.driver.core.Message" level="INFO">
-    <appender-ref ref="console"/>
-  </logger>
+  <logger name="org.springdata.cassandra" level="TRACE"/>
 
-  <logger name="com.datastax.driver.core.QueryLogger.SLOW" level="INFO">
-    <appender-ref ref="console"/>
-  </logger>
+  <logger name="com.datastax.driver.core.Cluster" level="INFO"/>
 
-  <logger name="com.datastax.driver.core.QueryLogger.NORMAL" level="INFO">
-    <appender-ref ref="console"/>
-  </logger>
+  <logger name="com.datastax.driver.core.Session" level="INFO"/>
 
-  <logger name="com.datastax.driver.core.QueryLogger.FAST" level="INFO">
-    <appender-ref ref="console"/>
-  </logger>
+  <logger name="com.datastax.driver.core.RequestHandler" level="TRACE"/>
 
-  <logger name="com.datastax.driver.core.QueryLogger.ERROR" level="INFO">
-    <appender-ref ref="console"/>
-  </logger>
+  <logger name="com.datastax.driver.core.Connection" level="INFO"/>
 
-  <category name="org.infinispan">
-    <priority value="TRACE"/>
-  </category>
+  <logger name="com.datastax.driver.core.Message" level="INFO"/>
 
-  <category name="org.jgroups">
-    <priority value="WARN"/>
-  </category>
+  <logger name="com.datastax.driver.core.QueryLogger.SLOW" level="INFO"/>
 
-  <logger name="org.mongodb.driver" level="TRACE">
-    <appender-ref ref="console"/>
-  </logger>
+  <logger name="com.datastax.driver.core.QueryLogger.NORMAL" level="INFO"/>
 
-  <logger name="net.spy.memcached" level="TRACE">
-    <appender-ref ref="console"/>
-  </logger>
+  <logger name="com.datastax.driver.core.QueryLogger.FAST" level="INFO"/>
 
-  <!-- Root logger
-  <root>
-    <level value="info" />
-    <appender-ref ref="console" />
-  </root>
-  -->
+  <logger name="com.datastax.driver.core.QueryLogger.ERROR" level="INFO"/>
+
+  <logger name="net.sf.ehcache" level="TRACE"/>
+
+  <logger name="org.jgroups" level="TRACE"/>
+
+  <logger name="org.mongodb.driver" level="TRACE"/>
+
+  <logger name="net.spy.memcached" level="TRACE"/>
+
+    <!-- Root logger -->
+    <root>
+        <level value="info" />
+        <appender-ref ref="consoleasync" />
+    </root>
 
 </configuration>

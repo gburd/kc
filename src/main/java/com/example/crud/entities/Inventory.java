@@ -20,6 +20,9 @@ public class Inventory extends AbstractAuditableEntity<String> {
     @Id
     private String name=null;
 
+    @Basic
+    private String description;
+
     @OneToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH }, fetch = FetchType.EAGER)
     private Set<Product> products = new HashSet<Product>();
 
@@ -42,4 +45,7 @@ public class Inventory extends AbstractAuditableEntity<String> {
         products.clear();
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }

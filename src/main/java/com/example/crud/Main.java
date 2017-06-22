@@ -2,10 +2,11 @@ package com.example.crud;
 
 import com.example.crud.entities.*;
 import com.example.crud.repositories.InventoryRepository;
-import org.datanucleus.util.NucleusLogger;
-import org.infinispan.Cache;
-import org.infinispan.configuration.cache.ConfigurationBuilder;
-import org.infinispan.manager.DefaultCacheManager;
+import com.example.crud.repositories.PersonRepository;
+import org.datanucleus.api.jpa.JPAEntityManager;
+import org.datanucleus.state.ObjectProvider;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.data.jpa.repository.support.JpaRepositoryFactory;
 
@@ -21,66 +22,101 @@ import java.util.Map;
  */
 public class Main {
 
-    public static void cacheTest() {
-        // Construct a simple local cache manager with default configuration
-        DefaultCacheManager cacheManager = new DefaultCacheManager();
-        // Define local cache configuration
-        cacheManager.defineConfiguration("local", new ConfigurationBuilder().build());
-        // Obtain the local cache
-        Cache<String, String> cache = cacheManager.getCache("local");
-        // Register a listener
-        cache.addListener(new CacheClusterListener());
-        // Store some values
-        cache.put("key1", "value1");
-        cache.put("key2", "value2");
-        cache.put("key1", "newValue");
-        // Stop the cache manager and release all resources
-        cacheManager.stop();
-    }
 
     public static void main(String args[]) {
-        //cacheTest();
+        Logger log = LoggerFactory.getLogger(Main.class);//getClass().getName());
 
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
-        ctx.register(ApplicationConfig.class);
+        ctx.scan("com.example");
+        ctx.register(ApplicationConfiguration.class);
         ctx.refresh();
+
+        // Enable MongoDB logging in general
+        System.setProperty("DEBUG.MONGO", "true");
+
+        // Enable DB operation tracing
+        System.setProperty("DB.TRACE", "true");
 
         // Create an EntityManagerFactory for this "persistence-unit"
         // See the file "META-INF/persistence.xml"
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("crud");
-        EntityManagerFactory emf_mongo = Persistence.createEntityManagerFactory("mongo");
-        //MergingPersistenceUnitmanager
+        EntityManagerFactory cassandraEntityManagerFactory = Persistence.createEntityManagerFactory("crud");
+        EntityManagerFactory mongoEntityManagerFactory = Persistence.createEntityManagerFactory("mongo");
 
         // TODO:
-        // * types: int, bool, etc.
-        // * Set<>
-        // * L2/Caching via Infinispan (embedded, clustered)
-        // * MergingPersistenceUnitmanager
-        // * Draft/(Fluent)Builder Immutable Entites
+        // * LOCAL_QUORUM
+        // * compound primary keys
+        // * pillar for DDL
+        // * metrics
+        // * com.datastax.driver.core.Cluster.builder().withQueryOptions(‌​new QueryOptions().setConsistencyLevel(ConsistencyLevel.QUORUM))
+        // * https://github.com/brndnmtthws/metrics-cassandra (c* as a sink for metrics)
+        // * https://github.com/addthis/metrics-reporter-config
+
+        EntityManager em;
+        EntityTransaction tx;
+        JpaRepositoryFactory factory;
+
+        //org.datanucleus.api.jpa.JPAEntityTransaction tx = (org.datanucleus.api.jpa.JPAEntityTransaction)pm.currentTransaction();
+        //tx.setOption("transaction.isolation", 2);
+
+        // Add a person to MongoDB
+        em = mongoEntityManagerFactory.createEntityManager();
+        Person person;
+        /*
+        factory = new JpaRepositoryFactory(em);
+        PersonRepository repository = factory.getRepository(PersonRepository.class);
+        person = new Person();
+        person.setPersonFirstName("James");
+        person.setPersonLastName("Bond");
+        person.setAge(42);
+        repository.save(person);
+        */
+        tx = em.getTransaction();
+        try {
+            tx.begin();
+            person = new Person();
+            person.setPersonFirstName("James");
+            person.setPersonLastName("Bond");
+            person.setAge(42);
+            em.merge(person);
+
+            List<ObjectProvider> objs = ((JPAEntityManager) em).getExecutionContext().getObjectsToBeFlushed();
+            for (Object o : objs) {
+                log.debug("to be flushed: " + o.toString());
+            }
+            tx.commit();
+        } finally {
+            if (tx.isActive()) {
+                tx.rollback();
+            }
+            em.close(); // This will detach all current managed objects
+        }
 
         // Persistence of a Product and a Book.
-        EntityManager em = emf.createEntityManager();
-        EntityTransaction tx = em.getTransaction();
+        em = cassandraEntityManagerFactory.createEntityManager();
+        tx = em.getTransaction();
         try {
             tx.begin();
 
             Inventory inv = em.merge(new Inventory("My Inventory"));
+            inv.setDescription("This is my initial description.");
             Product product = new Product("Sony Discman", "A standard discman from Sony", 200.00);
             inv.addProduct(product);
             Book book = new Book("Lord of the Rings by Tolkien", "The classic story", 49.99, "JRR Tolkien",
                     "12345678", "MyBooks Factory");
-            Magazine magazine = new Magazine("Field and Stream", "A hunter's guide to the outdoors.", 3.29, "F&S, Inc.", "23984729347", "F&S, Inc.");
+            Magazine magazine = new Magazine("Field and Stream", "A hunter's guide to the outdoors.", 3.29, "F&S, Inc.",
+                    "23984729347", "F&S, Inc.");
+
+            //product.setSeller(person);
+            //book.setSeller(person);
+            //magazine.setSeller(person);
             inv.addProduct(book);
             inv.addProduct(magazine);
             em.persist(inv);
 
             tx.commit();
-//            SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(inv);
-//            SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(product);
-//            System.out.println("Product and Book have been persisted, inventory: " + inv.getPrimaryKey().toString() + ", product: " + product.getPrimaryKey().toString());
         }
         catch (Exception e) {
-            NucleusLogger.GENERAL.error(">> Exception persisting data", e);
+            log.error(">> Exception persisting data", e);
             System.err.println("Error persisting data : " + e.getMessage());
             return;
         } finally {
@@ -89,11 +125,11 @@ public class Main {
             }
             em.close();
         }
-        emf.getCache().evictAll();
+        cassandraEntityManagerFactory.getCache().evictAll();
         System.out.println("");
 
         // Perform a retrieve of the Inventory and detach it (by closing the EM)
-        em = emf.createEntityManager();
+        em = cassandraEntityManagerFactory.createEntityManager();
         tx = em.getTransaction();
         Inventory inv = null;
         try {
@@ -114,7 +150,7 @@ public class Main {
             tx.commit();
         }
         catch (Exception e) {
-            NucleusLogger.GENERAL.error(">> Exception performing find() on data", e);
+            log.error(">> Exception performing find() on data", e);
             System.err.println("Error performing find() on data : " + e.getMessage());
             return;
         } finally {
@@ -128,17 +164,14 @@ public class Main {
         }
         System.out.println("");
 
-        // Add a person to MongoDB
-        em = emf_mongo.createEntityManager();
+        // Update a person to MongoDB
+        em = mongoEntityManagerFactory.createEntityManager();
         tx = em.getTransaction();
-        Person person;
         try {
             tx.begin();
-            person = new Person();
-            person.setPersonFirstName("James");
-            person.setPersonLastName("Bond");
-            person.setAge(42);
-            em.merge(person);
+            person = em.find(Person.class, person.getPersonId());
+            person.setPersonLastName("Blunder");
+            person.setAge(43);
             tx.commit();
         } finally {
             if (tx.isActive()) {
@@ -148,7 +181,7 @@ public class Main {
         }
 
         // Perform some query operations
-        em = emf.createEntityManager();
+        em = cassandraEntityManagerFactory.createEntityManager();
         tx = em.getTransaction();
         try {
             tx.begin();
@@ -173,7 +206,7 @@ public class Main {
             tx.commit();
         }
         catch (Exception e) {
-            NucleusLogger.GENERAL.error(">> Exception querying data", e);
+            log.error(">> Exception querying data", e);
             System.err.println("Error querying data : " + e.getMessage());
             return;
         } finally {
@@ -184,16 +217,54 @@ public class Main {
         }
         System.out.println("");
 
-        em = emf.createEntityManager();
-        JpaRepositoryFactory factory = new JpaRepositoryFactory(em);
-        InventoryRepository repository = factory.getRepository(InventoryRepository.class);
-        Inventory inventory = repository.findByName("My Inventory");
-        System.out.println("SpringData/JPA: " + inventory.toString());
-        em.close();
+        em = cassandraEntityManagerFactory.createEntityManager();
+        factory = new JpaRepositoryFactory(em);
+        tx = em.getTransaction();
+        try {
+            tx.begin();
+            InventoryRepository repository = factory.getRepository(InventoryRepository.class);
+            Inventory inventory = repository.findByName("My Inventory");
+            System.out.println("SpringData/JPA: " + inventory.toString());
+            inventory.setDescription("This is my updated description.");
+            tx.rollback();
+        }
+        catch (Exception e) {
+            log.error(">> Exception in bulk delete of data", e);
+            System.err.println("Error in bulk delete of data : " + e.getMessage());
+            return;
+        } finally {
+            if (tx.isActive()) {
+                tx.rollback();
+            }
+            em.close();
+        }
+
+        em = cassandraEntityManagerFactory.createEntityManager();
+        factory = new JpaRepositoryFactory(em);
+        tx = em.getTransaction();
+        try {
+            tx.begin();
+            InventoryRepository repository = factory.getRepository(InventoryRepository.class);
+            Inventory inventory = repository.findByName("My Inventory");
+            inventory.setDescription("This is the final description.");
+            repository.save(inventory);
+            tx.commit();
+        }
+        catch (Exception e) {
+            log.error(">> Exception in bulk delete of data", e);
+            System.err.println("Error in bulk delete of data : " + e.getMessage());
+            return;
+        } finally {
+            if (tx.isActive()) {
+                tx.rollback();
+            }
+            em.close();
+        }
+
 
         // Clean out the database
-        emf.getCache().evictAll();
-        em = emf.createEntityManager();
+        cassandraEntityManagerFactory.getCache().evictAll();
+        em = cassandraEntityManagerFactory.createEntityManager();
         tx = em.getTransaction();
         try {
             tx.begin();
@@ -221,7 +292,7 @@ public class Main {
             tx.commit();
         }
         catch (Exception e) {
-            NucleusLogger.GENERAL.error(">> Exception in bulk delete of data", e);
+            log.error(">> Exception in bulk delete of data", e);
             System.err.println("Error in bulk delete of data : " + e.getMessage());
             return;
         } finally {
@@ -233,6 +304,6 @@ public class Main {
 
         System.out.println("");
         System.out.println("End of Tutorial");
-        emf.close();
+        cassandraEntityManagerFactory.close();
     }
 }

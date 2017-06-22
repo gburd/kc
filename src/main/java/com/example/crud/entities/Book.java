@@ -29,6 +29,9 @@ public class Book extends Product
     @Basic
     private String publisher = null;
 
+    @Basic
+    private boolean paperback = false;
+
     /**
      * Default Constructor.
      **/

@@ -51,6 +51,13 @@ public class Person extends AbstractAuditableEntity {
     @OneToMany(mappedBy = "seller")
     private List<Product> products;
 
+    public Person() {
+    }
+
+    public Person(String personId) {
+        this.personId = personId;
+    }
+
     /**
      * Gets the person id.
      *

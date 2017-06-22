@@ -15,7 +15,7 @@
         </properties>
     </persistence-unit>
 
-    <persistence-unit name="crud">
+    <persistence-unit name="crud" transaction-type="RESOURCE_LOCAL">
         <class>com.example.crud.entities.Inventory</class>
         <class>com.example.crud.entities.Product</class>
         <class>com.example.crud.entities.Book</class>
@@ -25,10 +25,12 @@
         <properties>
             <property name="javax.persistence.jdbc.url" value="cassandra:"/>
             <property name="datanucleus.mapping.Schema" value="kc"/>
-            <property name="datanucleus.cache.level2.type" value="jcache"/>
-            <property name="datanucleus.cache.level2.cacheName" value="dist"/>
-            <property name="datanucleus.cache.level2.timeout" value="10000"/>
+            <property name="datanucleus.flush.mode" value="MANUAL"/>
+            <property name="datanucleus.datastoreTransactionFlushLimit" value="100"/>
             <property name="datanucleus.schema.autoCreateAll" value="true"/>
+            <property name="datanucleus.cache.level2.type" value="ehcache"/>
+            <property name="datanucleus.cache.level2.cacheName" value="crud"/>
+            <property name="datanucleus.cassandra.metrics" value="true"/>
         </properties>
     </persistence-unit>
 

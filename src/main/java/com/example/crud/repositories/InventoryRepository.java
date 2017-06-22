@@ -1,8 +1,6 @@
 package com.example.crud.repositories;
 
-import com.codahale.metrics.annotation.Metered;
 import com.example.crud.entities.Inventory;
-import io.astefanutti.metrics.aspectj.Metrics;
 import org.datanucleus.api.jpa.annotations.ReadOnly;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
@@ -12,6 +10,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.beans.Transient;
 import java.util.List;
 
 //@Metrics(registry = "${this.registry}")
@@ -31,4 +30,7 @@ public interface InventoryRepository extends JpaRepository<Inventory, String>, J
     @CacheEvict(value = "inventory", key = "#name")
     void deleteInventoryBy(String name);
 
+    @Transactional
+        //CacheEvict(value = "inventory", key = "#name")
+    <S extends String> S save(S s);
 }
