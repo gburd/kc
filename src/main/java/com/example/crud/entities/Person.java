@@ -48,8 +48,10 @@ public class Person extends AbstractAuditableEntity {
      * @Temporal(TemporalType.DATE) private Date updated;
      */
 
+    /*
     @OneToMany(mappedBy = "seller")
     private List<Product> products;
+    */
 
     public Person() {
     }

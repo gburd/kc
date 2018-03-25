@@ -1,5 +1,6 @@
 package com.example.crud.repositories;
 
+import com.datastax.driver.mapping.annotations.QueryParameters;
 import com.example.crud.entities.Inventory;
 import org.datanucleus.api.jpa.annotations.ReadOnly;
 import org.springframework.cache.annotation.CacheEvict;
@@ -10,7 +11,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.beans.Transient;
 import java.util.List;
 
 //@Metrics(registry = "${this.registry}")
@@ -19,7 +19,9 @@ public interface InventoryRepository extends JpaRepository<Inventory, String>, J
     //@Metered(name = "${this.id}")
     @Transactional
     @Cacheable(value = "inventory", key = "#name")
-    Inventory findByName(String name);
+    @QueryParameters(consistency="QUORUM")
+    //Query(value="select * from inventory where firstName = :name", nativeQuery=true)
+    Inventory findByName(@Param("name") String name);
 
     @ReadOnly
     @Query(value = "select * from inventory where product_id_eid contains :productId allow filtering",

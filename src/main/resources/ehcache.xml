@@ -14,6 +14,8 @@
            timeToLiveSeconds="600"
            overflowToDisk="true"
            transactionalMode="off">
+        <!-- cacheDecoratorFactory class="com.codahale.metrics.ehcache.InstrumentedCacheDecoratorFactory"
+                               properties="metric-registry-name=crud"/ -->
         <cacheEventListenerFactory class="net.sf.ehcache.distribution.jgroups.JGroupsCacheReplicatorFactory"
                                    properties="replicateAsynchronously=true,replicatePuts=true,replicateUpdates=true,replicateUpdatesViaCopy=false,replicateRemovals=true"/>
     </cache>

@@ -1,33 +1,43 @@
 package com.example.crud.entities;
 
 import com.google.common.collect.ImmutableSet;
-import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
+import org.datanucleus.api.jpa.annotations.DatastoreId;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
  * Definition of an Inventory of products.
  */
-@Data @Entity
-@ToString
+@DatastoreId
 @NamedEntityGraph(name = "allProps",
         attributeNodes = { @NamedAttributeNode("name"), @NamedAttributeNode("products") })
+@ToString
+@EqualsAndHashCode
+@Getter @Setter
+@IdClass(Inventory.ID.class)
 public class Inventory extends AbstractAuditableEntity<String> {
 
     @Id
     private String name=null;
 
+    @Id
+    private String region=null;
+
     @Basic
     private String description;
 
-    @OneToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH }, fetch = FetchType.EAGER)
-    private Set<Product> products = new HashSet<Product>();
-
     public Inventory() {
     }
+
+    @OneToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH }, fetch = FetchType.EAGER)
+    private Set<Product> products = new HashSet<Product>();
 
     public Inventory(String name) {
         this.name = name;
@@ -37,7 +47,7 @@ public class Inventory extends AbstractAuditableEntity<String> {
         products.add(product);
     }
 
-    public Iterable<Product> getProducts() {
+    public ImmutableSet<Product> getProducts() {
         return ImmutableSet.copyOf(products);
     }
 
@@ -47,5 +57,10 @@ public class Inventory extends AbstractAuditableEntity<String> {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    class ID implements Serializable {
+        String name;
+        String region;
     }
 }

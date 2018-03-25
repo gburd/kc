@@ -46,7 +46,6 @@
             <basic name="description">
                 <column length="255"/>
             </basic>
-            <one-to-many name="seller"/>
         </attributes>
     </entity>
 

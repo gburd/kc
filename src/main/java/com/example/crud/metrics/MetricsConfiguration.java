@@ -7,13 +7,9 @@ import ch.qos.logback.core.joran.spi.JoranException;
 import com.codahale.metrics.*;
 import com.codahale.metrics.health.HealthCheckRegistry;
 import com.codahale.metrics.jvm.*;
-import com.codahale.metrics.logback.InstrumentedAppender;
 import com.datastax.driver.core.Cluster;
-import com.datastax.driver.core.Session;
 import com.ryantenney.metrics.spring.config.annotation.EnableMetrics;
 import com.ryantenney.metrics.spring.config.annotation.MetricsConfigurerAdapter;
-import org.datanucleus.store.StoreManager;
-import org.datanucleus.store.connection.ManagedConnection;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -21,7 +17,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import javax.annotation.PostConstruct;
-import javax.persistence.EntityManagerFactory;
 import java.lang.management.ManagementFactory;
 import java.util.concurrent.TimeUnit;
 
@@ -37,7 +32,7 @@ public class MetricsConfiguration extends MetricsConfigurerAdapter {
 
     private final Logger log = (Logger)LoggerFactory.getLogger(getClass().getName());
 
-    private MetricRegistry metricRegistry = new MetricRegistry();
+    private MetricRegistry metricRegistry = SharedMetricRegistries.getOrCreate("dunno");
 
     private HealthCheckRegistry healthCheckRegistry = new HealthCheckRegistry();
 

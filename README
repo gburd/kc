@@ -17,3 +17,6 @@ netstat -nr | grep 239.9.9.9
 ping -t 1 -c 2 239.9.9.9
 sudo tcpdump -vvv -ni en0 host 239.9.9.9
 sudo route -v delete -inet 239.9.9.9
+
+mvn clean versions:use-latest-versions scm:checkin deploy -Dmessage="update versions" -DperformRelease=true
+http://www.mojohaus.org/versions-maven-plugin/index.html

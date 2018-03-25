@@ -40,9 +40,9 @@ public class Product extends AbstractAuditableEntity {
 
     /**
      * Seller of this product.
-     */
     @ManyToOne(optional = false)
     private Person seller;
+     */
 
     /**
      * Default constructor.
