@@ -1,5 +1,6 @@
 package com.example.crud.repositories;
 
+import com.codahale.metrics.annotation.Metered;
 import com.datastax.driver.mapping.annotations.QueryParameters;
 import com.example.crud.entities.Inventory;
 import org.datanucleus.api.jpa.annotations.ReadOnly;
@@ -16,11 +17,11 @@ import java.util.List;
 //@Metrics(registry = "${this.registry}")
 public interface InventoryRepository extends JpaRepository<Inventory, String>, JpaSpecificationExecutor {
 
-    //@Metered(name = "${this.id}")
+    @Metered(name = "${this.id}")
     @Transactional
     @Cacheable(value = "inventory", key = "#name")
     @QueryParameters(consistency="QUORUM")
-    //Query(value="select * from inventory where firstName = :name", nativeQuery=true)
+    @Query(value="select * from inventory where firstName = :name", nativeQuery=true)
     Inventory findByName(@Param("name") String name);
 
     @ReadOnly
@@ -30,9 +31,9 @@ public interface InventoryRepository extends JpaRepository<Inventory, String>, J
 
     @Transactional
     @CacheEvict(value = "inventory", key = "#name")
-    void deleteInventoryBy(String name);
+    void deleteInventoryByName(String name);
 
     @Transactional
-        //CacheEvict(value = "inventory", key = "#name")
+    @CacheEvict(value = "inventory", key = "#name")
     <S extends String> S save(S s);
 }

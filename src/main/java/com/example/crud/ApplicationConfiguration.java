@@ -8,6 +8,7 @@ import com.example.crud.entities.Product;
 import org.datanucleus.ExecutionContext;
 import org.datanucleus.enhancer.DataNucleusEnhancer;
 import org.datanucleus.store.StoreManager;
+import org.datanucleus.store.connection.ConnectionManager;
 import org.datanucleus.store.connection.ManagedConnection;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -74,7 +75,8 @@ class ApplicationConfiguration {
     @Bean
     public Session session() {
         StoreManager storeManager = ((ExecutionContext)entityManager().getDelegate()).getNucleusContext().getStoreManager();
-        ManagedConnection connection = storeManager.getConnection(-1);
+        ConnectionManager connectionManager = storeManager.getConnectionManager();
+        ManagedConnection connection = connectionManager.getConnection(-1);
         Session session = (Session) connection.getConnection();
         return session;
     }

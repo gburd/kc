@@ -8,6 +8,7 @@ mvn clean compile -Dmaven.compiler.showDeprecation=true -Dmaven.compiler.showWar
 https://www.one-tab.com/page/K4XlsjF2TyugqYE_8ORqxg
 
 
+CREATE KEYSPACE IF NOT EXISTS kc WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1' };
 
 
 https://apple.stackexchange.com/questions/215919/enable-multicast-on-mac
