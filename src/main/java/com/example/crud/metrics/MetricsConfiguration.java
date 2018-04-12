@@ -7,6 +7,7 @@ import ch.qos.logback.core.joran.spi.JoranException;
 import com.codahale.metrics.*;
 import com.codahale.metrics.health.HealthCheckRegistry;
 import com.codahale.metrics.jvm.*;
+import com.codahale.metrics.logback.InstrumentedAppender;
 import com.datastax.driver.core.Cluster;
 import com.ryantenney.metrics.spring.config.annotation.EnableMetrics;
 import com.ryantenney.metrics.spring.config.annotation.MetricsConfigurerAdapter;
@@ -53,7 +54,6 @@ public class MetricsConfiguration extends MetricsConfigurerAdapter {
 
     @PostConstruct
     public void init() {
-/*
         final LoggerContext factory = (LoggerContext) LoggerFactory.getILoggerFactory();
         final Logger root = factory.getLogger("console");//Logger.ROOT_LOGGER_NAME);
 
@@ -61,7 +61,6 @@ public class MetricsConfiguration extends MetricsConfigurerAdapter {
         metrics.setContext(root.getLoggerContext());
         metrics.start();
         root.addAppender(metrics);
-*/
 
         LoggerContext loggerContext = (LoggerContext)LoggerFactory.getILoggerFactory();
         loggerContext.reset();
@@ -71,8 +70,7 @@ public class MetricsConfiguration extends MetricsConfigurerAdapter {
         } catch (JoranException e) {
             e.printStackTrace();
         }
-
-
+        
         log.debug("Registering JVM gauges");
         metricRegistry.registerAll(new OperatingSystemGaugeSet());
         metricRegistry.register(PROP_METRIC_REG_JVM_MEMORY, new MemoryUsageGaugeSet());

@@ -21,3 +21,8 @@ sudo route -v delete -inet 239.9.9.9
 
 mvn clean versions:use-latest-versions scm:checkin deploy -Dmessage="update versions" -DperformRelease=true
 http://www.mojohaus.org/versions-maven-plugin/index.html
+
+mvn exec:java -D"exec.mainClass"="com.example.crud.Main"
+mvn exec:java
+
+

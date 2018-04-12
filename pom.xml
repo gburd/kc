@@ -19,6 +19,7 @@
         <metrics.version>3.2.2</metrics.version>
         <spring.version>5.0.5.RELEASE</spring.version>
         <spring-data.version>1.4.6.RELEASE</spring-data.version>
+        <exec.mainClass>com.example.crud.Main</exec.mainClass>
     </properties>
 
     <repositories>
@@ -87,7 +88,7 @@
             <artifactId>jcl-over-slf4j</artifactId>
             <version>1.8.0-alpha2</version>
         </dependency>
-p        <dependency>
+        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>log4j-over-slf4j</artifactId>
             <version>1.8.0-alpha2</version>
@@ -361,6 +362,17 @@ p        <dependency>
     </dependencies>
 
     <build>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources/META-INF</directory>
+                <targetPath>META-INF</targetPath>
+                <includes>
+                    <include>persistence.xml</include>
+                </includes>
+            </resource>
+        </resources>
+
         <plugins>
             <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
