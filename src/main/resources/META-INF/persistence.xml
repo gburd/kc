@@ -16,6 +16,7 @@
     </persistence-unit>
 
     <persistence-unit name="crud" transaction-type="RESOURCE_LOCAL">
+        <class>com.example.crud.entities.AbstractEntity/class>
         <class>com.example.crud.entities.Inventory</class>
         <class>com.example.crud.entities.Product</class>
         <class>com.example.crud.entities.Book</class>

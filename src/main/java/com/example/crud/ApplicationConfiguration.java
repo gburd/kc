@@ -37,13 +37,13 @@ class ApplicationConfiguration {
     @PostConstruct
     private void enhanceModelObjectBytecode() {
         DataNucleusEnhancer enhancer = new DataNucleusEnhancer("JPA", null);
-        enhancer.setVerbose(true);
-        enhancer.addClasses(AbstractEntity.class.getName());
-        enhancer.addClasses(AbstractAuditableEntity.class.getName());
-        enhancer.addClasses(Product.class.getName());
-        enhancer.addPersistenceUnit("crud");
-        enhancer.addPersistenceUnit("mongo");
-        enhancer.enhance();
+        enhancer.setVerbose(true)
+                .addClasses(AbstractEntity.class.getName())
+                .addClasses(AbstractAuditableEntity.class.getName())
+                .addClasses(Product.class.getName())
+                .addPersistenceUnit("crud")
+                .addPersistenceUnit("mongo")
+                .enhance();
     }
 
     @Bean
