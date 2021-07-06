@@ -3,7 +3,7 @@ docker run --name castrato -p 9042:9042 -p 9162:9162 -p 7000:7000 -e CASSANDRA_S
 
 drop table books; drop table products; drop table inventory; drop table magazines; desc tables;
 
-mvn clean compile -Dmaven.compiler.showDeprecation=true -Dmaven.compiler.showWarnings=true
+mvn -U clean compile -Dmaven.compiler.showDeprecation=true -Dmaven.compiler.showWarnings=true
 
 https://www.one-tab.com/page/K4XlsjF2TyugqYE_8ORqxg
 
