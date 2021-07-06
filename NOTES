@@ -1,0 +1,868 @@
+$ mvn exec:java -D"exec.mainClass"="com.example.crud.Main"
+[INFO] Scanning for projects...
+[INFO]
+[INFO] -----------------< com.example.crud:crud-jpa-tutorial >-----------------
+[INFO] Building CRUD JPA Application 5.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] >>> exec-maven-plugin:1.1:java (default-cli) > validate @ crud-jpa-tutorial >>>
+[INFO]
+[INFO] <<< exec-maven-plugin:1.1:java (default-cli) < validate @ crud-jpa-tutorial <<<
+[INFO]
+Downloading from clojars.org: https://clojars.org/repo/junit/junit/4.13.3-SNAPSHOT/maven-metadata.xml
+Downloading from maven.apache.org: https://repo.maven.apache.org/maven2/junit/junit/4.13.3-SNAPSHOT/maven-metadata.xml
+[WARNING] Could not transfer metadata junit:junit:4.13.3-SNAPSHOT/maven-metadata.xml from/to clojars.org (https://clojars.org/repo): transfer failed for https://clojars.org/repo/junit/junit/4.13.3-SNAPSHOT/maven-metadata.xml
+[WARNING] Could not transfer metadata junit:junit:4.13.3-SNAPSHOT/maven-metadata.xml from/to maven.apache.org (https://repo.maven.apache.org/maven2/): transfer failed for https://repo.maven.apache.org/maven2/junit/junit/4.13.3-SNAPSHOT/maven-metadata.xml
+[WARNING] junit:junit:4.13.3-SNAPSHOT/maven-metadata.xmlfailed to transfer from https://clojars.org/repo during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of clojars.org has elapsed or updates are forced. Original error: Could not transfer metadata junit:junit:4.13.3-SNAPSHOT/maven-metadata.xml from/to clojars.org (https://clojars.org/repo): transfer failed for https://clojars.org/repo/junit/junit/4.13.3-SNAPSHOT/maven-metadata.xml
+[WARNING] junit:junit:4.13.3-SNAPSHOT/maven-metadata.xmlfailed to transfer from https://repo.maven.apache.org/maven2/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven.apache.org has elapsed or updates are forced. Original error: Could not transfer metadata junit:junit:4.13.3-SNAPSHOT/maven-metadata.xml from/to maven.apache.org (https://repo.maven.apache.org/maven2/): transfer failed for https://repo.maven.apache.org/maven2/junit/junit/4.13.3-SNAPSHOT/maven-metadata.xml
+Downloading from clojars.org: https://clojars.org/repo/junit/junit/4.14-SNAPSHOT/maven-metadata.xml
+Downloading from maven.apache.org: https://repo.maven.apache.org/maven2/junit/junit/4.14-SNAPSHOT/maven-metadata.xml
+[WARNING] Could not transfer metadata junit:junit:4.14-SNAPSHOT/maven-metadata.xml from/to clojars.org (https://clojars.org/repo): transfer failed for https://clojars.org/repo/junit/junit/4.14-SNAPSHOT/maven-metadata.xml
+[WARNING] Could not transfer metadata junit:junit:4.14-SNAPSHOT/maven-metadata.xml from/to maven.apache.org (https://repo.maven.apache.org/maven2/): transfer failed for https://repo.maven.apache.org/maven2/junit/junit/4.14-SNAPSHOT/maven-metadata.xml
+[WARNING] junit:junit:4.14-SNAPSHOT/maven-metadata.xmlfailed to transfer from https://clojars.org/repo during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of clojars.org has elapsed or updates are forced. Original error: Could not transfer metadata junit:junit:4.14-SNAPSHOT/maven-metadata.xml from/to clojars.org (https://clojars.org/repo): transfer failed for https://clojars.org/repo/junit/junit/4.14-SNAPSHOT/maven-metadata.xml
+[WARNING] junit:junit:4.14-SNAPSHOT/maven-metadata.xmlfailed to transfer from https://repo.maven.apache.org/maven2/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven.apache.org has elapsed or updates are forced. Original error: Could not transfer metadata junit:junit:4.14-SNAPSHOT/maven-metadata.xml from/to maven.apache.org (https://repo.maven.apache.org/maven2/): transfer failed for https://repo.maven.apache.org/maven2/junit/junit/4.14-SNAPSHOT/maven-metadata.xml
+Downloading from clojars.org: https://clojars.org/repo/junit/junit/5.0-SNAPSHOT/maven-metadata.xml
+Downloading from maven.apache.org: https://repo.maven.apache.org/maven2/junit/junit/5.0-SNAPSHOT/maven-metadata.xml
+[WARNING] Could not transfer metadata junit:junit:5.0-SNAPSHOT/maven-metadata.xml from/to clojars.org (https://clojars.org/repo): transfer failed for https://clojars.org/repo/junit/junit/5.0-SNAPSHOT/maven-metadata.xml
+[WARNING] Could not transfer metadata junit:junit:5.0-SNAPSHOT/maven-metadata.xml from/to maven.apache.org (https://repo.maven.apache.org/maven2/): transfer failed for https://repo.maven.apache.org/maven2/junit/junit/5.0-SNAPSHOT/maven-metadata.xml
+[WARNING] junit:junit:5.0-SNAPSHOT/maven-metadata.xmlfailed to transfer from https://clojars.org/repo during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of clojars.org has elapsed or updates are forced. Original error: Could not transfer metadata junit:junit:5.0-SNAPSHOT/maven-metadata.xml from/to clojars.org (https://clojars.org/repo): transfer failed for https://clojars.org/repo/junit/junit/5.0-SNAPSHOT/maven-metadata.xml
+[WARNING] junit:junit:5.0-SNAPSHOT/maven-metadata.xmlfailed to transfer from https://repo.maven.apache.org/maven2/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven.apache.org has elapsed or updates are forced. Original error: Could not transfer metadata junit:junit:5.0-SNAPSHOT/maven-metadata.xml from/to maven.apache.org (https://repo.maven.apache.org/maven2/): transfer failed for https://repo.maven.apache.org/maven2/junit/junit/5.0-SNAPSHOT/maven-metadata.xml
+[INFO]
+[INFO] --- exec-maven-plugin:1.1:java (default-cli) @ crud-jpa-tutorial ---
+14:52:06,156 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+14:52:06,156 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+14:52:06,156 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/Users/greg/src/kc/target/classes/logback.xml]
+14:52:06,199 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+14:52:06,205 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+14:52:06,207 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [console]
+14:52:06,211 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+14:52:06,229 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.classic.AsyncAppender]
+14:52:06,230 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [consoleasync]
+14:52:06,230 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [console] to ch.qos.logback.classic.AsyncAppender[consoleasync]
+14:52:06,230 |-INFO in ch.qos.logback.classic.AsyncAppender[consoleasync] - Attaching appender named [console] to AsyncAppender.
+14:52:06,231 |-INFO in ch.qos.logback.classic.AsyncAppender[consoleasync] - Setting discardingThreshold to 0
+14:52:06,232 |-ERROR in ch.qos.logback.core.joran.spi.Interpreter@26:70 - no applicable action for [category], current ElementPath  is [[configuration][category]]
+14:52:06,232 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [com.mchange.v2.resourcepool] to TRACE
+14:52:06,232 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [com.mchange.v2.c3p0] to TRACE
+14:52:06,232 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.logicalcobwebs.proxool] to TRACE
+14:52:06,232 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [DataNucleus] to TRACE
+14:52:06,232 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.springframework] to TRACE
+14:52:06,232 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.springframework.cache] to TRACE
+14:52:06,232 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.springdata.cassandra] to TRACE
+14:52:06,232 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [com.datastax.driver.core.Cluster] to TRACE
+14:52:06,232 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [com.datastax.driver.core.Session] to TRACE
+14:52:06,232 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [com.datastax.driver.core.RequestHandler] to TRACE
+14:52:06,232 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [com.datastax.driver.core.Connection] to TRACE
+14:52:06,232 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [com.datastax.driver.core.Message] to TRACE
+14:52:06,232 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [com.datastax.driver.core.QueryLogger.SLOW] to TRACE
+14:52:06,232 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [com.datastax.driver.core.QueryLogger.NORMAL] to TRACE
+14:52:06,232 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [com.datastax.driver.core.QueryLogger.FAST] to TRACE
+14:52:06,233 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [com.datastax.driver.core.QueryLogger.ERROR] to TRACE
+14:52:06,233 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [net.sf.ehcache] to TRACE
+14:52:06,233 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.jgroups] to TRACE
+14:52:06,233 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [org.mongodb.driver] to TRACE
+14:52:06,233 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [net.spy.memcached] to TRACE
+14:52:06,233 |-INFO in ch.qos.logback.classic.joran.action.LevelAction - ROOT level set to INFO
+14:52:06,233 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [consoleasync] to Logger[ROOT]
+14:52:06,233 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+14:52:06,233 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@114bab55 - Registering current configuration as safe fallback point
+
+2021-07-06 18:52:06,328 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+2021-07-06 18:52:06,337 TRACE [rud.Main.main()] o.s.c.i.s.PathMatchingResourcePatternResolver: Resolved classpath location [com/example/] to resources [URL [file:/Users/greg/src/kc/target/classes/com/example/]]
+2021-07-06 18:52:06,339 TRACE [rud.Main.main()] o.s.c.i.s.PathMatchingResourcePatternResolver: Looking for matching resources in directory tree [/Users/greg/src/kc/target/classes/com/example]
+2021-07-06 18:52:06,339 TRACE [rud.Main.main()] o.s.c.i.s.PathMatchingResourcePatternResolver: Searching directory [/Users/greg/src/kc/target/classes/com/example] for files matching pattern [/Users/greg/src/kc/target/classes/com/example/**/*.class]
+2021-07-06 18:52:06,344 TRACE [rud.Main.main()] o.s.c.i.s.PathMatchingResourcePatternResolver: Searching directory [/Users/greg/src/kc/target/classes/com/example/crud] for files matching pattern [/Users/greg/src/kc/target/classes/com/example/**/*.class]
+2021-07-06 18:52:06,345 TRACE [rud.Main.main()] o.s.c.i.s.PathMatchingResourcePatternResolver: Searching directory [/Users/greg/src/kc/target/classes/com/example/crud/entities] for files matching pattern [/Users/greg/src/kc/target/classes/com/example/**/*.class]
+2021-07-06 18:52:06,345 TRACE [rud.Main.main()] o.s.c.i.s.PathMatchingResourcePatternResolver: Searching directory [/Users/greg/src/kc/target/classes/com/example/crud/metrics] for files matching pattern [/Users/greg/src/kc/target/classes/com/example/**/*.class]
+2021-07-06 18:52:06,346 TRACE [rud.Main.main()] o.s.c.i.s.PathMatchingResourcePatternResolver: Searching directory [/Users/greg/src/kc/target/classes/com/example/crud/repositories] for files matching pattern [/Users/greg/src/kc/target/classes/com/example/**/*.class]
+2021-07-06 18:52:06,347 TRACE [rud.Main.main()] o.s.c.i.s.PathMatchingResourcePatternResolver: Resolved location pattern [classpath*:com/example/**/*.class] to resources [file [/Users/greg/src/kc/target/classes/com/example/crud/ApplicationConfiguration.class], file [/Users/greg/src/kc/target/classes/com/example/crud/CacheConfiguration$1.class], file [/Users/greg/src/kc/target/classes/com/example/crud/CacheConfiguration.class], file [/Users/greg/src/kc/target/classes/com/example/crud/EhCacheConfiguration.class], file [/Users/greg/src/kc/target/classes/com/example/crud/Main.class], file [/Users/greg/src/kc/target/classes/com/example/crud/UsernameAuditorAware.class], file [/Users/greg/src/kc/target/classes/com/example/crud/entities/AbstractAuditableEntity.class], file [/Users/greg/src/kc/target/classes/com/example/crud/entities/AbstractEntity.class], file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Book.class], file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Inventory$ID.class], file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Inventory.class], file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Magazine.class], file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Person.class], file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Product.class], file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporter$1.class], file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporter$Builder.class], file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporter.class], file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporterElementParser.class], file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporterFactoryBean.class], file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/MetricsConfiguration$1.class], file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/MetricsConfiguration.class], file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/OperatingSystemGaugeSet.class], file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/SpringConfiguringClass.class], file [/Users/greg/src/kc/target/classes/com/example/crud/repositories/InventoryRepository.class], file [/Users/greg/src/kc/target/classes/com/example/crud/repositories/PersonRepository.class]]
+2021-07-06 18:52:06,347 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/ApplicationConfiguration.class]
+2021-07-06 18:52:06,411 DEBUG [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Identified candidate component class: file [/Users/greg/src/kc/target/classes/com/example/crud/ApplicationConfiguration.class]
+2021-07-06 18:52:06,411 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/CacheConfiguration$1.class]
+2021-07-06 18:52:06,413 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/CacheConfiguration$1.class]
+2021-07-06 18:52:06,413 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/CacheConfiguration.class]
+2021-07-06 18:52:06,415 DEBUG [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Identified candidate component class: file [/Users/greg/src/kc/target/classes/com/example/crud/CacheConfiguration.class]
+2021-07-06 18:52:06,415 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/EhCacheConfiguration.class]
+2021-07-06 18:52:06,416 DEBUG [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Identified candidate component class: file [/Users/greg/src/kc/target/classes/com/example/crud/EhCacheConfiguration.class]
+2021-07-06 18:52:06,417 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/Main.class]
+2021-07-06 18:52:06,418 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/Main.class]
+2021-07-06 18:52:06,418 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/UsernameAuditorAware.class]
+2021-07-06 18:52:06,418 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/UsernameAuditorAware.class]
+2021-07-06 18:52:06,418 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/entities/AbstractAuditableEntity.class]
+2021-07-06 18:52:06,422 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/entities/AbstractAuditableEntity.class]
+2021-07-06 18:52:06,422 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/entities/AbstractEntity.class]
+2021-07-06 18:52:06,422 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/entities/AbstractEntity.class]
+2021-07-06 18:52:06,422 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Book.class]
+2021-07-06 18:52:06,423 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Book.class]
+2021-07-06 18:52:06,423 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Inventory$ID.class]
+2021-07-06 18:52:06,424 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Inventory$ID.class]
+2021-07-06 18:52:06,424 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Inventory.class]
+2021-07-06 18:52:06,428 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Inventory.class]
+2021-07-06 18:52:06,428 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Magazine.class]
+2021-07-06 18:52:06,429 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Magazine.class]
+2021-07-06 18:52:06,429 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Person.class]
+2021-07-06 18:52:06,431 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Person.class]
+2021-07-06 18:52:06,431 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Product.class]
+2021-07-06 18:52:06,432 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Product.class]
+2021-07-06 18:52:06,432 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporter$1.class]
+2021-07-06 18:52:06,433 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporter$1.class]
+2021-07-06 18:52:06,433 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporter$Builder.class]
+2021-07-06 18:52:06,433 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporter$Builder.class]
+2021-07-06 18:52:06,433 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporter.class]
+2021-07-06 18:52:06,433 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporter.class]
+2021-07-06 18:52:06,433 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporterElementParser.class]
+2021-07-06 18:52:06,433 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporterElementParser.class]
+2021-07-06 18:52:06,433 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporterFactoryBean.class]
+2021-07-06 18:52:06,434 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporterFactoryBean.class]
+2021-07-06 18:52:06,434 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/MetricsConfiguration$1.class]
+2021-07-06 18:52:06,434 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/MetricsConfiguration$1.class]
+2021-07-06 18:52:06,434 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/MetricsConfiguration.class]
+2021-07-06 18:52:06,436 DEBUG [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Identified candidate component class: file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/MetricsConfiguration.class]
+2021-07-06 18:52:06,436 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/OperatingSystemGaugeSet.class]
+2021-07-06 18:52:06,437 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/OperatingSystemGaugeSet.class]
+2021-07-06 18:52:06,437 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/SpringConfiguringClass.class]
+2021-07-06 18:52:06,437 DEBUG [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Identified candidate component class: file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/SpringConfiguringClass.class]
+2021-07-06 18:52:06,437 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/repositories/InventoryRepository.class]
+2021-07-06 18:52:06,443 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/repositories/InventoryRepository.class]
+2021-07-06 18:52:06,443 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/repositories/PersonRepository.class]
+2021-07-06 18:52:06,443 TRACE [rud.Main.main()] o.s.c.a.ClassPathBeanDefinitionScanner: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/repositories/PersonRepository.class]
+2021-07-06 18:52:06,468 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Overriding bean definition for bean 'applicationConfiguration' with a different definition: replacing [Generic bean: class [com.example.crud.ApplicationConfiguration]; scope=singleton; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [/Users/greg/src/kc/target/classes/com/example/crud/ApplicationConfiguration.class]] with [Generic bean: class [com.example.crud.ApplicationConfiguration]; scope=singleton; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+2021-07-06 18:52:06,469 TRACE [rud.Main.main()] o.s.c.a.AnnotationConfigApplicationContext: Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@771288, started on Tue Jul 06 14:52:06 EDT 2021
+2021-07-06 18:52:06,496 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2021-07-06 18:52:06,496 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2021-07-06 18:52:06,512 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor' to allow for resolving potential circular references
+2021-07-06 18:52:06,513 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2021-07-06 18:52:06,567 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registered bean definition for imported class 'org.springframework.scheduling.annotation.SchedulingConfiguration'
+2021-07-06 18:52:06,568 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method org.springframework.scheduling.annotation.SchedulingConfiguration.org.springframework.context.annotation.internalScheduledAnnotationProcessor()
+2021-07-06 18:52:06,570 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registered bean definition for imported class 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration'
+2021-07-06 18:52:06,570 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration.org.springframework.transaction.config.internalTransactionAdvisor()
+2021-07-06 18:52:06,570 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration.transactionAttributeSource()
+2021-07-06 18:52:06,570 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration.transactionInterceptor()
+2021-07-06 18:52:06,570 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration.org.springframework.transaction.config.internalTransactionalEventListenerFactory()
+2021-07-06 18:52:06,570 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method com.example.crud.ApplicationConfiguration.entityManagerFactory()
+2021-07-06 18:52:06,571 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method com.example.crud.ApplicationConfiguration.transactionManager()
+2021-07-06 18:52:06,571 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method com.example.crud.ApplicationConfiguration.auditorAware()
+2021-07-06 18:52:06,571 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method com.example.crud.ApplicationConfiguration.entityManager()
+2021-07-06 18:52:06,572 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method com.example.crud.ApplicationConfiguration.session()
+2021-07-06 18:52:06,572 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method com.example.crud.ApplicationConfiguration.cluster()
+2021-07-06 18:52:06,587 INFO  [rud.Main.main()] o.s.d.r.c.RepositoryConfigurationDelegate: Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-07-06 18:52:06,589 INFO  [rud.Main.main()] o.s.d.r.c.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-06 18:52:06,602 DEBUG [rud.Main.main()] o.s.d.r.c.RepositoryConfigurationDelegate: Scanning for JPA repositories in packages com.example.crud.
+2021-07-06 18:52:06,608 TRACE [rud.Main.main()] o.s.c.i.s.PathMatchingResourcePatternResolver: Resolved classpath location [com/example/crud/] to resources [URL [file:/Users/greg/src/kc/target/classes/com/example/crud/]]
+2021-07-06 18:52:06,608 TRACE [rud.Main.main()] o.s.c.i.s.PathMatchingResourcePatternResolver: Looking for matching resources in directory tree [/Users/greg/src/kc/target/classes/com/example/crud]
+2021-07-06 18:52:06,608 TRACE [rud.Main.main()] o.s.c.i.s.PathMatchingResourcePatternResolver: Searching directory [/Users/greg/src/kc/target/classes/com/example/crud] for files matching pattern [/Users/greg/src/kc/target/classes/com/example/crud/**/*.class]
+2021-07-06 18:52:06,609 TRACE [rud.Main.main()] o.s.c.i.s.PathMatchingResourcePatternResolver: Searching directory [/Users/greg/src/kc/target/classes/com/example/crud/entities] for files matching pattern [/Users/greg/src/kc/target/classes/com/example/crud/**/*.class]
+2021-07-06 18:52:06,609 TRACE [rud.Main.main()] o.s.c.i.s.PathMatchingResourcePatternResolver: Searching directory [/Users/greg/src/kc/target/classes/com/example/crud/metrics] for files matching pattern [/Users/greg/src/kc/target/classes/com/example/crud/**/*.class]
+2021-07-06 18:52:06,610 TRACE [rud.Main.main()] o.s.c.i.s.PathMatchingResourcePatternResolver: Searching directory [/Users/greg/src/kc/target/classes/com/example/crud/repositories] for files matching pattern [/Users/greg/src/kc/target/classes/com/example/crud/**/*.class]
+2021-07-06 18:52:06,610 TRACE [rud.Main.main()] o.s.c.i.s.PathMatchingResourcePatternResolver: Resolved location pattern [classpath*:com/example/crud/**/*.class] to resources [file [/Users/greg/src/kc/target/classes/com/example/crud/ApplicationConfiguration.class], file [/Users/greg/src/kc/target/classes/com/example/crud/CacheConfiguration$1.class], file [/Users/greg/src/kc/target/classes/com/example/crud/CacheConfiguration.class], file [/Users/greg/src/kc/target/classes/com/example/crud/EhCacheConfiguration.class], file [/Users/greg/src/kc/target/classes/com/example/crud/Main.class], file [/Users/greg/src/kc/target/classes/com/example/crud/UsernameAuditorAware.class], file [/Users/greg/src/kc/target/classes/com/example/crud/entities/AbstractAuditableEntity.class], file [/Users/greg/src/kc/target/classes/com/example/crud/entities/AbstractEntity.class], file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Book.class], file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Inventory$ID.class], file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Inventory.class], file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Magazine.class], file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Person.class], file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Product.class], file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporter$1.class], file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporter$Builder.class], file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporter.class], file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporterElementParser.class], file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporterFactoryBean.class], file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/MetricsConfiguration$1.class], file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/MetricsConfiguration.class], file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/OperatingSystemGaugeSet.class], file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/SpringConfiguringClass.class], file [/Users/greg/src/kc/target/classes/com/example/crud/repositories/InventoryRepository.class], file [/Users/greg/src/kc/target/classes/com/example/crud/repositories/PersonRepository.class]]
+2021-07-06 18:52:06,610 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/ApplicationConfiguration.class]
+2021-07-06 18:52:06,611 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/ApplicationConfiguration.class]
+2021-07-06 18:52:06,611 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/CacheConfiguration$1.class]
+2021-07-06 18:52:06,611 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/CacheConfiguration$1.class]
+2021-07-06 18:52:06,611 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/CacheConfiguration.class]
+2021-07-06 18:52:06,611 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/CacheConfiguration.class]
+2021-07-06 18:52:06,611 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/EhCacheConfiguration.class]
+2021-07-06 18:52:06,611 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/EhCacheConfiguration.class]
+2021-07-06 18:52:06,611 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/Main.class]
+2021-07-06 18:52:06,611 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/Main.class]
+2021-07-06 18:52:06,611 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/UsernameAuditorAware.class]
+2021-07-06 18:52:06,612 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/UsernameAuditorAware.class]
+2021-07-06 18:52:06,612 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/entities/AbstractAuditableEntity.class]
+2021-07-06 18:52:06,612 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/entities/AbstractAuditableEntity.class]
+2021-07-06 18:52:06,612 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/entities/AbstractEntity.class]
+2021-07-06 18:52:06,612 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/entities/AbstractEntity.class]
+2021-07-06 18:52:06,612 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Book.class]
+2021-07-06 18:52:06,613 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Book.class]
+2021-07-06 18:52:06,613 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Inventory$ID.class]
+2021-07-06 18:52:06,613 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Inventory$ID.class]
+2021-07-06 18:52:06,613 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Inventory.class]
+2021-07-06 18:52:06,613 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Inventory.class]
+2021-07-06 18:52:06,613 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Magazine.class]
+2021-07-06 18:52:06,613 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Magazine.class]
+2021-07-06 18:52:06,613 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Person.class]
+2021-07-06 18:52:06,613 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Person.class]
+2021-07-06 18:52:06,614 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Product.class]
+2021-07-06 18:52:06,614 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/entities/Product.class]
+2021-07-06 18:52:06,614 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporter$1.class]
+2021-07-06 18:52:06,614 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporter$1.class]
+2021-07-06 18:52:06,614 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporter$Builder.class]
+2021-07-06 18:52:06,614 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporter$Builder.class]
+2021-07-06 18:52:06,614 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporter.class]
+2021-07-06 18:52:06,615 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporter.class]
+2021-07-06 18:52:06,615 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporterElementParser.class]
+2021-07-06 18:52:06,615 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporterElementParser.class]
+2021-07-06 18:52:06,615 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporterFactoryBean.class]
+2021-07-06 18:52:06,618 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/CoalescingReporterFactoryBean.class]
+2021-07-06 18:52:06,618 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/MetricsConfiguration$1.class]
+2021-07-06 18:52:06,618 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/MetricsConfiguration$1.class]
+2021-07-06 18:52:06,618 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/MetricsConfiguration.class]
+2021-07-06 18:52:06,619 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/MetricsConfiguration.class]
+2021-07-06 18:52:06,619 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/OperatingSystemGaugeSet.class]
+2021-07-06 18:52:06,620 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/OperatingSystemGaugeSet.class]
+2021-07-06 18:52:06,620 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/SpringConfiguringClass.class]
+2021-07-06 18:52:06,620 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Ignored because not matching any filter: file [/Users/greg/src/kc/target/classes/com/example/crud/metrics/SpringConfiguringClass.class]
+2021-07-06 18:52:06,620 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/repositories/InventoryRepository.class]
+2021-07-06 18:52:06,621 DEBUG [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Identified candidate component class: file [/Users/greg/src/kc/target/classes/com/example/crud/repositories/InventoryRepository.class]
+2021-07-06 18:52:06,621 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Scanning file [/Users/greg/src/kc/target/classes/com/example/crud/repositories/PersonRepository.class]
+2021-07-06 18:52:06,622 DEBUG [rud.Main.main()] o.s.d.r.c.RepositoryComponentProvider: Identified candidate component class: file [/Users/greg/src/kc/target/classes/com/example/crud/repositories/PersonRepository.class]
+2021-07-06 18:52:06,629 TRACE [rud.Main.main()] o.s.c.i.s.SpringFactoriesLoader: Loaded [org.springframework.data.util.ProxyUtils$ProxyDetector] names: [org.springframework.data.jpa.util.HibernateProxyDetector]
+2021-07-06 18:52:06,661 TRACE [rud.Main.main()] o.s.c.i.s.PathMatchingResourcePatternResolver: Resolved classpath location [com/example/crud/] to resources [URL [file:/Users/greg/src/kc/target/classes/com/example/crud/]]
+2021-07-06 18:52:06,661 TRACE [rud.Main.main()] o.s.c.i.s.PathMatchingResourcePatternResolver: Looking for matching resources in directory tree [/Users/greg/src/kc/target/classes/com/example/crud]
+2021-07-06 18:52:06,661 TRACE [rud.Main.main()] o.s.c.i.s.PathMatchingResourcePatternResolver: Searching directory [/Users/greg/src/kc/target/classes/com/example/crud] for files matching pattern [/Users/greg/src/kc/target/classes/com/example/crud/**/*Impl.class]
+2021-07-06 18:52:06,662 TRACE [rud.Main.main()] o.s.c.i.s.PathMatchingResourcePatternResolver: Searching directory [/Users/greg/src/kc/target/classes/com/example/crud/entities] for files matching pattern [/Users/greg/src/kc/target/classes/com/example/crud/**/*Impl.class]
+2021-07-06 18:52:06,662 TRACE [rud.Main.main()] o.s.c.i.s.PathMatchingResourcePatternResolver: Searching directory [/Users/greg/src/kc/target/classes/com/example/crud/metrics] for files matching pattern [/Users/greg/src/kc/target/classes/com/example/crud/**/*Impl.class]
+2021-07-06 18:52:06,662 TRACE [rud.Main.main()] o.s.c.i.s.PathMatchingResourcePatternResolver: Searching directory [/Users/greg/src/kc/target/classes/com/example/crud/repositories] for files matching pattern [/Users/greg/src/kc/target/classes/com/example/crud/**/*Impl.class]
+2021-07-06 18:52:06,663 TRACE [rud.Main.main()] o.s.c.i.s.PathMatchingResourcePatternResolver: Resolved location pattern [classpath*:com/example/crud/**/*Impl.class] to resources []
+2021-07-06 18:52:06,673 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryConfigurationDelegate: Spring Data JPA - Registering repository: inventoryRepository - Interface: com.example.crud.repositories.InventoryRepository - Factory: org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean
+2021-07-06 18:52:06,674 TRACE [rud.Main.main()] o.s.d.r.c.RepositoryConfigurationDelegate: Spring Data JPA - Registering repository: personRepository - Interface: com.example.crud.repositories.PersonRepository - Factory: org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean
+2021-07-06 18:52:06,675 INFO  [rud.Main.main()] o.s.d.r.c.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 72 ms. Found 2 JPA repository interfaces.
+2021-07-06 18:52:06,683 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registered bean definition for imported class 'org.springframework.cache.annotation.ProxyCachingConfiguration'
+2021-07-06 18:52:06,683 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method org.springframework.cache.annotation.ProxyCachingConfiguration.org.springframework.cache.config.internalCacheAdvisor()
+2021-07-06 18:52:06,683 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method org.springframework.cache.annotation.ProxyCachingConfiguration.cacheOperationSource()
+2021-07-06 18:52:06,684 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method org.springframework.cache.annotation.ProxyCachingConfiguration.cacheInterceptor()
+2021-07-06 18:52:06,684 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registered bean definition for imported class 'org.springframework.cache.jcache.config.ProxyJCacheConfiguration'
+2021-07-06 18:52:06,684 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method org.springframework.cache.jcache.config.ProxyJCacheConfiguration.org.springframework.cache.config.internalJCacheAdvisor()
+2021-07-06 18:52:06,684 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method org.springframework.cache.jcache.config.ProxyJCacheConfiguration.jCacheInterceptor()
+2021-07-06 18:52:06,684 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method org.springframework.cache.jcache.config.ProxyJCacheConfiguration.jCacheOperationSource()
+2021-07-06 18:52:06,684 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method com.example.crud.CacheConfiguration.cacheManager()
+2021-07-06 18:52:06,684 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method com.example.crud.CacheConfiguration.cacheResolver()
+2021-07-06 18:52:06,685 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method com.example.crud.CacheConfiguration.keyGenerator()
+2021-07-06 18:52:06,685 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method com.example.crud.CacheConfiguration.errorHandler()
+2021-07-06 18:52:06,685 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method com.example.crud.EhCacheConfiguration.ehCacheCacheManager()
+2021-07-06 18:52:06,685 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method com.example.crud.EhCacheConfiguration.ehCacheManagerFactoryBean()
+2021-07-06 18:52:06,685 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registered bean definition for imported class 'com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration'
+2021-07-06 18:52:06,685 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration.getMetricRegistry()
+2021-07-06 18:52:06,685 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration.getHealthCheckRegistry()
+2021-07-06 18:52:06,686 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration.exceptionMeteredAnnotationBeanPostProcessor()
+2021-07-06 18:52:06,686 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration.meteredAnnotationBeanPostProcessor()
+2021-07-06 18:52:06,686 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration.timedAnnotationBeanPostProcessor()
+2021-07-06 18:52:06,686 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration.countedAnnotationBeanPostProcessor()
+2021-07-06 18:52:06,686 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration.gaugeFieldAnnotationBeanPostProcessor()
+2021-07-06 18:52:06,687 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration.gaugeMethodAnnotationBeanPostProcessor()
+2021-07-06 18:52:06,687 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration.cachedGaugeAnnotationBeanPostProcessor()
+2021-07-06 18:52:06,687 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration.metricAnnotationBeanPostProcessor()
+2021-07-06 18:52:06,687 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration.healthCheckBeanPostProcessor()
+2021-07-06 18:52:06,687 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration.legacyCountedAnnotationBeanPostProcessor()
+2021-07-06 18:52:06,687 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration.legacyCachedGaugeAnnotationBeanPostProcessor()
+2021-07-06 18:52:06,687 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration.legacyMetricAnnotationBeanPostProcessor()
+2021-07-06 18:52:06,688 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method com.example.crud.metrics.MetricsConfiguration.getMetricRegistry()
+2021-07-06 18:52:06,688 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Overriding bean definition for bean 'getMetricRegistry' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration; factoryMethodName=getMetricRegistry; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/ryantenney/metrics/spring/config/annotation/DelegatingMetricsConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=metricsConfiguration; factoryMethodName=getMetricRegistry; initMethodName=null; destroyMethodName=(inferred); defined in com.example.crud.metrics.MetricsConfiguration]
+2021-07-06 18:52:06,688 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassBeanDefinitionReader: Registering bean definition for @Bean method com.example.crud.metrics.MetricsConfiguration.getHealthCheckRegistry()
+2021-07-06 18:52:06,688 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Overriding bean definition for bean 'getHealthCheckRegistry' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration; factoryMethodName=getHealthCheckRegistry; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/ryantenney/metrics/spring/config/annotation/DelegatingMetricsConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=metricsConfiguration; factoryMethodName=getHealthCheckRegistry; initMethodName=null; destroyMethodName=(inferred); defined in com.example.crud.metrics.MetricsConfiguration]
+2021-07-06 18:52:06,799 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassEnhancer: Successfully enhanced com.example.crud.ApplicationConfiguration; enhanced class name is: com.example.crud.ApplicationConfiguration$$EnhancerBySpringCGLIB$$c0776fb8
+2021-07-06 18:52:06,799 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassPostProcessor: Replacing bean definition 'applicationConfiguration' existing class 'com.example.crud.ApplicationConfiguration' with enhanced class 'com.example.crud.ApplicationConfiguration$$EnhancerBySpringCGLIB$$c0776fb8'
+2021-07-06 18:52:06,801 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassEnhancer: Successfully enhanced com.example.crud.CacheConfiguration; enhanced class name is: com.example.crud.CacheConfiguration$$EnhancerBySpringCGLIB$$7b33fdc6
+2021-07-06 18:52:06,801 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassPostProcessor: Replacing bean definition 'cacheConfiguration' existing class 'com.example.crud.CacheConfiguration' with enhanced class 'com.example.crud.CacheConfiguration$$EnhancerBySpringCGLIB$$7b33fdc6'
+2021-07-06 18:52:06,803 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassEnhancer: Successfully enhanced com.example.crud.EhCacheConfiguration; enhanced class name is: com.example.crud.EhCacheConfiguration$$EnhancerBySpringCGLIB$$33b7969
+2021-07-06 18:52:06,803 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassPostProcessor: Replacing bean definition 'ehCacheConfiguration' existing class 'com.example.crud.EhCacheConfiguration' with enhanced class 'com.example.crud.EhCacheConfiguration$$EnhancerBySpringCGLIB$$33b7969'
+2021-07-06 18:52:06,805 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassEnhancer: Successfully enhanced com.example.crud.metrics.MetricsConfiguration; enhanced class name is: com.example.crud.metrics.MetricsConfiguration$$EnhancerBySpringCGLIB$$e45192f0
+2021-07-06 18:52:06,805 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassPostProcessor: Replacing bean definition 'metricsConfiguration' existing class 'com.example.crud.metrics.MetricsConfiguration' with enhanced class 'com.example.crud.metrics.MetricsConfiguration$$EnhancerBySpringCGLIB$$e45192f0'
+2021-07-06 18:52:06,807 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassEnhancer: Successfully enhanced com.example.crud.metrics.SpringConfiguringClass; enhanced class name is: com.example.crud.metrics.SpringConfiguringClass$$EnhancerBySpringCGLIB$$6c75b39f
+2021-07-06 18:52:06,807 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassPostProcessor: Replacing bean definition 'springConfiguringClass' existing class 'com.example.crud.metrics.SpringConfiguringClass' with enhanced class 'com.example.crud.metrics.SpringConfiguringClass$$EnhancerBySpringCGLIB$$6c75b39f'
+2021-07-06 18:52:06,813 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassEnhancer: Successfully enhanced com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration; enhanced class name is: com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration$$EnhancerBySpringCGLIB$$aa19e729
+2021-07-06 18:52:06,813 TRACE [rud.Main.main()] o.s.c.a.ConfigurationClassPostProcessor: Replacing bean definition 'com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration' existing class 'com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration' with enhanced class 'com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration$$EnhancerBySpringCGLIB$$aa19e729'
+2021-07-06 18:52:06,814 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'emBeanDefinitionRegistrarPostProcessor'
+2021-07-06 18:52:06,814 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'emBeanDefinitionRegistrarPostProcessor'
+2021-07-06 18:52:06,814 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'emBeanDefinitionRegistrarPostProcessor' to allow for resolving potential circular references
+2021-07-06 18:52:06,814 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'emBeanDefinitionRegistrarPostProcessor'
+2021-07-06 18:52:06,820 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2021-07-06 18:52:06,820 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'org.springframework.context.event.internalEventListenerProcessor'
+2021-07-06 18:52:06,821 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'org.springframework.context.event.internalEventListenerProcessor' to allow for resolving potential circular references
+2021-07-06 18:52:06,821 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'org.springframework.context.event.internalEventListenerProcessor'
+2021-07-06 18:52:06,821 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'org.springframework.data.jpa.domain.support.AuditingBeanFactoryPostProcessor'
+2021-07-06 18:52:06,821 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'org.springframework.data.jpa.domain.support.AuditingBeanFactoryPostProcessor'
+2021-07-06 18:52:06,821 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'org.springframework.data.jpa.domain.support.AuditingBeanFactoryPostProcessor' to allow for resolving potential circular references
+2021-07-06 18:52:06,821 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'org.springframework.data.jpa.domain.support.AuditingBeanFactoryPostProcessor'
+2021-07-06 18:52:06,822 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2021-07-06 18:52:06,822 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'org.springframework.context.event.internalEventListenerFactory'
+2021-07-06 18:52:06,823 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'org.springframework.context.event.internalEventListenerFactory' to allow for resolving potential circular references
+2021-07-06 18:52:06,823 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'org.springframework.context.event.internalEventListenerFactory'
+2021-07-06 18:52:06,823 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'org.springframework.transaction.config.internalTransactionalEventListenerFactory'
+2021-07-06 18:52:06,823 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'org.springframework.transaction.config.internalTransactionalEventListenerFactory'
+2021-07-06 18:52:06,825 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'org.springframework.transaction.config.internalTransactionalEventListenerFactory' to allow for resolving potential circular references
+2021-07-06 18:52:06,825 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'org.springframework.transaction.config.internalTransactionalEventListenerFactory'
+2021-07-06 18:52:06,829 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2021-07-06 18:52:06,829 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2021-07-06 18:52:06,830 TRACE [rud.Main.main()] o.s.b.f.a.AutowiredAnnotationBeanPostProcessor: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2021-07-06 18:52:06,830 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor' to allow for resolving potential circular references
+2021-07-06 18:52:06,830 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2021-07-06 18:52:06,830 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2021-07-06 18:52:06,830 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2021-07-06 18:52:06,834 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor' to allow for resolving potential circular references
+2021-07-06 18:52:06,834 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2021-07-06 18:52:06,834 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+2021-07-06 18:52:06,834 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+2021-07-06 18:52:06,834 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor' to allow for resolving potential circular references
+2021-07-06 18:52:06,834 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+2021-07-06 18:52:06,834 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'org.springframework.context.annotation.internalScheduledAnnotationProcessor'
+2021-07-06 18:52:06,834 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'org.springframework.context.annotation.internalScheduledAnnotationProcessor'
+2021-07-06 18:52:06,834 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'org.springframework.scheduling.annotation.SchedulingConfiguration'
+2021-07-06 18:52:06,834 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'org.springframework.scheduling.annotation.SchedulingConfiguration'
+2021-07-06 18:52:06,838 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'org.springframework.scheduling.annotation.SchedulingConfiguration' to allow for resolving potential circular references
+2021-07-06 18:52:06,839 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'org.springframework.scheduling.annotation.SchedulingConfiguration'
+2021-07-06 18:52:06,843 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'org.springframework.context.annotation.internalScheduledAnnotationProcessor' to allow for resolving potential circular references
+2021-07-06 18:52:06,844 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'org.springframework.context.annotation.internalScheduledAnnotationProcessor'
+2021-07-06 18:52:06,844 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'org.springframework.aop.config.internalAutoProxyCreator'
+2021-07-06 18:52:06,844 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'org.springframework.aop.config.internalAutoProxyCreator'
+2021-07-06 18:52:06,852 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'org.springframework.aop.config.internalAutoProxyCreator' to allow for resolving potential circular references
+2021-07-06 18:52:06,857 TRACE [rud.Main.main()] o.s.c.i.s.SpringFactoriesLoader: Loaded [org.springframework.beans.BeanInfoFactory] names: [org.springframework.beans.ExtendedBeanInfoFactory]
+2021-07-06 18:52:06,857 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Getting BeanInfo for class [org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator]
+2021-07-06 18:52:06,867 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Caching PropertyDescriptors for class [org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator]
+2021-07-06 18:52:06,867 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Found bean property 'advisorAdapterRegistry' of type [org.springframework.aop.framework.adapter.AdvisorAdapterRegistry]
+2021-07-06 18:52:06,867 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Found bean property 'applyCommonInterceptorsFirst' of type [boolean]
+2021-07-06 18:52:06,867 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Found bean property 'aspectJAdvisorFactory' of type [org.springframework.aop.aspectj.annotation.AspectJAdvisorFactory]
+2021-07-06 18:52:06,867 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Found bean property 'beanClassLoader' of type [java.lang.ClassLoader]
+2021-07-06 18:52:06,867 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Found bean property 'beanFactory' of type [org.springframework.beans.factory.BeanFactory]
+2021-07-06 18:52:06,867 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Found bean property 'class' of type [java.lang.Class]
+2021-07-06 18:52:06,867 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Found bean property 'customTargetSourceCreators' of type [[Lorg.springframework.aop.framework.autoproxy.TargetSourceCreator;]
+2021-07-06 18:52:06,867 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Found bean property 'exposeProxy' of type [boolean]
+2021-07-06 18:52:06,867 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Found bean property 'frozen' of type [boolean]
+2021-07-06 18:52:06,867 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Found bean property 'includePatterns' of type [java.util.List]
+2021-07-06 18:52:06,867 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Found bean property 'interceptorNames' of type [[Ljava.lang.String;]
+2021-07-06 18:52:06,868 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Found bean property 'opaque' of type [boolean]
+2021-07-06 18:52:06,868 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Found bean property 'optimize' of type [boolean]
+2021-07-06 18:52:06,868 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Found bean property 'order' of type [int]
+2021-07-06 18:52:06,868 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Found bean property 'proxyClassLoader' of type [java.lang.ClassLoader]
+2021-07-06 18:52:06,868 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Found bean property 'proxyTargetClass' of type [boolean]
+2021-07-06 18:52:06,885 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'org.springframework.aop.config.internalAutoProxyCreator'
+2021-07-06 18:52:06,886 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'exceptionMeteredAnnotationBeanPostProcessor'
+2021-07-06 18:52:06,886 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'exceptionMeteredAnnotationBeanPostProcessor'
+2021-07-06 18:52:06,887 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:06,887 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:06,887 TRACE [rud.Main.main()] o.s.a.a.a.AnnotationAwareAspectJAutoProxyCreator: Did not attempt to auto-proxy infrastructure class [org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor]
+2021-07-06 18:52:06,887 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration'
+2021-07-06 18:52:06,887 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration'
+2021-07-06 18:52:06,888 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:06,888 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:06,888 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:06,888 TRACE [rud.Main.main()] o.s.a.a.a.AnnotationAwareAspectJAutoProxyCreator: Did not attempt to auto-proxy infrastructure class [org.springframework.cache.interceptor.BeanFactoryCacheOperationSourceAdvisor]
+2021-07-06 18:52:06,888 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'org.springframework.cache.annotation.ProxyCachingConfiguration'
+2021-07-06 18:52:06,888 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'org.springframework.cache.annotation.ProxyCachingConfiguration'
+2021-07-06 18:52:06,888 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:06,888 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:06,888 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:06,888 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:06,888 TRACE [rud.Main.main()] o.s.a.a.a.AnnotationAwareAspectJAutoProxyCreator: Did not attempt to auto-proxy infrastructure class [org.springframework.cache.jcache.interceptor.BeanFactoryJCacheOperationSourceAdvisor]
+2021-07-06 18:52:06,888 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'org.springframework.cache.jcache.config.ProxyJCacheConfiguration'
+2021-07-06 18:52:06,888 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'org.springframework.cache.jcache.config.ProxyJCacheConfiguration'
+2021-07-06 18:52:06,888 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:06,888 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:06,888 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:06,894 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Getting BeanInfo for class [org.springframework.cache.jcache.config.ProxyJCacheConfiguration]
+2021-07-06 18:52:06,896 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Caching PropertyDescriptors for class [org.springframework.cache.jcache.config.ProxyJCacheConfiguration]
+2021-07-06 18:52:06,896 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Found bean property 'class' of type [java.lang.Class]
+2021-07-06 18:52:06,896 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Found bean property 'importMetadata' of type [org.springframework.core.type.AnnotationMetadata]
+2021-07-06 18:52:06,898 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'org.springframework.cache.jcache.config.ProxyJCacheConfiguration' to allow for resolving potential circular references
+2021-07-06 18:52:06,900 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:06,900 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:06,900 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:06,901 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:06,901 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:06,901 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:06,909 TRACE [rud.Main.main()] o.s.b.TypeConverterDelegate: Converting String to [class java.lang.Class] using property editor [org.springframework.beans.propertyeditors.ClassEditor@4d7d3911]
+2021-07-06 18:52:06,910 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:06,910 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:06,910 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:06,910 TRACE [rud.Main.main()] o.s.b.TypeConverterDelegate: Converting String to [class java.lang.Class] using property editor [org.springframework.beans.propertyeditors.ClassEditor@4129ee01]
+2021-07-06 18:52:06,911 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'cacheConfiguration'
+2021-07-06 18:52:06,911 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'cacheConfiguration'
+2021-07-06 18:52:06,911 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:06,911 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:06,911 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:06,913 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'cacheConfiguration' to allow for resolving potential circular references
+2021-07-06 18:52:06,915 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'ehCacheCacheManager'
+2021-07-06 18:52:06,915 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'ehCacheCacheManager'
+2021-07-06 18:52:06,915 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:06,915 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:06,915 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:06,915 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'ehCacheConfiguration'
+2021-07-06 18:52:06,915 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'ehCacheConfiguration'
+2021-07-06 18:52:06,915 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:06,915 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:06,915 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:06,915 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'ehCacheConfiguration' to allow for resolving potential circular references
+2021-07-06 18:52:06,915 INFO  [rud.Main.main()] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'ehCacheConfiguration' of type [com.example.crud.EhCacheConfiguration$$EnhancerBySpringCGLIB$$33b7969] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-06 18:52:06,915 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:06,915 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:06,915 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:06,915 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:06,915 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:06,915 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:06,920 TRACE [rud.Main.main()] o.s.s.a.ScheduledAnnotationBeanPostProcessor: No @Scheduled annotations found on bean class: class com.example.crud.EhCacheConfiguration$$EnhancerBySpringCGLIB$$33b7969
+2021-07-06 18:52:06,920 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'ehCacheConfiguration'
+2021-07-06 18:52:06,928 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'ehCacheManagerFactoryBean'
+2021-07-06 18:52:06,928 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'ehCacheManagerFactoryBean'
+2021-07-06 18:52:06,929 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:06,929 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:06,929 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:06,929 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'ehCacheConfiguration'
+2021-07-06 18:52:06,929 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'ehCacheManagerFactoryBean' to allow for resolving potential circular references
+2021-07-06 18:52:06,929 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Invoking afterPropertiesSet() on bean with name 'ehCacheManagerFactoryBean'
+2021-07-06 18:52:06,929 DEBUG [rud.Main.main()] o.s.c.e.EhCacheManagerFactoryBean: Initializing EhCache CacheManager
+2021-07-06 18:52:06,931 DEBUG [rud.Main.main()] n.s.e.c.ConfigurationFactory: Configuring ehcache from ehcache.xml found in the classpath: file:/Users/greg/src/kc/target/classes/ehcache.xml
+2021-07-06 18:52:06,931 DEBUG [rud.Main.main()] n.s.e.c.ConfigurationFactory: Configuring ehcache from URL: file:/Users/greg/src/kc/target/classes/ehcache.xml
+2021-07-06 18:52:06,932 DEBUG [rud.Main.main()] n.s.e.c.ConfigurationFactory: Configuring ehcache from InputStream
+2021-07-06 18:52:06,943 DEBUG [rud.Main.main()] n.s.e.c.BeanHandler: Ignoring ehcache attribute xmlns:xsi
+2021-07-06 18:52:06,943 DEBUG [rud.Main.main()] n.s.e.c.BeanHandler: Ignoring ehcache attribute xsi:noNamespaceSchemaLocation
+2021-07-06 18:52:06,944 DEBUG [rud.Main.main()] n.s.e.c.DiskStoreConfiguration: Disk Store Path: /var/folders/g3/2t9dql3s1t7b24774nfbdkk80000gq/T/crudCache
+2021-07-06 18:52:06,969 DEBUG [rud.Main.main()] n.s.e.CacheManager: Creating new CacheManager with Configuration Object
+2021-07-06 18:52:06,973 DEBUG [rud.Main.main()] n.s.e.u.PropertyUtil: propertiesString is null.
+2021-07-06 18:52:06,980 DEBUG [rud.Main.main()] n.s.e.c.ConfigurationHelper: No CacheManagerEventListenerFactory class specified. Skipping...
+2021-07-06 18:52:06,981 TRACE [rud.Main.main()] n.s.e.d.j.JGroupsCacheManagerPeerProviderFactory: Creating JGroups CacheManagerPeerProvider for crudCache with properties:
+{jgroups-l2-cache-udp-largecluster.xml=}
+2021-07-06 18:52:06,981 DEBUG [rud.Main.main()] n.s.e.u.PropertyUtil: Value found for connect: null
+2021-07-06 18:52:06,981 DEBUG [rud.Main.main()] n.s.e.u.PropertyUtil: Value found for file: null
+2021-07-06 18:52:06,981 DEBUG [rud.Main.main()] n.s.e.u.PropertyUtil: Value found for channelName: null
+2021-07-06 18:52:06,981 DEBUG [rud.Main.main()] n.s.e.d.j.JGroupsCacheManagerPeerProviderFactory: Creating JGroups CacheManagerPeerProvider for crudCache with configuration:
+null
+2021-07-06 18:52:07,031 DEBUG [rud.Main.main()] o.j.c.ClassConfigurator: Using jg-magic-map.xml as magic number file and jg-protocol-ids.xml for protocol IDs
+2021-07-06 18:52:07,182 DEBUG [rud.Main.main()] o.j.s.Configurator: set property UDP.mcast_group_addr to default value /ff0e:0:0:0:0:8:8:8
+2021-07-06 18:52:07,182 DEBUG [rud.Main.main()] o.j.s.Configurator: set property UDP.bind_addr to default value /fe80:0:0:0:aca3:202b:814a:516f%utun1
+2021-07-06 18:52:07,182 DEBUG [rud.Main.main()] o.j.s.Configurator: set property UDP.diagnostics_addr to default value /ff0e:0:0:0:0:0:75:75
+2021-07-06 18:52:07,190 DEBUG [rud.Main.main()] o.j.p.FRAG2: received CONFIG event: {bind_addr=/fe80:0:0:0:aca3:202b:814a:516f%utun1}
+2021-07-06 18:52:07,204 TRACE [rud.Main.main()] o.j.p.p.STABLE: stable task started
+2021-07-06 18:52:07,205 DEBUG [rud.Main.main()] o.j.p.UDP: sockets will use interface fe80:0:0:0:aca3:202b:814a:516f%utun1
+2021-07-06 18:52:07,211 WARN  [rud.Main.main()] o.j.p.UDP: receive buffer of socket java.net.DatagramSocket@3d7ac309 was set to 20MB, but the OS only allocated 6.71MB. This might lead to performance problems. Please set your max receive buffer in the OS correctly (e.g. net.core.rmem_max on Linux)
+2021-07-06 18:52:07,211 WARN  [rud.Main.main()] o.j.p.UDP: receive buffer of socket java.net.MulticastSocket@629e94fb was set to 25MB, but the OS only allocated 6.71MB. This might lead to performance problems. Please set your max receive buffer in the OS correctly (e.g. net.core.rmem_max on Linux)
+2021-07-06 18:52:07,213 DEBUG [rud.Main.main()] o.j.p.UDP: socket information:
+, mcast_addr=ff0e:0:0:0:0:8:8:8:45588, bind_addr=/fe80:0:0:0:aca3:202b:814a:516f%utun1, ttl=8
+sock: bound to fe80:0:0:0:aca3:202b:814a:516f%16:53856, receive buffer size=6710884, send buffer size=640000
+mcast_sock: bound to fe80:0:0:0:aca3:202b:814a:516f%utun1:45588, send buffer size=640000, receive buffer size=6710884
+2021-07-06 18:52:07,216 TRACE [rud.Main.main()] o.j.p.UDP: joined /ff0e:0:0:0:0:0:75:75:7500 on utun1
+2021-07-06 18:52:07,216 TRACE [rud.Main.main()] o.j.p.UDP: joined /ff0e:0:0:0:0:0:75:75:7500 on utun0
+2021-07-06 18:52:07,216 TRACE [rud.Main.main()] o.j.p.UDP: joined /ff0e:0:0:0:0:0:75:75:7500 on llw0
+2021-07-06 18:52:07,216 TRACE [rud.Main.main()] o.j.p.UDP: joined /ff0e:0:0:0:0:0:75:75:7500 on awdl0
+2021-07-06 18:52:07,216 TRACE [rud.Main.main()] o.j.p.UDP: joined /ff0e:0:0:0:0:0:75:75:7500 on en6
+2021-07-06 18:52:07,216 TRACE [rud.Main.main()] o.j.p.UDP: joined /ff0e:0:0:0:0:0:75:75:7500 on utun2
+2021-07-06 18:52:07,220 TRACE [rud.Main.main()] o.j.p.UDP: joined /ff0e:0:0:0:0:0:75:75:7500 on en0
+2021-07-06 18:52:07,220 TRACE [rud.Main.main()] o.j.p.UDP: joined /ff0e:0:0:0:0:0:75:75:7500 on lo0
+
+-------------------------------------------------------------------
+GMS: address=C02FD3Q3MD6R-26856, cluster=crudCache, physical address=fe80:0:0:0:aca3:202b:814a:516f%16:53856
+-------------------------------------------------------------------
+2021-07-06 18:52:07,223 DEBUG [rud.Main.main()] o.j.p.UDP: created unicast receiver thread
+2021-07-06 18:52:07,223 DEBUG [rud.Main.main()] o.j.p.UDP: created multicast receiver thread
+2021-07-06 18:52:07,224 TRACE [FD3Q3MD6R-26856] o.j.p.FD_SOCK: waiting for client connections on /fe80:0:0:0:aca3:202b:814a:516f%utun1:50242
+2021-07-06 18:52:07,228 TRACE [rud.Main.main()] o.j.p.UDP: sending msg to null, src=C02FD3Q3MD6R-26856, headers are PING: [PING: type=GET_MBRS_REQ, cluster=crudCache, arg=C02FD3Q3MD6R-26856, view_id=, is_server=false, is_coord=false, logical_name=C02FD3Q3MD6R-26856, physical_addrs=fe80:0:0:0:aca3:202b:814a:516f%16:53856], UDP: [channel_name=crudCache]
+2021-07-06 18:52:07,228 TRACE [rud.Main.main()] o.j.p.UDP: looping back message [dst: <null>, src: C02FD3Q3MD6R-26856 (2 headers), size=0 bytes, flags=OOB]
+2021-07-06 18:52:07,229 TRACE [FD3Q3MD6R-26856] o.j.p.UDP: received [dst: <null>, src: C02FD3Q3MD6R-26856 (2 headers), size=0 bytes, flags=OOB], headers are PING: [PING: type=GET_MBRS_REQ, cluster=crudCache, arg=C02FD3Q3MD6R-26856, view_id=, is_server=false, is_coord=false, logical_name=C02FD3Q3MD6R-26856, physical_addrs=fe80:0:0:0:aca3:202b:814a:516f%16:53856], UDP: [channel_name=crudCache]
+2021-07-06 18:52:07,229 TRACE [FD3Q3MD6R-26856] o.j.p.PING: received GET_MBRS_REQ from C02FD3Q3MD6R-26856, sending response [PING: type=GET_MBRS_RSP, arg=C02FD3Q3MD6R-26856, view_id=, is_server=false, is_coord=false, logical_name=C02FD3Q3MD6R-26856, physical_addrs=fe80:0:0:0:aca3:202b:814a:516f%16:53856]
+2021-07-06 18:52:07,229 TRACE [FD3Q3MD6R-26856] o.j.p.UDP: sending msg to C02FD3Q3MD6R-26856, src=C02FD3Q3MD6R-26856, headers are PING: [PING: type=GET_MBRS_RSP, arg=C02FD3Q3MD6R-26856, view_id=, is_server=false, is_coord=false, logical_name=C02FD3Q3MD6R-26856, physical_addrs=fe80:0:0:0:aca3:202b:814a:516f%16:53856], UDP: [channel_name=crudCache]
+2021-07-06 18:52:07,229 TRACE [FD3Q3MD6R-26856] o.j.p.UDP: looping back message [dst: C02FD3Q3MD6R-26856, src: C02FD3Q3MD6R-26856 (2 headers), size=0 bytes, flags=OOB]
+2021-07-06 18:52:07,229 TRACE [FD3Q3MD6R-26856] o.j.p.UDP: received [dst: C02FD3Q3MD6R-26856, src: C02FD3Q3MD6R-26856 (2 headers), size=0 bytes, flags=OOB], headers are PING: [PING: type=GET_MBRS_RSP, arg=C02FD3Q3MD6R-26856, view_id=, is_server=false, is_coord=false, logical_name=C02FD3Q3MD6R-26856, physical_addrs=fe80:0:0:0:aca3:202b:814a:516f%16:53856], UDP: [channel_name=crudCache]
+2021-07-06 18:52:07,230 TRACE [FD3Q3MD6R-26856] o.j.p.PING: C02FD3Q3MD6R-26856: received GET_MBRS_RSP from C02FD3Q3MD6R-26856: C02FD3Q3MD6R-26856, view_id=, is_server=false, is_coord=false, logical_name=C02FD3Q3MD6R-26856, physical_addrs=fe80:0:0:0:aca3:202b:814a:516f%16:53856
+2021-07-06 18:52:09,234 TRACE [rud.Main.main()] o.j.p.PING: discovery took 2010 ms: responses: 1 total (0 servers (0 coord), 1 clients)
+2021-07-06 18:52:09,234 TRACE [rud.Main.main()] o.j.p.p.GMS: C02FD3Q3MD6R-26856: no initial members discovered: creating group as first member
+2021-07-06 18:52:09,236 DEBUG [rud.Main.main()] o.j.p.p.NAKACK2:
+[C02FD3Q3MD6R-26856 setDigest()]
+existing digest:  []
+new digest:       C02FD3Q3MD6R-26856: [0 (0)]
+resulting digest: C02FD3Q3MD6R-26856: [0 (0)]
+2021-07-06 18:52:09,236 DEBUG [rud.Main.main()] o.j.p.p.GMS: C02FD3Q3MD6R-26856: installing view [C02FD3Q3MD6R-26856|0] [C02FD3Q3MD6R-26856]
+2021-07-06 18:52:09,237 TRACE [rud.Main.main()] o.j.p.p.STABLE: C02FD3Q3MD6R-26856: resetting digest from NAKACK: C02FD3Q3MD6R-26856: [0]
+2021-07-06 18:52:09,237 DEBUG [rud.Main.main()] o.j.p.p.STABLE: resuming message garbage collection
+2021-07-06 18:52:09,237 DEBUG [rud.Main.main()] o.j.p.FD_SOCK: VIEW_CHANGE received: [C02FD3Q3MD6R-26856]
+2021-07-06 18:52:09,238 TRACE [rud.Main.main()] o.j.p.p.STABLE: C02FD3Q3MD6R-26856: resetting digest from NAKACK: C02FD3Q3MD6R-26856: [0]
+2021-07-06 18:52:09,242 DEBUG [rud.Main.main()] o.j.p.p.STABLE: [ergonomics] setting max_bytes to 4MB (1 members)
+2021-07-06 18:52:09,243 TRACE [rud.Main.main()] o.j.p.UFC: new membership: [C02FD3Q3MD6R-26856]
+2021-07-06 18:52:09,243 TRACE [rud.Main.main()] o.j.p.MFC: new membership: [C02FD3Q3MD6R-26856]
+2021-07-06 18:52:09,243 TRACE [rud.Main.main()] o.j.p.p.STABLE: C02FD3Q3MD6R-26856: resetting digest from NAKACK: C02FD3Q3MD6R-26856: [0]
+2021-07-06 18:52:09,243 DEBUG [rud.Main.main()] o.j.p.p.STABLE: resuming message garbage collection
+2021-07-06 18:52:09,243 DEBUG [rud.Main.main()] o.j.p.p.GMS: created group (first member). My view is [C02FD3Q3MD6R-26856|0], impl is org.jgroups.protocols.pbcast.CoordGmsImpl
+2021-07-06 18:52:09,250 INFO  [rud.Main.main()] n.s.e.d.j.JGroupsCacheManagerPeerProvider: JGroups Replication started for 'crudCache'. JChannel: local_addr=C02FD3Q3MD6R-26856
+cluster_name=crudCache
+my_view=[C02FD3Q3MD6R-26856|0] [C02FD3Q3MD6R-26856]
+connected=true
+closed=false
+discard_own_messages=true
+state_transfer_supported=true
+props=UDP(discard_incompatible_packets=true;thread_pool_max_threads=8;mcast_group_addr=/ff0e:0:0:0:0:8:8:8;ergonomics=true;enable_unicast_bundling=false;port_range=50;thread_naming_pattern=cl;stats=true;oob_thread_pool_enabled=true;oob_thread_pool_rejection_policy=Run;mcast_send_buf_size=640000;id=21;thread_pool_rejection_policy=discard;logical_addr_cache_max_size=500;loopback=true;timer_rejection_policy=run;oob_thread_pool_min_threads=1;max_bundle_timeout=30;enable_diagnostics=true;mcast_recv_buf_size=25000000;disable_loopback=false;external_port=0;oob_thread_pool_max_threads=8;log_discard_msgs=true;name=UDP;oob_thread_pool_keep_alive_time=5000;bind_addr=/fe80:0:0:0:aca3:202b:814a:516f%utun1;wheel_size=200;bundler_capacity=200000;tick_time=50;timer_max_threads=10;ucast_send_buf_size=640000;thread_pool_queue_enabled=true;enable_bundling=true;ucast_recv_buf_size=20000000;oob_thread_pool_queue_enabled=false;thread_pool_keep_alive_time=5000;bind_port=0;thread_pool_min_threads=2;ip_ttl=8;bind_interface_str=;diagnostics_ttl=8;tos=8;logical_addr_cache_expiration=120000;oob_thread_pool_queue_max_size=100;diagnostics_addr=/ff0e:0:0:0:0:0:75:75;receive_on_all_interfaces=false;mcast_port=45588;timer_queue_max_size=500;thread_pool_queue_max_size=10000;max_bundle_size=64000;ip_mcast=true;timer_min_threads=4;thread_pool_enabled=true;bundler_type=new;timer_keep_alive_time=3000;timer_type=new;diagnostics_port=7500)
+:PING(num_initial_srv_members=0;break_on_coord_rsp=true;stats=true;ergonomics=true;num_initial_members=20;name=PING;stagger_timeout=0;id=6;return_entire_cache=false;timeout=2000)
+:MERGE2(merge_fast=true;merge_fast_delay=1000;stats=true;min_interval=10000;ergonomics=true;name=MERGE2;id=0;max_interval=30000;inconsistent_view_threshold=1)
+:FD_SOCK(get_cache_timeout=1000;sock_conn_timeout=1000;client_bind_port=0;ergonomics=true;start_port=0;port_range=50;suspect_msg_interval=5000;num_tries=3;bind_interface_str=;stats=true;external_port=0;name=FD_SOCK;bind_addr=/fe80:0:0:0:aca3:202b:814a:516f%utun1;keep_alive=true;id=3)
+:FD_ALL(stats=true;timeout_check_interval=2000;ergonomics=true;name=FD_ALL;interval=3000;id=29;timeout=10000;msg_counts_as_heartbeat=false)
+:VERIFY_SUSPECT(num_msgs=1;bind_interface_str=;stats=true;ergonomics=true;name=VERIFY_SUSPECT;bind_addr=/fe80:0:0:0:aca3:202b:814a:516f%utun1;id=13;timeout=1500;use_icmp=false)
+:BARRIER(stats=true;ergonomics=true;max_close_time=60000;name=BARRIER;id=0)
+:pbcast.NAKACK2(use_mcast_xmit=false;ergonomics=true;xmit_table_msgs_per_row=2000;xmit_table_max_compaction_time=30000;xmit_interval=1000;print_stability_history_on_failed_xmit=false;discard_delivered_msgs=true;max_msg_batch_size=500;xmit_table_num_rows=100;stats=true;xmit_from_random_member=false;log_discard_msgs=true;log_not_found_msgs=true;xmit_table_resize_factor=1.2;name=NAKACK2;id=57;max_rebroadcast_timeout=2000;use_mcast_xmit_req=false)
+:UNICAST(ergonomics=true;xmit_table_msgs_per_row=2000;xmit_table_max_compaction_time=60000;max_retransmit_time=60000;xmit_interval=2000;timeout=400,800,1600,3200;max_msg_batch_size=500;conn_expiry_timeout=60000;xmit_table_num_rows=100;stats=true;xmit_table_resize_factor=1.2;name=UNICAST;id=12;segment_capacity=1000)
+:pbcast.STABLE(cap=0.1;stability_delay=1000;stats=true;ergonomics=true;name=STABLE;desired_avg_gossip=50000;max_bytes=4000000;id=16)
+:pbcast.GMS(max_join_attempts=0;print_local_addr=true;handle_concurrent_startup=true;view_bundling=true;leave_timeout=1000;log_view_warnings=true;ergonomics=true;resume_task_timeout=20000;use_flush_if_present=true;print_physical_addrs=true;join_timeout=3000;view_ack_collection_timeout=2000;stats=true;num_prev_views=20;merge_timeout=5000;max_bundling_time=50;name=GMS;num_prev_mbrs=50;id=14;log_collect_msgs=true)
+:UFC(min_threshold=0.4;stats=true;ergonomics=true;max_credits=2000000;name=UFC;min_credits=800000;id=45;max_block_time=5000;ignore_synchronous_response=true)
+:MFC(min_threshold=0.4;stats=true;ergonomics=true;max_credits=2000000;name=MFC;min_credits=800000;id=44;max_block_time=5000;ignore_synchronous_response=true)
+:FRAG2(frag_size=60000;stats=true;ergonomics=true;name=FRAG2;id=5)
+:RSVP(ack_on_delivery=true;stats=true;ergonomics=true;name=RSVP;resend_interval=2000;id=55;throw_exception_on_timeout=true;timeout=10000)
+:pbcast.STATE_TRANSFER(stats=true;ergonomics=true;name=STATE_TRANSFER;id=17)
+
+
+2021-07-06 18:52:09,265 DEBUG [rud.Main.main()] n.s.e.d.j.JGroupsCacheReplicatorFactory: Creating JGroups CacheEventListener with configuration: {replicateAsynchronously=true, replicateUpdates=true, replicatePuts=true, replicateUpdatesViaCopy=false, replicateRemovals=true}
+2021-07-06 18:52:09,265 DEBUG [rud.Main.main()] n.s.e.u.PropertyUtil: Value found for replicatePuts: true
+2021-07-06 18:52:09,265 DEBUG [rud.Main.main()] n.s.e.u.PropertyUtil: Value found for replicateUpdates: true
+2021-07-06 18:52:09,265 DEBUG [rud.Main.main()] n.s.e.u.PropertyUtil: Value found for replicateUpdatesViaCopy: false
+2021-07-06 18:52:09,265 DEBUG [rud.Main.main()] n.s.e.u.PropertyUtil: Value found for replicateRemovals: true
+2021-07-06 18:52:09,265 DEBUG [rud.Main.main()] n.s.e.u.PropertyUtil: Value found for replicateAsynchronously: true
+2021-07-06 18:52:09,265 DEBUG [rud.Main.main()] n.s.e.u.PropertyUtil: Value found for asynchronousReplicationIntervalMillis: null
+2021-07-06 18:52:09,267 DEBUG [rud.Main.main()] n.s.e.Cache: No BootstrapCacheLoaderFactory class specified. Skipping...
+2021-07-06 18:52:09,267 DEBUG [rud.Main.main()] n.s.e.Cache: CacheWriter factory not configured. Skipping...
+2021-07-06 18:52:09,267 DEBUG [rud.Main.main()] n.s.e.c.ConfigurationHelper: No CacheExceptionHandlerFactory class specified. Skipping...
+2021-07-06 18:52:09,271 INFO  [rud.Main.main()] n.s.e.p.s.f.AnnotationSizeOfFilter: Using regular expression provided through VM argument net.sf.ehcache.pool.sizeof.ignore.pattern for IgnoreSizeOf annotation : ^.*cache\..*IgnoreSizeOf$
+2021-07-06 18:52:09,274 INFO  [rud.Main.main()] n.s.e.p.s.AgentLoader: Located valid 'tools.jar' at '/Users/greg/.dotfiles/asdf/installs/java/zulu-8.54.0.21/zulu-8.jdk/Contents/Home/jre/../lib/tools.jar'
+2021-07-06 18:52:09,280 INFO  [rud.Main.main()] n.s.e.p.s.JvmInformation: Detected JVM data model settings of: Unrecognized 64-Bit JVM
+2021-07-06 18:52:09,407 INFO  [rud.Main.main()] n.s.e.p.s.AgentLoader: Extracted agent jar to temporary file /var/folders/g3/2t9dql3s1t7b24774nfbdkk80000gq/T/ehcache-sizeof-agent3632781762761744263.jar
+2021-07-06 18:52:09,407 INFO  [rud.Main.main()] n.s.e.p.s.AgentLoader: Trying to load agent @ /var/folders/g3/2t9dql3s1t7b24774nfbdkk80000gq/T/ehcache-sizeof-agent3632781762761744263.jar
+2021-07-06 18:52:09,413 INFO  [rud.Main.main()] n.s.e.p.i.DefaultSizeOfEngine: using Agent sizeof engine
+2021-07-06 18:52:09,426 DEBUG [rud.Main.main()] n.s.e.s.MemoryStore: Initialized net.sf.ehcache.store.MemoryStore for crud
+2021-07-06 18:52:09,431 DEBUG [rud.Main.main()] n.s.e.DiskStorePathManager: Using diskstore path /var/folders/g3/2t9dql3s1t7b24774nfbdkk80000gq/T/crudCache
+2021-07-06 18:52:09,431 DEBUG [rud.Main.main()] n.s.e.DiskStorePathManager: Holding exclusive lock on /var/folders/g3/2t9dql3s1t7b24774nfbdkk80000gq/T/crudCache/.ehcache-diskstore.lock
+2021-07-06 18:52:09,431 DEBUG [rud.Main.main()] n.s.e.s.d.DiskStorageFactory: Failed to delete file crud.data
+2021-07-06 18:52:09,431 DEBUG [rud.Main.main()] n.s.e.s.d.DiskStorageFactory: Failed to delete file crud.index
+2021-07-06 18:52:09,435 DEBUG [rud.Main.main()] n.s.e.s.d.DiskStorageFactory: Matching data file missing (or empty) for index file. Deleting index file /var/folders/g3/2t9dql3s1t7b24774nfbdkk80000gq/T/crudCache/crud.index
+2021-07-06 18:52:09,435 DEBUG [rud.Main.main()] n.s.e.s.d.DiskStorageFactory: Failed to delete file crud.index
+2021-07-06 18:52:09,440 DEBUG [rud.Main.main()] n.s.e.Cache: Initialised cache: crud
+2021-07-06 18:52:09,440 DEBUG [rud.Main.main()] n.s.e.c.ConfigurationHelper: CacheDecoratorFactory not configured. Skipping for 'crud'.
+2021-07-06 18:52:09,440 DEBUG [rud.Main.main()] n.s.e.c.ConfigurationHelper: CacheDecoratorFactory not configured for defaultCache. Skipping for 'crud'.
+2021-07-06 18:52:09,441 INFO  [rud.Main.main()] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'ehCacheManagerFactoryBean' of type [org.springframework.cache.ehcache.EhCacheManagerFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-06 18:52:09,441 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,441 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,441 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,441 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,441 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,441 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,441 TRACE [rud.Main.main()] o.s.s.a.ScheduledAnnotationBeanPostProcessor: No @Scheduled annotations found on bean class: class org.springframework.cache.ehcache.EhCacheManagerFactoryBean
+2021-07-06 18:52:09,441 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'ehCacheManagerFactoryBean'
+2021-07-06 18:52:09,449 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'ehCacheManagerFactoryBean'
+2021-07-06 18:52:09,449 INFO  [rud.Main.main()] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'ehCacheManagerFactoryBean' of type [net.sf.ehcache.CacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-06 18:52:09,450 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,450 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,450 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,450 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,450 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,450 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,452 TRACE [rud.Main.main()] o.s.s.a.ScheduledAnnotationBeanPostProcessor: No @Scheduled annotations found on bean class: class net.sf.ehcache.CacheManager
+2021-07-06 18:52:09,453 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'ehCacheCacheManager' to allow for resolving potential circular references
+2021-07-06 18:52:09,453 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Invoking afterPropertiesSet() on bean with name 'ehCacheCacheManager'
+2021-07-06 18:52:09,454 INFO  [rud.Main.main()] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'ehCacheCacheManager' of type [org.springframework.cache.ehcache.EhCacheCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-06 18:52:09,454 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,454 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,454 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,454 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,454 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,454 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,455 TRACE [rud.Main.main()] o.s.s.a.ScheduledAnnotationBeanPostProcessor: No @Scheduled annotations found on bean class: class org.springframework.cache.ehcache.EhCacheCacheManager
+2021-07-06 18:52:09,455 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'ehCacheCacheManager'
+2021-07-06 18:52:09,455 TRACE [rud.Main.main()] o.s.b.f.a.AutowiredAnnotationBeanPostProcessor: Autowiring by type from bean name 'cacheConfiguration' to bean named 'ehCacheCacheManager'
+2021-07-06 18:52:09,455 INFO  [rud.Main.main()] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'cacheConfiguration' of type [com.example.crud.CacheConfiguration$$EnhancerBySpringCGLIB$$7b33fdc6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-06 18:52:09,455 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,455 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,455 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,455 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,455 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,455 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,456 TRACE [rud.Main.main()] o.s.s.a.ScheduledAnnotationBeanPostProcessor: No @Scheduled annotations found on bean class: class com.example.crud.CacheConfiguration$$EnhancerBySpringCGLIB$$7b33fdc6
+2021-07-06 18:52:09,456 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'cacheConfiguration'
+2021-07-06 18:52:09,457 TRACE [rud.Main.main()] o.s.b.f.a.AutowiredAnnotationBeanPostProcessor: Autowiring by type from bean name 'org.springframework.cache.jcache.config.ProxyJCacheConfiguration' to bean named 'cacheConfiguration'
+2021-07-06 18:52:09,458 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry'
+2021-07-06 18:52:09,458 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,458 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,458 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,458 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,458 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,458 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,459 TRACE [rud.Main.main()] o.s.s.a.ScheduledAnnotationBeanPostProcessor: No @Scheduled annotations found on bean class: class org.springframework.cache.jcache.config.ProxyJCacheConfiguration
+2021-07-06 18:52:09,459 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'org.springframework.cache.jcache.config.ProxyJCacheConfiguration'
+2021-07-06 18:52:09,459 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'jCacheOperationSource'
+2021-07-06 18:52:09,459 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'jCacheOperationSource'
+2021-07-06 18:52:09,459 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,459 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,459 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,460 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.jcache.config.ProxyJCacheConfiguration'
+2021-07-06 18:52:09,466 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'jCacheOperationSource' to allow for resolving potential circular references
+2021-07-06 18:52:09,466 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,466 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,466 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,466 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,466 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,466 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,467 TRACE [rud.Main.main()] o.s.s.a.ScheduledAnnotationBeanPostProcessor: No @Scheduled annotations found on bean class: class org.springframework.cache.jcache.interceptor.DefaultJCacheOperationSource
+2021-07-06 18:52:09,467 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'jCacheOperationSource'
+2021-07-06 18:52:09,467 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'jCacheInterceptor'
+2021-07-06 18:52:09,467 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'jCacheInterceptor'
+2021-07-06 18:52:09,467 TRACE [rud.Main.main()] o.s.a.a.a.AnnotationAwareAspectJAutoProxyCreator: Did not attempt to auto-proxy infrastructure class [org.springframework.cache.jcache.interceptor.JCacheInterceptor]
+2021-07-06 18:52:09,467 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.jcache.config.ProxyJCacheConfiguration'
+2021-07-06 18:52:09,467 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'jCacheOperationSource'
+2021-07-06 18:52:09,467 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Autowiring by type from bean name 'jCacheInterceptor' via factory method to bean named 'jCacheOperationSource'
+2021-07-06 18:52:09,471 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'jCacheInterceptor' to allow for resolving potential circular references
+2021-07-06 18:52:09,471 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Invoking afterPropertiesSet() on bean with name 'jCacheInterceptor'
+2021-07-06 18:52:09,472 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'errorHandler'
+2021-07-06 18:52:09,472 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'errorHandler'
+2021-07-06 18:52:09,472 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,472 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,472 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,472 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'cacheConfiguration'
+2021-07-06 18:52:09,475 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'errorHandler' to allow for resolving potential circular references
+2021-07-06 18:52:09,475 INFO  [rud.Main.main()] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'errorHandler' of type [org.springframework.beans.factory.support.NullBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-07-06 18:52:09,475 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,475 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,475 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,475 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,475 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,475 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,475 TRACE [rud.Main.main()] o.s.s.a.ScheduledAnnotationBeanPostProcessor: No @Scheduled annotations found on bean class: class org.springframework.beans.factory.support.NullBean
+2021-07-06 18:52:09,475 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'errorHandler'
+2021-07-06 18:52:09,475 DEBUG [rud.Main.main()] o.s.c.a.ConfigurationClassEnhancer: @Bean method CacheConfiguration.errorHandler called as bean reference for type [org.springframework.cache.interceptor.CacheErrorHandler] returned null bean; resolving to null value.
+2021-07-06 18:52:09,476 TRACE [rud.Main.main()] o.s.s.a.ScheduledAnnotationBeanPostProcessor: No @Scheduled annotations found on bean class: class org.springframework.cache.jcache.interceptor.JCacheInterceptor
+2021-07-06 18:52:09,476 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'jCacheInterceptor'
+2021-07-06 18:52:09,476 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Autowiring by type from bean name 'org.springframework.cache.config.internalJCacheAdvisor' via factory method to bean named 'jCacheOperationSource'
+2021-07-06 18:52:09,476 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Autowiring by type from bean name 'org.springframework.cache.config.internalJCacheAdvisor' via factory method to bean named 'jCacheInterceptor'
+2021-07-06 18:52:09,478 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'org.springframework.cache.config.internalJCacheAdvisor' to allow for resolving potential circular references
+2021-07-06 18:52:09,478 TRACE [rud.Main.main()] o.s.s.a.ScheduledAnnotationBeanPostProcessor: No @Scheduled annotations found on bean class: class org.springframework.cache.jcache.interceptor.BeanFactoryJCacheOperationSourceAdvisor
+2021-07-06 18:52:09,479 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,479 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Getting BeanInfo for class [org.springframework.cache.annotation.ProxyCachingConfiguration]
+2021-07-06 18:52:09,480 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Caching PropertyDescriptors for class [org.springframework.cache.annotation.ProxyCachingConfiguration]
+2021-07-06 18:52:09,480 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Found bean property 'class' of type [java.lang.Class]
+2021-07-06 18:52:09,480 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Found bean property 'importMetadata' of type [org.springframework.core.type.AnnotationMetadata]
+2021-07-06 18:52:09,480 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'org.springframework.cache.annotation.ProxyCachingConfiguration' to allow for resolving potential circular references
+2021-07-06 18:52:09,480 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'cacheConfiguration'
+2021-07-06 18:52:09,480 TRACE [rud.Main.main()] o.s.b.f.a.AutowiredAnnotationBeanPostProcessor: Autowiring by type from bean name 'org.springframework.cache.annotation.ProxyCachingConfiguration' to bean named 'cacheConfiguration'
+2021-07-06 18:52:09,480 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry'
+2021-07-06 18:52:09,481 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,481 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,481 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,481 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,481 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,481 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,482 TRACE [rud.Main.main()] o.s.s.a.ScheduledAnnotationBeanPostProcessor: No @Scheduled annotations found on bean class: class org.springframework.cache.annotation.ProxyCachingConfiguration
+2021-07-06 18:52:09,482 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'org.springframework.cache.annotation.ProxyCachingConfiguration'
+2021-07-06 18:52:09,483 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'cacheOperationSource'
+2021-07-06 18:52:09,483 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'cacheOperationSource'
+2021-07-06 18:52:09,483 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,483 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,483 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,483 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.annotation.ProxyCachingConfiguration'
+2021-07-06 18:52:09,488 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'cacheOperationSource' to allow for resolving potential circular references
+2021-07-06 18:52:09,488 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,488 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,488 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,488 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,488 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,488 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,489 TRACE [rud.Main.main()] o.s.s.a.ScheduledAnnotationBeanPostProcessor: No @Scheduled annotations found on bean class: class org.springframework.cache.annotation.AnnotationCacheOperationSource
+2021-07-06 18:52:09,489 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'cacheOperationSource'
+2021-07-06 18:52:09,489 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'cacheInterceptor'
+2021-07-06 18:52:09,489 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'cacheInterceptor'
+2021-07-06 18:52:09,489 TRACE [rud.Main.main()] o.s.a.a.a.AnnotationAwareAspectJAutoProxyCreator: Did not attempt to auto-proxy infrastructure class [org.springframework.cache.interceptor.CacheInterceptor]
+2021-07-06 18:52:09,489 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.annotation.ProxyCachingConfiguration'
+2021-07-06 18:52:09,490 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'cacheOperationSource'
+2021-07-06 18:52:09,490 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Autowiring by type from bean name 'cacheInterceptor' via factory method to bean named 'cacheOperationSource'
+2021-07-06 18:52:09,494 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'cacheInterceptor' to allow for resolving potential circular references
+2021-07-06 18:52:09,494 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Invoking afterPropertiesSet() on bean with name 'cacheInterceptor'
+2021-07-06 18:52:09,494 TRACE [rud.Main.main()] o.s.s.a.ScheduledAnnotationBeanPostProcessor: No @Scheduled annotations found on bean class: class org.springframework.cache.interceptor.CacheInterceptor
+2021-07-06 18:52:09,495 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'cacheInterceptor'
+2021-07-06 18:52:09,495 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Autowiring by type from bean name 'org.springframework.cache.config.internalCacheAdvisor' via factory method to bean named 'cacheOperationSource'
+2021-07-06 18:52:09,495 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Autowiring by type from bean name 'org.springframework.cache.config.internalCacheAdvisor' via factory method to bean named 'cacheInterceptor'
+2021-07-06 18:52:09,496 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'org.springframework.cache.config.internalCacheAdvisor' to allow for resolving potential circular references
+2021-07-06 18:52:09,496 TRACE [rud.Main.main()] o.s.s.a.ScheduledAnnotationBeanPostProcessor: No @Scheduled annotations found on bean class: class org.springframework.cache.interceptor.BeanFactoryCacheOperationSourceAdvisor
+2021-07-06 18:52:09,496 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,496 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,496 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Getting BeanInfo for class [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration]
+2021-07-06 18:52:09,498 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Caching PropertyDescriptors for class [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration]
+2021-07-06 18:52:09,498 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Found bean property 'class' of type [java.lang.Class]
+2021-07-06 18:52:09,498 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Found bean property 'importMetadata' of type [org.springframework.core.type.AnnotationMetadata]
+2021-07-06 18:52:09,498 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' to allow for resolving potential circular references
+2021-07-06 18:52:09,499 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry'
+2021-07-06 18:52:09,499 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,499 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,499 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,499 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,500 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,500 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,505 TRACE [rud.Main.main()] o.s.s.a.ScheduledAnnotationBeanPostProcessor: No @Scheduled annotations found on bean class: class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration
+2021-07-06 18:52:09,505 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration'
+2021-07-06 18:52:09,506 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'transactionAttributeSource'
+2021-07-06 18:52:09,506 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'transactionAttributeSource'
+2021-07-06 18:52:09,506 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,506 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,506 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,506 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration'
+2021-07-06 18:52:09,512 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'transactionAttributeSource' to allow for resolving potential circular references
+2021-07-06 18:52:09,512 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,512 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,512 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,512 TRACE [rud.Main.main()] o.s.a.f.a.BeanFactoryAdvisorRetrievalHelper: Skipping currently created advisor 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,512 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,512 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,513 TRACE [rud.Main.main()] o.s.s.a.ScheduledAnnotationBeanPostProcessor: No @Scheduled annotations found on bean class: class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource
+2021-07-06 18:52:09,513 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'transactionAttributeSource'
+2021-07-06 18:52:09,513 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'transactionInterceptor'
+2021-07-06 18:52:09,513 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'transactionInterceptor'
+2021-07-06 18:52:09,513 TRACE [rud.Main.main()] o.s.a.a.a.AnnotationAwareAspectJAutoProxyCreator: Did not attempt to auto-proxy infrastructure class [org.springframework.transaction.interceptor.TransactionInterceptor]
+2021-07-06 18:52:09,514 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration'
+2021-07-06 18:52:09,514 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'transactionAttributeSource'
+2021-07-06 18:52:09,514 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Autowiring by type from bean name 'transactionInterceptor' via factory method to bean named 'transactionAttributeSource'
+2021-07-06 18:52:09,520 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'transactionInterceptor' to allow for resolving potential circular references
+2021-07-06 18:52:09,520 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Invoking afterPropertiesSet() on bean with name 'transactionInterceptor'
+2021-07-06 18:52:09,521 TRACE [rud.Main.main()] o.s.s.a.ScheduledAnnotationBeanPostProcessor: No @Scheduled annotations found on bean class: class org.springframework.transaction.interceptor.TransactionInterceptor
+2021-07-06 18:52:09,521 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'transactionInterceptor'
+2021-07-06 18:52:09,521 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Autowiring by type from bean name 'org.springframework.transaction.config.internalTransactionAdvisor' via factory method to bean named 'transactionAttributeSource'
+2021-07-06 18:52:09,521 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Autowiring by type from bean name 'org.springframework.transaction.config.internalTransactionAdvisor' via factory method to bean named 'transactionInterceptor'
+2021-07-06 18:52:09,522 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'org.springframework.transaction.config.internalTransactionAdvisor' to allow for resolving potential circular references
+2021-07-06 18:52:09,522 TRACE [rud.Main.main()] o.s.s.a.ScheduledAnnotationBeanPostProcessor: No @Scheduled annotations found on bean class: class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor
+2021-07-06 18:52:09,522 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Finished creating instance of bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,522 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,522 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,523 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration'
+2021-07-06 18:52:09,523 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration'
+2021-07-06 18:52:09,523 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,523 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,523 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,523 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Getting BeanInfo for class [com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration$$EnhancerBySpringCGLIB$$aa19e729]
+2021-07-06 18:52:09,526 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Caching PropertyDescriptors for class [com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration$$EnhancerBySpringCGLIB$$aa19e729]
+2021-07-06 18:52:09,526 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Found bean property 'beanFactory' of type [org.springframework.beans.factory.BeanFactory]
+2021-07-06 18:52:09,526 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Found bean property 'class' of type [java.lang.Class]
+2021-07-06 18:52:09,526 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Found bean property 'healthCheckRegistry' of type [com.codahale.metrics.health.HealthCheckRegistry]
+2021-07-06 18:52:09,526 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Found bean property 'importMetadata' of type [org.springframework.core.type.AnnotationMetadata]
+2021-07-06 18:52:09,526 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Found bean property 'metricRegistry' of type [com.codahale.metrics.MetricRegistry]
+2021-07-06 18:52:09,526 TRACE [rud.Main.main()] o.s.b.CachedIntrospectionResults: Found bean property 'metricsConfigurers' of type [java.util.List]
+2021-07-06 18:52:09,528 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration' to allow for resolving potential circular references
+2021-07-06 18:52:09,528 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'metricsConfiguration'
+2021-07-06 18:52:09,528 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'metricsConfiguration'
+2021-07-06 18:52:09,528 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,528 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,528 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,531 TRACE [rud.Main.main()] o.s.c.a.CommonAnnotationBeanPostProcessor: Found init method on class [com.example.crud.metrics.MetricsConfiguration$$EnhancerBySpringCGLIB$$e45192f0]: public void com.example.crud.metrics.MetricsConfiguration.init()
+2021-07-06 18:52:09,531 TRACE [rud.Main.main()] o.s.c.a.CommonAnnotationBeanPostProcessor: Registered init method on class [com.example.crud.metrics.MetricsConfiguration$$EnhancerBySpringCGLIB$$e45192f0]: org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement@316510
+2021-07-06 18:52:09,531 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'metricsConfiguration' to allow for resolving potential circular references
+2021-07-06 18:52:09,532 TRACE [rud.Main.main()] o.s.b.f.a.AutowiredAnnotationBeanPostProcessor: Autowiring by type from bean name 'metricsConfiguration' to bean named 'org.springframework.context.annotation.AnnotationConfigApplicationContext@771288'
+2021-07-06 18:52:09,532 TRACE [rud.Main.main()] o.s.c.a.CommonAnnotationBeanPostProcessor: Invoking init method on bean 'metricsConfiguration': public void com.example.crud.metrics.MetricsConfiguration.init()
+2021-07-06 18:52:09,596 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'cluster'
+2021-07-06 18:52:09,596 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'cluster'
+2021-07-06 18:52:09,596 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,596 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,596 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,596 DEBUG [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating shared instance of singleton bean 'applicationConfiguration'
+2021-07-06 18:52:09,596 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Creating instance of bean 'applicationConfiguration'
+2021-07-06 18:52:09,597 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2021-07-06 18:52:09,597 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.config.internalCacheAdvisor'
+2021-07-06 18:52:09,597 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Returning cached instance of singleton bean 'org.springframework.cache.config.internalJCacheAdvisor'
+2021-07-06 18:52:09,597 TRACE [rud.Main.main()] o.s.c.a.CommonAnnotationBeanPostProcessor: Found init method on class [com.example.crud.ApplicationConfiguration$$EnhancerBySpringCGLIB$$c0776fb8]: private void com.example.crud.ApplicationConfiguration.enhanceModelObjectBytecode()
+2021-07-06 18:52:09,597 TRACE [rud.Main.main()] o.s.c.a.CommonAnnotationBeanPostProcessor: Registered init method on class [com.example.crud.ApplicationConfiguration$$EnhancerBySpringCGLIB$$c0776fb8]: org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement@c4a46ab8
+2021-07-06 18:52:09,597 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Eagerly caching bean 'applicationConfiguration' to allow for resolving potential circular references
+2021-07-06 18:52:09,597 TRACE [rud.Main.main()] o.s.c.a.CommonAnnotationBeanPostProcessor: Invoking init method on bean 'applicationConfiguration': private void com.example.crud.ApplicationConfiguration.enhanceModelObjectBytecode()
+2021-07-06 18:52:09,614 DEBUG [rud.Main.main()] D.General: Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+2021-07-06 18:52:09,618 DEBUG [rud.Main.main()] D.General: Registering bundle org.datanucleus version 5.2.0.release at URL file:/Users/greg/.m2/repository/org/datanucleus/datanucleus-core/5.2.0-release/datanucleus-core-5.2.0-release.jar.
+2021-07-06 18:52:09,626 DEBUG [rud.Main.main()] D.General: Loading extension points and extensions from plug-in file jar:file:/Users/greg/.m2/repository/org/datanucleus/datanucleus-core/5.2.0-release/datanucleus-core-5.2.0-release.jar!/plugin.xml.
+2021-07-06 18:52:09,630 DEBUG [rud.Main.main()] D.General: Registering bundle org.datanucleus.api.jpa version 5.2.0.release at URL file:/Users/greg/.m2/repository/org/datanucleus/datanucleus-api-jpa/5.2.0-release/datanucleus-api-jpa-5.2.0-release.jar.
+2021-07-06 18:52:09,632 DEBUG [rud.Main.main()] D.General: Loading extension points and extensions from plug-in file jar:file:/Users/greg/.m2/repository/org/datanucleus/datanucleus-api-jpa/5.2.0-release/datanucleus-api-jpa-5.2.0-release.jar!/plugin.xml.
+2021-07-06 18:52:09,633 DEBUG [rud.Main.main()] D.General: Registering bundle org.datanucleus.store.mongodb version 5.2.0.release at URL file:/Users/greg/.m2/repository/org/datanucleus/datanucleus-mongodb/5.2.0-release/datanucleus-mongodb-5.2.0-release.jar.
+2021-07-06 18:52:09,634 DEBUG [rud.Main.main()] D.General: Loading extension points and extensions from plug-in file jar:file:/Users/greg/.m2/repository/org/datanucleus/datanucleus-mongodb/5.2.0-release/datanucleus-mongodb-5.2.0-release.jar!/plugin.xml.
+2021-07-06 18:52:09,634 DEBUG [rud.Main.main()] D.General: Registering bundle org.datanucleus.store.cassandra version 5.2.0.release at URL file:/Users/greg/.m2/repository/org/datanucleus/datanucleus-cassandra/5.2.0-release/datanucleus-cassandra-5.2.0-release.jar.
+2021-07-06 18:52:09,634 DEBUG [rud.Main.main()] D.General: Loading extension points and extensions from plug-in file jar:file:/Users/greg/.m2/repository/org/datanucleus/datanucleus-cassandra/5.2.0-release/datanucleus-cassandra-5.2.0-release.jar!/plugin.xml.
+2021-07-06 18:52:09,635 DEBUG [rud.Main.main()] D.General: Registering bundle org.datanucleus.cache version 5.1.1 at URL file:/Users/greg/.m2/repository/org/datanucleus/datanucleus-cache/5.1.1/datanucleus-cache-5.1.1.jar.
+2021-07-06 18:52:09,635 DEBUG [rud.Main.main()] D.General: Loading extension points and extensions from plug-in file jar:file:/Users/greg/.m2/repository/org/datanucleus/datanucleus-cache/5.1.1/datanucleus-cache-5.1.1.jar!/plugin.xml.
+2021-07-06 18:52:09,656 DEBUG [rud.Main.main()] D.Persistence: Java types support initialising ...
+2021-07-06 18:52:09,699 DEBUG [rud.Main.main()] D.Persistence: Java types support loaded : supported java types=[B, [C, [D, [F, [I, [J, [Ljava.lang.Boolean;, [Ljava.lang.Byte;, [Ljava.lang.Character;, [Ljava.lang.Double;, [Ljava.lang.Enum;, [Ljava.lang.Float;, [Ljava.lang.Integer;, [Ljava.lang.Long;, [Ljava.lang.Number;, [Ljava.lang.Object;, [Ljava.lang.Short;, [Ljava.lang.String;, [Ljava.math.BigDecimal;, [Ljava.math.BigInteger;, [Ljava.util.Date;, [Ljava.util.Locale;, [S, [Z, boolean, byte, char, double, float, int, java.awt.Color, java.awt.image.BufferedImage, java.lang.Boolean, java.lang.Byte, java.lang.Character, java.lang.Class, java.lang.Double, java.lang.Enum, java.lang.Float, java.lang.Integer, java.lang.Long, java.lang.Number, java.lang.Short, java.lang.String, java.lang.StringBuffer, java.lang.StringBuilder, java.math.BigDecimal, java.math.BigInteger, java.net.URI, java.net.URL, java.sql.Date, java.sql.Time, java.sql.Timestamp, java.time.Duration, java.time.Instant, java.time.LocalDate, java.time.LocalDateTime, java.time.LocalTime, java.time.MonthDay, java.time.OffsetDateTime, java.time.OffsetTime, java.time.Period, java.time.Year, java.time.YearMonth, java.time.ZonedDateTime, java.time.ZoneId, java.time.ZoneOffset, java.util.ArrayList, java.util.Arrays$ArrayList, java.util.BitSet, java.util.Calendar, java.util.Collection, java.util.Currency, java.util.Date, java.util.GregorianCalendar, java.util.HashMap, java.util.HashSet, java.util.Hashtable, java.util.LinkedHashMap, java.util.LinkedHashSet, java.util.LinkedList, java.util.List, java.util.Locale, java.util.Map, java.util.Optional, java.util.PriorityQueue, java.util.Properties, java.util.Queue, java.util.Set, java.util.SortedMap, java.util.SortedSet, java.util.Stack, java.util.TimeZone, java.util.TreeMap, java.util.TreeSet, java.util.UUID, java.util.Vector, long, short
+2021-07-06 18:52:09,699 DEBUG [rud.Main.main()] D.Persistence: Type converter support initialising ...
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: Type converter support loaded
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for byte[] to : java.nio.ByteBuffer
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for char[] to : java.nio.ByteBuffer
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for double[] to : java.nio.ByteBuffer
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for float[] to : java.nio.ByteBuffer
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for int[] to : java.nio.ByteBuffer
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for long[] to : java.nio.ByteBuffer
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for [Ljava.math.BigDecimal; to : java.nio.ByteBuffer
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for [Ljava.math.BigInteger; to : java.nio.ByteBuffer
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for short[] to : java.nio.ByteBuffer
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for boolean[] to : java.nio.ByteBuffer
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.awt.Color to : java.lang.String,int[]
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.awt.image.BufferedImage to : byte[],java.nio.ByteBuffer
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.io.Serializable to : java.lang.String,byte[],java.nio.ByteBuffer
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.lang.Boolean to : java.lang.Integer,java.lang.Character
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.lang.Character to : java.lang.String
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.lang.Class to : java.lang.String
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.lang.Integer to : java.lang.String
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.lang.Long to : java.lang.String
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.lang.StringBuffer to : java.lang.String
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.lang.StringBuilder to : java.lang.String
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.math.BigDecimal to : java.lang.String,java.lang.Double
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.math.BigInteger to : java.lang.String,java.lang.Long
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.net.URI to : java.lang.String
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.net.URL to : java.lang.String
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.sql.Date to : java.lang.String,java.lang.Long,java.util.Date
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.sql.Time to : java.lang.String,java.lang.Long,java.util.Date
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.sql.Timestamp to : java.lang.String,java.lang.Long,java.util.Date
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.time.Duration to : java.lang.String,java.lang.Long,java.lang.Double
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.time.Instant to : java.lang.String,java.sql.Timestamp,java.lang.Long,java.util.Date
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.time.LocalDate to : java.lang.String,java.sql.Date,java.util.Date
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.time.LocalDateTime to : java.lang.String,java.sql.Timestamp,java.util.Date
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.time.LocalTime to : java.lang.String,java.sql.Time,java.lang.Long,java.util.Date
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.time.MonthDay to : java.lang.String,int[],java.sql.Date,java.util.Date
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.time.OffsetDateTime to : java.lang.String,java.sql.Timestamp,java.util.Date
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.time.OffsetTime to : java.lang.String,java.sql.Time,java.lang.Long
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.time.Period to : java.lang.String,int[]
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.time.Year to : java.lang.String,java.lang.Integer
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.time.YearMonth to : java.lang.String,int[],java.sql.Date,java.util.Date
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.time.ZonedDateTime to : java.lang.String,java.sql.Timestamp
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.time.ZoneId to : java.lang.String
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.time.ZoneOffset to : java.lang.String
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.util.BitSet to : java.lang.String
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.util.Calendar to : java.lang.String,java.sql.Timestamp,java.util.Date,[Ljava.lang.Object;
+2021-07-06 18:52:09,718 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.util.Currency to : java.lang.String
+2021-07-06 18:52:09,719 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.util.Date to : java.lang.String,java.lang.Long
+2021-07-06 18:52:09,719 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.util.Locale to : java.lang.String
+2021-07-06 18:52:09,719 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.util.TimeZone to : java.lang.String
+2021-07-06 18:52:09,719 DEBUG [rud.Main.main()] D.Persistence: TypeConverter(s) available for java.util.UUID to : java.lang.String
+2021-07-06 18:52:09,719 DEBUG [rud.Main.main()] D.MetaData: MetaDataManager : Input=(XML,Annotations), XML-Validation=false
+2021-07-06 18:52:09,719 DEBUG [rud.Main.main()] D.Enhancer: Enhancing classes
+2021-07-06 18:52:09,719 DEBUG [rud.Main.main()] D.MetaData: MetaData Management : Loading Metadata for classes "[com.example.crud.entities.AbstractEntity]" ...
+2021-07-06 18:52:09,742 DEBUG [rud.Main.main()] D.MetaData: Class "com.example.crud.entities.AbstractEntity" has been specified with JPA annotations so using those.
+2021-07-06 18:52:09,747 DEBUG [rud.Main.main()] D.MetaData: Populating all MetaData ...
+2021-07-06 18:52:09,747 DEBUG [rud.Main.main()] D.MetaData: Class "com.example.crud.entities.AbstractEntity" : Populating Meta-Data
+2021-07-06 18:52:09,747 DEBUG [rud.Main.main()] D.MetaData: Class "com.example.crud.entities.AbstractEntity" has no table of its own, is using application-identity and has no primary key fields. Marking as not persistence instantiable
+2021-07-06 18:52:09,748 DEBUG [rud.Main.main()] D.MetaData: Initialising all MetaData ...
+2021-07-06 18:52:09,748 DEBUG [rud.Main.main()] D.MetaData: Class "com.example.crud.entities.AbstractEntity" : Initialising Meta-Data
+2021-07-06 18:52:09,750 DEBUG [rud.Main.main()] D.MetaData: MetaData Management : Load of Metadata complete
+2021-07-06 18:52:09,750 DEBUG [rud.Main.main()] D.MetaData: MetaData Management : Loading Metadata for classes "[com.example.crud.entities.AbstractAuditableEntity]" ...
+2021-07-06 18:52:09,751 DEBUG [rud.Main.main()] D.MetaData: Class "com.example.crud.entities.AbstractAuditableEntity" has been specified with JPA annotations so using those.
+2021-07-06 18:52:09,757 DEBUG [rud.Main.main()] D.MetaData: Populating all MetaData ...
+2021-07-06 18:52:09,758 DEBUG [rud.Main.main()] D.MetaData: Class "com.example.crud.entities.AbstractAuditableEntity" : Populating Meta-Data
+2021-07-06 18:52:09,758 DEBUG [rud.Main.main()] D.MetaData: Class "com.example.crud.entities.AbstractAuditableEntity" field "createdByUser" : Adding Meta-Data for member since it didnt appear in the Meta-Data definition.
+2021-07-06 18:52:09,758 DEBUG [rud.Main.main()] D.MetaData: Class "com.example.crud.entities.AbstractAuditableEntity" field "modifiedByUser" : Adding Meta-Data for member since it didnt appear in the Meta-Data definition.
+2021-07-06 18:52:09,758 DEBUG [rud.Main.main()] D.MetaData: Class "com.example.crud.entities.AbstractAuditableEntity" has no table of its own, is using application-identity and has no primary key fields. Marking as not persistence instantiable
+2021-07-06 18:52:09,758 DEBUG [rud.Main.main()] D.MetaData: Initialising all MetaData ...
+2021-07-06 18:52:09,758 DEBUG [rud.Main.main()] D.MetaData: Class "com.example.crud.entities.AbstractAuditableEntity" : Initialising Meta-Data
+2021-07-06 18:52:09,758 DEBUG [rud.Main.main()] D.MetaData: MetaData Management : Load of Metadata complete
+2021-07-06 18:52:09,758 DEBUG [rud.Main.main()] D.MetaData: MetaData Management : Loading Metadata for classes "[com.example.crud.entities.Product]" ...
+2021-07-06 18:52:09,761 DEBUG [rud.Main.main()] D.MetaData: Class "com.example.crud.entities.Product" has been specified with JPA annotations so using those.
+2021-07-06 18:52:09,763 DEBUG [rud.Main.main()] D.MetaData: Populating all MetaData ...
+2021-07-06 18:52:09,763 DEBUG [rud.Main.main()] D.MetaData: Class "com.example.crud.entities.Product" : Populating Meta-Data
+2021-07-06 18:52:09,763 DEBUG [rud.Main.main()] D.MetaData: Initialising all MetaData ...
+2021-07-06 18:52:09,763 DEBUG [rud.Main.main()] D.MetaData: Class "com.example.crud.entities.Product" : Initialising Meta-Data
+2021-07-06 18:52:09,763 DEBUG [rud.Main.main()] D.MetaData: MetaData Management : Load of Metadata complete
+2021-07-06 18:52:09,767 DEBUG [rud.Main.main()] D.MetaData: Parsing MetaData file "file:/Users/greg/src/kc/target/classes/META-INF/persistence.xml" using handler "persistence" (validation="false")
+2021-07-06 18:52:09,773 ERROR [rud.Main.main()] D.MetaData: Parser error with file "file:/Users/greg/src/kc/target/classes/META-INF/persistence.xml" has cause
+2021-07-06 18:52:09,775 WARN  [rud.Main.main()] o.s.c.a.AnnotationConfigApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration': Unsatisfied dependency expressed through method 'setMetricsConfigurers' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'metricsConfiguration': Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'applicationConfiguration': Invocation of init method failed; nested exception is org.datanucleus.enhancer.NucleusEnhanceException: No "persistence.xml" files were found in the CLASSPATH yet you specified as input the name ("crud") of a "persistence-unit" to enhance. You must have a valid "persistence.xml" file in the CLASSPATH in a valid location to use this option.
+2021-07-06 18:52:09,775 TRACE [rud.Main.main()] o.s.b.f.s.DefaultListableBeanFactory: Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@63978a9: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.event.internalEventListenerProcessor,org.springframework.context.event.internalEventListenerFactory,applicationConfiguration,cacheConfiguration,ehCacheConfiguration,metricsConfiguration,springConfiguringClass,org.springframework.scheduling.annotation.SchedulingConfiguration,org.springframework.context.annotation.internalScheduledAnnotationProcessor,org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration,org.springframework.transaction.config.internalTransactionAdvisor,transactionAttributeSource,transactionInterceptor,org.springframework.transaction.config.internalTransactionalEventListenerFactory,entityManagerFactory,transactionManager,auditorAware,entityManager,session,cluster,org.springframework.data.jpa.repository.config.JpaRepositoryConfigExtension#0,emBeanDefinitionRegistrarPostProcessor,jpaMappingContext,jpaContext,org.springframework.data.jpa.util.JpaMetamodelCacheCleanup,org.springframework.data.jpa.repository.support.JpaEvaluationContextExtension,inventoryRepository,personRepository,org.springframework.context.config.internalBeanConfigurerAspect,jpaAuditingHandler,org.springframework.data.jpa.domain.support.AuditingEntityListener,org.springframework.data.jpa.domain.support.AuditingBeanFactoryPostProcessor,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.cache.annotation.ProxyCachingConfiguration,org.springframework.cache.config.internalCacheAdvisor,cacheOperationSource,cacheInterceptor,org.springframework.cache.jcache.config.ProxyJCacheConfiguration,org.springframework.cache.config.internalJCacheAdvisor,jCacheInterceptor,jCacheOperationSource,cacheManager,cacheResolver,keyGenerator,errorHandler,ehCacheCacheManager,ehCacheManagerFactoryBean,com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration,getMetricRegistry,getHealthCheckRegistry,exceptionMeteredAnnotationBeanPostProcessor,meteredAnnotationBeanPostProcessor,timedAnnotationBeanPostProcessor,countedAnnotationBeanPostProcessor,gaugeFieldAnnotationBeanPostProcessor,gaugeMethodAnnotationBeanPostProcessor,cachedGaugeAnnotationBeanPostProcessor,metricAnnotationBeanPostProcessor,healthCheckBeanPostProcessor,legacyCountedAnnotationBeanPostProcessor,legacyCachedGaugeAnnotationBeanPostProcessor,legacyMetricAnnotationBeanPostProcessor,org.springframework.orm.jpa.SharedEntityManagerCreator#0]; root of factory hierarchy
+2021-07-06 18:52:09,775 TRACE [rud.Main.main()] o.s.b.f.s.DisposableBeanAdapter: Invoking destroy() on bean with name 'ehCacheManagerFactoryBean'
+2021-07-06 18:52:09,775 DEBUG [rud.Main.main()] o.s.c.e.EhCacheManagerFactoryBean: Shutting down EhCache CacheManager
+2021-07-06 18:52:09,776 TRACE [FD3Q3MD6R-26856] o.j.p.p.GMS: view [C02FD3Q3MD6R-26856|1] [] is empty: will not multicast it (last view)
+2021-07-06 18:52:09,777 DEBUG [rud.Main.main()] o.j.p.UDP: multicast socket closed
+2021-07-06 18:52:09,777 DEBUG [FD3Q3MD6R-26856] o.j.p.UDP: receiver socket is closed, exception=java.net.SocketException: Socket closed
+2021-07-06 18:52:09,777 DEBUG [FD3Q3MD6R-26856] o.j.p.UDP: multicast receiver thread terminated
+2021-07-06 18:52:09,777 DEBUG [FD3Q3MD6R-26856] o.j.p.UDP: receiver socket is closed, exception=java.net.SocketException: Socket closed
+2021-07-06 18:52:09,777 DEBUG [FD3Q3MD6R-26856] o.j.p.UDP: unicast receiver thread terminated
+2021-07-06 18:52:09,778 DEBUG [rud.Main.main()] o.j.p.UDP: closing sockets and stopping threads
+2021-07-06 18:52:09,779 DEBUG [rud.Main.main()] n.s.e.d.j.JGroupsCacheManagerPeerProvider: Closing JChannel for cluster crudCache
+2021-07-06 18:52:09,784 TRACE [rud.Main.main()] o.s.b.f.s.DisposableBeanAdapter: Invoking destroy() on bean with name 'org.springframework.context.annotation.internalScheduledAnnotationProcessor'
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.817 s
+[INFO] Finished at: 2021-07-06T14:52:09-04:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:1.1:java (default-cli) on project crud-jpa-tutorial: An exception occured while executing the Java class. null: InvocationTargetException: Error creating bean with name 'com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration': Unsatisfied dependency expressed through method 'setMetricsConfigurers' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'metricsConfiguration': Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'applicationConfiguration': Invocation of init method failed; nested exception is org.datanucleus.enhancer.NucleusEnhanceException: No "persistence.xml" files were found in the CLASSPATH yet you specified as input the name ("crud") of a "persistence-unit" to enhance. You must have a valid "persistence.xml" file in the CLASSPATH in a valid location to use this option. -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+
