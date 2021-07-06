@@ -14,30 +14,38 @@
         <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <org.datanucleus.version>5.1.0-release</org.datanucleus.version>
-        <aspectj.version>1.8.10</aspectj.version>
-        <metrics.version>3.2.2</metrics.version>
-        <spring.version>5.3.6</spring.version>
-        <spring-data.version>1.4.6.RELEASE</spring-data.version>
+        <org.datanucleus.version>5.2.0-release</org.datanucleus.version>
+        <aspectj.version>1.9.7</aspectj.version>
+        <metrics.version>4.2.2</metrics.version>
+        <spring.version>5.3.8</spring.version>
+        <spring-data.version>2.5.2</spring-data.version>
         <exec.mainClass>com.example.crud.Main</exec.mainClass>
     </properties>
 
     <repositories>
         <repository>
-            <id>spring-milestones</id>
-            <name>Spring Milestones</name>
-            <url>https://repo.spring.io/libs-milestone</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
+          <id>oss-sonatype</id>
+          <name>oss-sonatype</name>
+          <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+	</repository>
+        <!-- <repository> -->
+        <!--     <id>spring-milestones</id> -->
+        <!--     <name>Spring Milestones</name> -->
+        <!--     <url>https://repo.spring.io/libs-milestone</url> -->
+        <!--     <snapshots> -->
+        <!--         <enabled>false</enabled> -->
+        <!--     </snapshots> -->
+        <!-- </repository> -->
         <repository>
             <id>clojars.org</id>
-            <url>http://clojars.org/repo</url>
+            <url>https://clojars.org/repo</url>
         </repository>
         <repository>
             <id>maven.apache.org</id>
-            <url>http://repo.maven.apache.org/maven2/</url>
+            <url>https://repo.maven.apache.org/maven2/</url>
         </repository>
     </repositories>
 
@@ -220,13 +228,13 @@
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
-            <version>2.1.0.M1</version>
+            <version>${spring-data.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-keyvalue</artifactId>
-            <version>2.1.0.M1</version>
+            <version>${spring-data.version}</version>
         </dependency>
 
         <dependency>
@@ -244,7 +252,7 @@
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
-            <version>5.2.10.RELEASE</version>
+            <version>5.5.1</version>
         </dependency>
 
         <dependency>
@@ -330,13 +338,13 @@
         <dependency>
             <groupId>io.riemann</groupId>
             <artifactId>metrics3-riemann-reporter</artifactId>
-            <version>0.4.6</version>
+            <version>0.5.1</version>
         </dependency>
 
         <dependency>
-          <groupId>defunkt</groupId>
+          <groupId>com.walmartlabs</groupId>
           <artifactId>logback-riemann-appender</artifactId>
-          <version>0.4.0</version>
+          <version>0.3.0</version>
         </dependency>
 
         <!--
