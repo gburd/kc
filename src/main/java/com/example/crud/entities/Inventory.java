@@ -19,7 +19,7 @@ import java.util.Set;
 @NamedEntityGraph(name = "allProps",
         attributeNodes = { @NamedAttributeNode("name"), @NamedAttributeNode("products") })
 @ToString
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper=false)
 @Getter @Setter
 @IdClass(Inventory.ID.class)
 public class Inventory extends AbstractAuditableEntity<String> {

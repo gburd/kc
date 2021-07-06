@@ -2,6 +2,7 @@ package com.example.crud.entities;
 
 import lombok.Data;
 import lombok.ToString;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 
@@ -11,6 +12,7 @@ import javax.persistence.*;
  **/
 @Data @Entity
 @ToString
+@EqualsAndHashCode(callSuper=false)
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Product extends AbstractAuditableEntity {
 

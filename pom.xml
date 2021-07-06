@@ -163,13 +163,13 @@
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-guava</artifactId>
-            <version>5.0.1</version>
+            <version>5.2.1</version>
         </dependency>
 
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-jodatime</artifactId>
-            <version>5.0.0-release</version>
+            <version>5.2.1</version>
         </dependency>
 
         <dependency>
@@ -465,16 +465,17 @@
             <plugin>
                 <groupId>org.datanucleus</groupId>
                 <artifactId>datanucleus-maven-plugin</artifactId>
-                <version>5.0.0-release</version>
+                <version>5.2.1</version>
                 <configuration>
                     <api>JPA</api>
                     <persistenceUnitName>crud</persistenceUnitName>
                     <persistenceUnitName>mongo</persistenceUnitName>
+                    <log4jConfiguration>${basedir}/log4j.properties</log4jConfiguration>
                     <verbose>true</verbose>
                 </configuration>
                 <executions>
                     <execution>
-                        <phase>compile</phase>
+                        <phase>process-classes</phase>
                         <goals>
                             <goal>enhance</goal>
                         </goals>
