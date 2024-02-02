@@ -17,7 +17,7 @@
         <org.datanucleus.version>5.2.0-release</org.datanucleus.version>
         <aspectj.version>1.9.7</aspectj.version>
         <metrics.version>4.2.2</metrics.version>
-        <spring.version>5.3.8</spring.version>
+        <spring.version>5.3.19</spring.version>
         <spring-data.version>2.5.2</spring-data.version>
         <exec.mainClass>com.example.crud.Main</exec.mainClass>
     </properties>
