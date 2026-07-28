@@ -17,7 +17,7 @@
         <org.datanucleus.version>5.2.0-release</org.datanucleus.version>
         <aspectj.version>1.9.7</aspectj.version>
         <metrics.version>4.2.2</metrics.version>
-        <spring.version>5.3.8</spring.version>
+        <spring.version>5.3.39</spring.version>
         <spring-data.version>2.5.2</spring-data.version>
         <exec.mainClass>com.example.crud.Main</exec.mainClass>
     </properties>
@@ -84,12 +84,12 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.2.3</version>
+            <version>1.2.13</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-access</artifactId>
-            <version>1.2.3</version>
+            <version>1.2.13</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -252,7 +252,7 @@
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
-            <version>5.5.1</version>
+            <version>5.8.16</version>
         </dependency>
 
         <dependency>
