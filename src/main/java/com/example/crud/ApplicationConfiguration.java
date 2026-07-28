@@ -1,15 +1,9 @@
 package com.example.crud;
 
-import com.datastax.driver.core.Cluster;
-import com.datastax.driver.core.Session;
 import com.example.crud.entities.AbstractAuditableEntity;
 import com.example.crud.entities.AbstractEntity;
 import com.example.crud.entities.Product;
-import org.datanucleus.ExecutionContext;
 import org.datanucleus.enhancer.DataNucleusEnhancer;
-import org.datanucleus.store.StoreManager;
-import org.datanucleus.store.connection.ConnectionManager;
-import org.datanucleus.store.connection.ManagedConnection;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
@@ -21,10 +15,10 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.annotation.PostConstruct;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import jakarta.annotation.PostConstruct;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
 
 @Configuration
 @EnableJpaRepositories
@@ -70,20 +64,6 @@ class ApplicationConfiguration {
     public EntityManager entityManager() {
         EntityManager em = entityManagerFactory().createEntityManager();
         return em;
-    }
-
-    @Bean
-    public Session session() {
-        StoreManager storeManager = ((ExecutionContext)entityManager().getDelegate()).getNucleusContext().getStoreManager();
-        ConnectionManager connectionManager = storeManager.getConnectionManager();
-        ManagedConnection connection = connectionManager.getConnection(-1);
-        Session session = (Session) connection.getConnection();
-        return session;
-    }
-
-    @Bean
-    public Cluster cluster() {
-        return session().getCluster();
     }
 
 }

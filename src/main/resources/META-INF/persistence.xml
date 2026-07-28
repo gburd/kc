@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_1.xsd"
-             version="2.1">
+    xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
 
     <persistence-unit name="mongo">
         <class>com.example.crud.entities.Person</class>
@@ -10,13 +10,13 @@
 
         <properties>
             <!-- ENABLE THESE FOR MONGODB -->
-            <property name="javax.persistence.jdbc.url" value="mongodb:/crud"/>
+            <property name="jakarta.persistence.jdbc.url" value="mongodb:/crud"/>
             <property name="datanucleus.schema.autoCreateAll" value="true"/>
         </properties>
     </persistence-unit>
 
     <persistence-unit name="crud" transaction-type="RESOURCE_LOCAL">
-        <class>com.example.crud.entities.AbstractEntity/class>
+        <class>com.example.crud.entities.AbstractEntity</class>
         <class>com.example.crud.entities.Inventory</class>
         <class>com.example.crud.entities.Product</class>
         <class>com.example.crud.entities.Book</class>
@@ -24,12 +24,12 @@
         <exclude-unlisted-classes/>
 
         <properties>
-            <property name="javax.persistence.jdbc.url" value="cassandra:"/>
+            <property name="jakarta.persistence.jdbc.url" value="cassandra:"/>
             <property name="datanucleus.mapping.Schema" value="kc"/>
             <property name="datanucleus.flush.mode" value="MANUAL"/>
             <property name="datanucleus.datastoreTransactionFlushLimit" value="100"/>
             <property name="datanucleus.schema.autoCreateAll" value="true"/>
-            <property name="datanucleus.cache.level2.type" value="ehcache"/>
+            <property name="datanucleus.cache.level2.type" value="soft"/>
             <property name="datanucleus.cache.level2.cacheName" value="crud"/>
             <property name="datanucleus.cassandra.metrics" value="true"/>
         </properties>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_1.xsd"
-    version="2.1">
+    xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence/orm https://jakarta.ee/xml/ns/persistence/orm_3_0.xsd"
+    version="3.0">
     <description>JPA Mapping for CRUD/JPA</description>
     <package>com.example.crud.entities</package>
 
@@ -16,10 +16,10 @@
     <entity class="com.example.crud.entities.AbstractAuditableEntity" name="AbstractAuditableEntity">
         <attributes>
             <basic name="createdDateTime">
-                <column name="created" nullable="=false"/>
+                <column name="created" nullable="false"/>
             </basic>
             <basic name="lastModifiedDateTime">
-                <column name="modified" nullable="=false"/>
+                <column name="modified" nullable="false"/>
             </basic>
             <basic name="createdByUser">
                 <column name="created_by" nullable="false"/>
