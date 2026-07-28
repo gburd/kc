@@ -14,7 +14,7 @@
         <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <org.datanucleus.version>5.2.0-release</org.datanucleus.version>
+        <org.datanucleus.version>6.0.0-release</org.datanucleus.version>
         <aspectj.version>1.9.7</aspectj.version>
         <metrics.version>4.2.2</metrics.version>
         <spring.version>5.3.39</spring.version>
