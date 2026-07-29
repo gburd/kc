@@ -1,20 +1,16 @@
 package com.example.crud;
 
-import com.codahale.metrics.ehcache.InstrumentedEhcache;
-import com.datastax.driver.core.*;
-import com.datastax.driver.core.querybuilder.QueryBuilder;
-import com.datastax.driver.core.querybuilder.Select;
 import com.example.crud.entities.*;
 import com.example.crud.repositories.InventoryRepository;
 import com.example.crud.repositories.PersonRepository;
-import org.datanucleus.api.jpa.JPAEntityManager;
-import org.datanucleus.state.ObjectProvider;
+import org.datanucleus.api.jakarta.JakartaEntityManager;
+import org.datanucleus.state.DNStateManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.data.jpa.repository.support.JpaRepositoryFactory;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -39,7 +35,6 @@ public class Main {
 
     EntityManagerFactory cassandraEntityManagerFactory;
     EntityManagerFactory mongoEntityManagerFactory;
-    Cluster cluster;
 
     String personId;
 
@@ -61,7 +56,6 @@ public class Main {
         cassandraEntityManagerFactory = Persistence.createEntityManagerFactory("crud");
         mongoEntityManagerFactory = Persistence.createEntityManagerFactory("mongo");
 
-        cluster = ctx.getBean(Cluster.class);
         /*
         Configuration configuration = cluster.getConfiguration();
         Metadata metadata = cluster.getMetadata();
@@ -129,7 +123,7 @@ public class Main {
             personId = person.getPersonId();
             em.merge(person);
 
-            List<ObjectProvider> objs = ((JPAEntityManager) em).getExecutionContext().getObjectsToBeFlushed();
+            List<DNStateManager> objs = ((JakartaEntityManager) em).getExecutionContext().getObjectsToBeFlushed();
             for (Object o : objs) {
                 log.debug("to be flushed: " + o.toString());
             }
@@ -204,7 +198,7 @@ public class Main {
             log.debug("Executing find() on Inventory");
             EntityGraph allGraph = em.getEntityGraph("allProps");
             Map hints = new HashMap();
-            hints.put("javax.persistence.loadgraph", allGraph); // <- not yet supported, ignore this
+            hints.put("jakarta.persistence.loadgraph", allGraph); // <- not yet supported, ignore this
             inv = em.find(Inventory.class, "My Inventory", hints);
             log.debug("Retrieved Inventory as " + inv);
 

@@ -1,13 +1,12 @@
 package com.example.crud.entities;
 
-import com.google.common.collect.ImmutableSet;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.datanucleus.api.jpa.annotations.DatastoreId;
+import org.datanucleus.api.jakarta.annotations.DatastoreId;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -47,8 +46,8 @@ public class Inventory extends AbstractAuditableEntity<String> {
         products.add(product);
     }
 
-    public ImmutableSet<Product> getProducts() {
-        return ImmutableSet.copyOf(products);
+    public Set<Product> getProducts() {
+        return Set.copyOf(products);
     }
 
     public void clearProducts() {

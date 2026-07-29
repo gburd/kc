@@ -1,33 +1,26 @@
 package com.example.crud;
 
-import com.codahale.metrics.ehcache.InstrumentedEhcache;
-import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurer;
-import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.cache.concurrent.ConcurrentMapCache;
 import org.springframework.cache.interceptor.CacheErrorHandler;
 import org.springframework.cache.interceptor.CacheResolver;
 import org.springframework.cache.interceptor.KeyGenerator;
 import org.springframework.cache.support.CompositeCacheManager;
-import org.springframework.cache.support.SimpleCacheManager;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
 
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Configuration
 //@ComponentScan("com.example.crud")
 //@PropertySource("application.properties")
 @EnableCaching
-public class CacheConfiguration extends CachingConfigurerSupport {
+public class CacheConfiguration implements CachingConfigurer {
 
     //private final CacheProperties cacheProperties;
 
@@ -51,7 +44,7 @@ public class CacheConfiguration extends CachingConfigurerSupport {
     public CacheManager cacheManager() {
 //        if (cacheProperties.isEnabled()) {
 
-            List<CacheManager> cacheManagers = Lists.newArrayList();
+            List<CacheManager> cacheManagers = new ArrayList<>();
 
             if (this.ehCacheCacheManager != null) {
                 cacheManagers.add(this.ehCacheCacheManager);
@@ -66,7 +59,7 @@ public class CacheConfiguration extends CachingConfigurerSupport {
             CompositeCacheManager cacheManager = new CompositeCacheManager();
 
             cacheManager.setCacheManagers(cacheManagers);
-            cacheManager.setFallbackToNoOpCache(false);
+            cacheManager.setFallbackToNoOpCache(true);
 
             return cacheManager;
 /*

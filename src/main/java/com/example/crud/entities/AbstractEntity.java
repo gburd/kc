@@ -3,7 +3,7 @@ package com.example.crud.entities;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.io.Serializable;
 
 @Data
