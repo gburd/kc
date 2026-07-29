@@ -17,7 +17,7 @@
         <datanucleus.core.version>6.0.11</datanucleus.core.version>
         <datanucleus.version>6.0.0-release</datanucleus.version>
         <metrics.version>4.2.2</metrics.version>
-        <spring.version>6.2.8</spring.version>
+        <spring.version>7.0.8</spring.version>
         <spring-data.version>3.5.1</spring-data.version>
         <spring-security.version>6.5.11</spring-security.version>
         <exec.mainClass>com.example.crud.Main</exec.mainClass>
